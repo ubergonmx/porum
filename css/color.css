@@ -1,0 +1,17 @@
+:root{
+    --clr-blue: hsl(205, 99%, 62%);
+    --clr-gray: hsl(0, 0%, 90%);
+
+    --clr-txt-primary: hsl(208, 36%, 26%);
+    --clr-txt-secondary: hsl(208, 24%, 53%);
+
+    --clr-tag-orange: hsl(38, 98%, 69%);
+    --clr-tag-green: hsl(157, 64%, 71%);
+    --clr-tag-purple: hsl(255, 89%, 75%);
+    --clr-tag-red: hsl(359, 85%, 71%);
+    --clr-tag-blue: hsl(184, 65%, 69%);
+    --clr-tag-pink: hsl(322, 82%, 70%);
+    --clr-tag-gray: hsl(195, 34%, 77%);
+    --clr-tag-brown: hsl(60, 20%, 73%);
+
+}
