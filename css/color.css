@@ -15,3 +15,8 @@
     --clr-tag-brown: hsl(60, 20%, 73%);
 
 }
+
+body{
+    margin: 0;
+    padding: 0;
+}
