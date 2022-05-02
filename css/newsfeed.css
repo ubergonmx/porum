@@ -147,22 +147,27 @@ header > * {
 
 .icon-notification{
     padding: 10px;
-    margin-bottom:5px;
+    margin-top:10px;
 }
 
 .icon-messages{
     padding: 10px;
-    margin-bottom:5px;
+    margin-top:10px;
 }
 
 .icon-user{
     border-radius: 50%;
-    height:35px;
-    width:35px;
-    padding:10px;
+    height:40px;
+    width:40px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .icon-logo{
     height:65px;
     width:65px;
+}
+
+.icon-arrowdown{
+    margin-bottom:10px;
 }
