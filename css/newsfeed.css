@@ -130,15 +130,21 @@ header > * {
 
 .filterBox{
     height: 20px;
-    width: 100px;
+    width: 60px;
     margin: auto;
-    padding-left: 10px;
+    padding-left: 10px;   
+    position: relative;
+    right: 500px;
 }
 
 .filterBox:hover{
     background-color: var(--clr-gray);
     border: 1px solid #FFFFFF;
     border-radius: 25px;
+}
+
+.filterBox:hover .filter{
+    color:var(--clr-blue);
 }
 
 #search-format{
