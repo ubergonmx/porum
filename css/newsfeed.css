@@ -121,6 +121,26 @@ header > * {
   .others {
 
   }
+
+.filter{
+    color:var(--clr-txt-secondary);
+    font-weight: bold;
+    display: inline;
+}
+
+.filterBox{
+    height: 20px;
+    width: 100px;
+    margin: auto;
+    padding-left: 10px;
+}
+
+.filterBox:hover{
+    background-color: var(--clr-gray);
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+}
+
 #search-format{
     border-radius: 25px;
     padding: 10px;
@@ -171,3 +191,4 @@ header > * {
 .icon-arrowdown{
     margin-bottom:10px;
 }
+
