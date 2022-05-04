@@ -388,7 +388,6 @@ hr {
     background-color: var(--clr-tag-orange);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
 
 .cat-green {
@@ -397,7 +396,6 @@ hr {
     background-color: var(--clr-tag-green);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
 
 .cat-purple {
@@ -422,7 +420,6 @@ hr {
     background-color: var(--clr-tag-blue);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
 
 .cat-pink {
@@ -431,7 +428,6 @@ hr {
     background-color: var(--clr-tag-pink);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
 
 .cat-gray {
@@ -440,7 +436,6 @@ hr {
     background-color: var(--clr-tag-gray);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
 
 .cat-brown {
@@ -449,5 +444,4 @@ hr {
     background-color: var(--clr-tag-brown);
     border-radius: 50%;
     margin-bottom:20px;
-
 }
