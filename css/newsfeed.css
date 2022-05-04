@@ -319,13 +319,13 @@ aside > * {
     height: 15px;
     margin-bottom: 5px;
     margin-right: 5px;
-    float: left;
 }
 
 .others-comment {
     margin-left: 70px;
     color:var(--clr-txt-primary);
     font-size:12px;
+    float: right;
 }
 
 .new-discussion {
