@@ -11,6 +11,21 @@ header > * {
     justify-content: space-around;
 }
 
+section {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 20px var(--clr-gray);
+    padding: 25px 15px;
+    flex-direction:column;
+}
+
+section > * {
+    display: flex;
+    justify-content: space-around;
+    flex-direction:column;
+}
+
+
 #search-format{
     border-radius: 25px;
     padding: 10px;
@@ -32,7 +47,7 @@ header > * {
     padding: 10px;
     position: absolute;
     margin-top: 15px;
-    margin-left: 400px;
+    margin-left: 225px;
 }
 
 .icon-notification{
@@ -58,31 +73,71 @@ header > * {
     width:65px;
 }
 
-.filter{
-    color:var(--clr-txt-secondary);
-    font-weight: bold;
-    display: inline;
+
+.filter-pos{
+    position: relative;
+    right:70px;
+    top:30px;
 }
 
-.filterBox{
+.filterBox1{
+    color:var(--clr-txt-secondary);
+    font-weight: bold;
+    height: 20px;
+    width: 110px;
+    margin: auto; 
+    position: relative;
+    right: 650px;
+    bottom: 0px;
+}
+
+.filterBox2{
+    color:var(--clr-txt-secondary);
+    font-weight: bold;
     height: 20px;
     width: 110px;
     margin: auto;
-    padding-left: 10px;   
     position: relative;
     right: 500px;
-    top: 80px;
+    bottom: 20px;
 }
 
-.filterBox:hover{
+.filterBox1:hover{
     background-color: var(--clr-gray);
     border: 1px solid #FFFFFF;
     border-radius: 25px;
 }
 
-.filterBox:hover .filter{
+.filterBox1:hover .filter{
     color:var(--clr-blue);
 }
+
+.filterBox2:hover{
+    background-color: var(--clr-gray);
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+}
+
+.filterBox2:hover .filter{
+    color:var(--clr-blue);
+}
+
+.mark-read{
+    color:var(--clr-txt-secondary);
+    font-weight: bold;
+    height: 20px;
+    margin: auto;
+    position: relative;
+    left:10px;
+    bottom: 35px;
+}
+
+.mark-read:hover{
+    background-color: var(--clr-gray);
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+}
+
 
 .icon-arrowdown{
     margin-bottom:10px;
@@ -107,10 +162,10 @@ header > * {
     color:var(--clr-txt-secondary);
     border-radius: 25px;
     width: 100px;
-    margin-left: 850px;
+    position:relative;
+    left: 850px;
+    top:10px;
     font-size: 10px;
-    padding-bottom: 5px;
-    padding-left: 5px;
 }
 
 .dot-orange {
@@ -121,6 +176,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-green {
@@ -131,6 +187,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-purple {
@@ -141,6 +198,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-red {
@@ -151,6 +209,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-blue {
@@ -161,6 +220,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-pink {
@@ -171,6 +231,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-gray {
@@ -181,6 +242,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .dot-brown {
@@ -191,6 +253,7 @@ header > * {
     margin: auto;
     margin-top: 3px;
     display: inline-block;
+    margin-left:10px;
 }
 
 .pic {
