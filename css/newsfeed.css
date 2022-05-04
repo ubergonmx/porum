@@ -97,6 +97,10 @@ header > * {
     padding: 45px 30px;
 }
 
+.discussion:hover{
+    box-shadow: 0 2px 20px var(--clr-blue);
+}
+
 .tag {
     border: 1px solid;
     border-color: var(--clr-gray);
@@ -227,9 +231,6 @@ header > * {
     border-radius: 50%;
     height:20px;
     width:20px;
-    padding-left:2px;
-    padding-right:2px;
-    margin-right: 0px;
     float: right;
 }
 
