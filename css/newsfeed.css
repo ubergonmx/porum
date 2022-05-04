@@ -195,16 +195,18 @@ header > * {
     width:50px;
     padding-left:10px;
     padding-right:10px;
+    float: left;
 }
 
 .content-title {
-    margin-left: 50px;
     color:var(--clr-txt-primary);
     font-size:16px;
 }
 
 .icon-reply {
     margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
 }
 
 .reply-notice {
@@ -215,23 +217,28 @@ header > * {
 
 .content{
     margin-left: 50px;
+    margin-top: 10px;
     color:var(--clr-txt-primary);
     font-size:14px;
+    width: 600px;
 }
 
 .others-icon {
     border-radius: 50%;
     height:20px;
     width:20px;
-    padding-left:10px;
-    padding-right:10px;
+    padding-left:2px;
+    padding-right:2px;
     margin-right: 0px;
+    float: right;
 }
 
 .icon-comment {
     width: 15px;
     height: 15px;
     margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
 }
 
 .others-comment {
