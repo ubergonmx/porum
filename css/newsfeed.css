@@ -25,6 +25,23 @@ section > * {
     flex-direction:column;
 }
 
+aside {
+    position:absolute;
+    top:120px;
+    left:1000px;
+    display: flex;
+    flex-direction:column;
+    margin-left:75px;
+    margin-bottom:25px;
+}
+
+aside > * {
+    position:relative;
+    left:100px;
+    top:100px;
+    display: flex;
+    flex-direction:column;
+}
 
 #search-format{
     border-radius: 25px;
@@ -312,53 +329,57 @@ section > * {
 }
 
 .new-discussion {
-    border-radius: 10%;
+    border-radius: 5%;
     color: white;
     background-color: var(--clr-blue);
-    margin-left: 50px;
     font-size:14px;
-    width: 160px;
-    box-shadow: 0 px 20px var(--clr-blue);
-    padding: 0.1%;
+    width: 250px;
+    height:40px;
+    text-align:center;
+    margin-bottom:35px;
 }
 
-.icon-discussion {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 5px;
+.icon-discussion{
+    margin-right:15px;
 }
 
 .all-discussion {
-    margin-left: 50px;
     color:var(--clr-blue);
-    font-size:14px;
+    font-size: 16px;
+    width:500px;
+    margin-bottom:20px;
+    font-weight:bold;
 }
 
-.icon-follwing {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 5px;
+.icon-following {
+    margin-right:15px;
 }
 
 .following {
-    margin-left: 50px;
     color:var(--clr-txt-primary);
-    font-size:14px;
+    font-size: 16px;
+    width:500px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
-.horizontal-line {
-    width: 50px;
-    border-top: 1px solid var(--primary);
-    border-top-width: 1px;
+.line-hr{
+    align-items: left;
+    margin-left:0px;
+}
+
+hr {
+    color: var(--clr-tag-gray);
+    margin-left:0px;
+    width:50%;
 }
 
 .category {
-    border: 1px;
-    font-size: 14px;
-    width: 100px;
-    margin-left: 500px;
-    padding-bottom: 5px;
-    padding-left: 5px;
+    color:var(--clr-txt-primary);
+    font-size: 16px;
+    width:500px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
 .cat-orange {
@@ -366,8 +387,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-orange);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
 
@@ -376,8 +396,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-green);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
 
@@ -386,8 +405,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-purple);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 }
 
 .cat-red {
@@ -395,8 +413,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-red);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 }
 
 .cat-blue {
@@ -404,8 +421,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-blue);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
 
@@ -414,8 +430,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-pink);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
 
@@ -424,8 +439,7 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-gray);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
 
@@ -434,7 +448,6 @@ section > * {
     width: 20px;
     background-color: var(--clr-tag-brown);
     border-radius: 50%;
-    margin-left: 200px;
-    margin-top: 3px;
+    margin-bottom:20px;
 
 }
