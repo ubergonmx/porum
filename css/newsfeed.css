@@ -285,6 +285,7 @@ aside > * {
 .content-title {
     color:var(--clr-txt-primary);
     font-size:16px;
+    height:20px;
 }
 
 .icon-reply {
@@ -297,11 +298,11 @@ aside > * {
     margin-left: 70px;
     color:var(--clr-txt-primary);
     font-size:10px;
+    height:10px;
 }
 
 .content{
     margin-left: 70px;
-    margin-top: 10px;
     color:var(--clr-txt-primary);
     font-size:14px;
     width: 600px;
@@ -317,15 +318,15 @@ aside > * {
 .icon-comment {
     width: 15px;
     height: 15px;
-    margin-bottom: 5px;
-    margin-right: 5px;
+    margin-right:10px;
 }
 
 .others-comment {
-    margin-left: 70px;
+    position:relative;
+    float:right;
+    top:-30px;
     color:var(--clr-txt-primary);
     font-size:12px;
-    float: right;
 }
 
 .new-discussion {
