@@ -1,59 +1,12 @@
-header {
-    display: flex;
-    justify-content: space-around;
+.discussion {
+    border: 1px;
+    border-color: var(--clr-gray);
+    width: 800px;
+    margin-left: 150px;
     box-shadow: 0 2px 20px var(--clr-gray);
-    padding: 25px 15px;
-    flex: 2, 1, 1;
+    padding: 45px 30px;
+    background-color: var(--clr-txt-secondary);
 }
 
-header > * {
-    display: flex;
-    justify-content: space-around;
-}
-
-#search-format{
-    border-radius: 25px;
-    padding: 10px;
-    width: 500px;
-    height:15px;
-    vertical-align: center;
-    margin-top: 15px;
-}
-
-.title-format{
-    margin-top:5px;
-    margin-bottom:0;
-    color:var(--clr-txt-secondary);
-    font-size:50px;
-}
-
-.icon-glass{
-    margin: auto;
-    padding: 10px;
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 225px;
-}
-
-.icon-notification{
-    padding: 10px;
-    margin-top:10px;
-}
-
-.icon-messages{
-    padding: 10px;
-    margin-top:10px;
-}
-
-.icon-user{
-    border-radius: 50%;
-    height:40px;
-    width:40px;
-    padding-left:10px;
-    padding-right:10px;
-}
-
-.icon-logo{
-    height:65px;
-    width:65px;
+.posts{
 }
