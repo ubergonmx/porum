@@ -17,14 +17,27 @@
 
     <!-- Signup Form -->
 
-    <div id="signup-format"></div>
-            First Name
-            <input type="text" id="fname" name="firstname" placeholder="First Name" required>
-            <input type="text"id="lname" name="lastname" placeholder="Last Name" required>
-            <input type="email"id="email" name="email" placeholder="Email" required>
-            <input type="email"id="confirmemail" name="confirmemail" placeholder="Confirm Email" required>
-            <input type="password"id="password" name="passowrd" placeholder="Password" required>
-            <input type="password"id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+    <div id="signup-format">
+        <div class="profile-pic">
+            <span><img src="images/users/user1.jpg" class="user-pic"></span>
+            <button class="change-pic">CHANGE</button>
+        </div>  
+        <div class="input-forms">
+            <div class="field-format">First Name<br>
+            <input type="text" id="fname" name="firstname" required></div>
+            <div class="field-format">Last Name<br>
+            <input type="text"id="lname" name="lastname" required></div>
+            <div class="field-format">Email Address<br>
+            <input type="email"id="email" name="email" required></div>
+            <div class="field-format">Confirm Email Address<br>
+            <input type="email"id="confirmemail" name="confirmemail"required></div>
+            <div class="field-format">Password<br>
+            <input type="password"id="password" name="passowrd" required></div>
+            <div class="field-format">Confirm Password<br>
+            <input type="password"id="confirmpassword" name="confirmpassword" required></div>
+            <div class="create-format">
+            <button class="create-account">Create Account</button></div>
+        </div>
     </div>
 </body>
 </html> 

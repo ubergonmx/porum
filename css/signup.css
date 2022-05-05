@@ -1,8 +1,82 @@
 #signup-format{
-    border:1px solid black;
-    width:250px;
-    height:500px;
+    border:1px solid var(--clr-gray);
+    background-color: white;
+    width:400px;
+    height:475px;
     position:absolute;
-    top:250px;
+    top:100px;
     left:500px;
+    padding:50px;
+
+}
+
+.profile-pic{
+    margin-left:100px;
+    margin-bottom:20px;
+}
+
+.user-pic{
+    border-radius:50%;
+    width:100px;
+}
+
+.change-pic{
+    position:relative;
+    top:-50px;
+    left:20px;
+    border:1px solid black;
+    border-radius:10%;
+    background-color:white;
+    color:var(--clr-txt-secondary);
+    font-size:10px;
+    width:75px;
+    height:25px;
+}
+
+.input-forms{
+    display:flex;
+    flex-direction:row;
+    width:500px;
+    flex-wrap:wrap;
+}
+
+.field-format{
+    margin-right:20px;
+    margin-bottom:10px;
+    font-size:12px;
+    color: var(--clr-txt-secondary);
+}
+
+input{
+    height:15px;
+    padding:10px;
+}
+
+input[type=text]{
+    width:177px;
+}
+
+
+input[type=email]{
+    width:400px;
+}
+
+input[type=password]{
+    width:400px;
+}
+
+.create-account{
+background-color:var(--clr-txt-primary);
+color:white;
+width:425px;
+border-radius: 12px;
+padding:10px;
+}
+
+.create-format{
+    margin-right:20px;
+    margin-bottom:10px;
+    font-size:12px;
+    color: var(--clr-txt-secondary);
+    margin-top:10px;
 }
