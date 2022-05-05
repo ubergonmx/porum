@@ -57,3 +57,23 @@ header > * {
     height:65px;
     width:65px;
 }
+
+.bio {
+    border: 1px;
+    border-color: var(--clr-gray);
+    width: 800px;
+    height: 100px;
+    margin-left: 500px;
+    margin-top: 150px;
+    box-shadow: 0 2px 20px var(--clr-gray);
+    padding: 45px 30px;
+}
+
+.profile-photo{
+    position: absolute;
+    border-radius: 50%;
+    height:200px;
+    width:200px;
+    left: 850px;
+    top: 150px;
+}
