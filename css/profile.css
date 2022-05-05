@@ -5,7 +5,27 @@
     margin-left: 150px;
     box-shadow: 0 2px 20px var(--clr-gray);
     padding: 45px 30px;
-    background-color: var(--clr-txt-secondary);
+    background-color: white;
+}
+
+.posts{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:350px;
+}
+
+.tag {
+    border: 1px solid;
+    border-color: var(--clr-gray);
+    color:var(--clr-txt-secondary);
+    border-radius: 25px;
+    width: 100px;
+    position:relative;
+    left: 850px;
+    top:10px;
+    font-size: 10px;
+    background-color: white;
 }
 
 header > * {
