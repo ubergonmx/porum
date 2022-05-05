@@ -94,7 +94,7 @@ aside > * {
 .filter-pos{
     position: relative;
     right:70px;
-    top:35px;
+    top:30px;
 }
 
 .filterBox1{
@@ -285,7 +285,6 @@ aside > * {
 .content-title {
     color:var(--clr-txt-primary);
     font-size:16px;
-    height:20px;
 }
 
 .icon-reply {
@@ -298,11 +297,11 @@ aside > * {
     margin-left: 70px;
     color:var(--clr-txt-primary);
     font-size:10px;
-    height:10px;
 }
 
 .content{
     margin-left: 70px;
+    margin-top: 10px;
     color:var(--clr-txt-primary);
     font-size:14px;
     width: 600px;
@@ -318,13 +317,13 @@ aside > * {
 .icon-comment {
     width: 15px;
     height: 15px;
-    margin-right:10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
 }
 
 .others-comment {
-    position:relative;
-    float:right;
-    top:-30px;
+    margin-left: 70px;
     color:var(--clr-txt-primary);
     font-size:12px;
 }
@@ -389,6 +388,7 @@ hr {
     background-color: var(--clr-tag-orange);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
 
 .cat-green {
@@ -397,6 +397,7 @@ hr {
     background-color: var(--clr-tag-green);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
 
 .cat-purple {
@@ -421,6 +422,7 @@ hr {
     background-color: var(--clr-tag-blue);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
 
 .cat-pink {
@@ -429,6 +431,7 @@ hr {
     background-color: var(--clr-tag-pink);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
 
 .cat-gray {
@@ -437,6 +440,7 @@ hr {
     background-color: var(--clr-tag-gray);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
 
 .cat-brown {
@@ -445,4 +449,5 @@ hr {
     background-color: var(--clr-tag-brown);
     border-radius: 50%;
     margin-bottom:20px;
+
 }
