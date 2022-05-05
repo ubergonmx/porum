@@ -60,7 +60,7 @@ header > * {
     width:65px;
 }
 
-.bio {
+.bio-container {
     border: 1px;
     border-color: var(--clr-gray);
     width: 800px;
@@ -69,6 +69,7 @@ header > * {
     margin-top: 150px;
     box-shadow: 0 2px 20px var(--clr-gray);
     padding: 45px 30px;
+    background-color: white;
 }
 
 .profile-photo{
@@ -76,6 +77,22 @@ header > * {
     border-radius: 50%;
     height:200px;
     width:200px;
-    left: 850px;
+    left: 830px;
     top: 150px;
+}
+
+.name{
+    color:var(--clr-txt-secondary);
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
+.bio-content{
+    color:var(--clr-txt-secondary);
+    font-size: 15px;
+    text-align: center;
+    margin-top: 0px;
 }
