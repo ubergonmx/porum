@@ -45,7 +45,7 @@
     border-radius: 50%;
     height:200px;
     width:200px;
-    left: 830px;
+    left: 850px;
     top: 150px;
 }
 
@@ -63,4 +63,26 @@
     font-size: 15px;
     text-align: center;
     margin-top: 0px;
+}
+
+button{
+   float: right;
+   background-color:var(--clr-txt-primary);
+   color:white;
+   width:130px;
+   height: 30px;
+   border-radius: 12px;
+   padding:5px;
+}
+
+button:hover{
+    background-color:var(--clr-blue);
+    border-color:var(--clr-blue);
+}
+
+.count{
+    float: left;
+    color:var(--clr-txt-secondary);
+    font-size: 15px;
+    font-weight: bold;
 }
