@@ -4,6 +4,7 @@ header {
     box-shadow: 0 2px 20px var(--clr-gray);
     padding: 25px 15px;
     flex: 2, 1, 1;
+    background-color: var(--clr-txt-primary);
 }
 
 header > * {
@@ -55,7 +56,7 @@ aside > * {
 .title-format{
     margin-top:5px;
     margin-bottom:0;
-    color:var(--clr-txt-secondary);
+    color:var(--clr-gray);
     font-size:50px;
 }
 
@@ -70,19 +71,28 @@ aside > * {
 .icon-notification{
     padding: 10px;
     margin-top:10px;
+    color:var(--clr-gray);
 }
 
-.icon-messages{
+.icon-newsfeed{
     padding: 10px;
     margin-top:10px;
+    color:var(--clr-gray);
 }
 
 .icon-user{
     border-radius: 50%;
     height:40px;
     width:40px;
-    padding-left:10px;
-    padding-right:10px;
+}
+
+.icon-user:hover{
+    border:2px solid var(--clr-gray);
+}
+s
+.icon-newsfeed:hover{
+    padding:0px;
+    border:2px solid var(--clr-gray);
 }
 
 .icon-logo{
@@ -158,6 +168,7 @@ aside > * {
 
 .icon-arrowdown{
     margin-bottom:10px;
+    color:var(--clr-gray);
 }
 
 .discussion {
