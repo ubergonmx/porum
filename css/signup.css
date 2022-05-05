@@ -80,3 +80,37 @@ padding:10px;
     color: var(--clr-txt-secondary);
     margin-top:10px;
 }
+.outer-box{
+    border:1px solid var(--clr-gray);
+    background-color: var(--clr-gray);
+    width:1500px;
+    height:800px;
+    position:absolute;
+    top:75px;
+    left:200px;
+    border-radius: 3%;
+    box-shadow: 0 2px 20px var(--clr-gray);
+}
+
+.content{
+    width:650px;
+    height:500px;
+    padding-left: 70px;
+}
+
+.title{
+    color:var(--clr-txt-secondary);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.description{
+    color:var(--clr-txt-primary);
+    font-size:14px;
+}
+
+.logo{
+    height: 500px;
+    width: 500px;
+    margin-top: 40px
+}
