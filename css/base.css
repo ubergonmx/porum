@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Omnes';
+    src: url('font/Omnes.eot'); /* IE9 Compat Modes */
+    src: url('font/Omnes.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('font/Omnes.woff') format('woff'),
+         url('font/Omnes.woff2') format('woff2'), /* Modern Browsers */
+         url('font/Omnes.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
 :root{
     --clr-blue: hsl(205, 99%, 62%);
     --clr-gray: hsl(0, 0%, 90%);
@@ -14,10 +23,11 @@
     --clr-tag-gray: hsl(195, 34%, 77%);
     --clr-tag-brown: hsl(60, 20%, 73%);
 
+    --font-type: 'Omnes', Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
     margin: 0;
     padding: 0;
-    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-type);
 }

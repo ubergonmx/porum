@@ -53,6 +53,10 @@ aside > * {
     margin-top: 15px;
 }
 
+input::placeholder{
+    font-family: var(--font-type);
+}
+
 .title-format{
     margin-top:5px;
     margin-bottom:0;
