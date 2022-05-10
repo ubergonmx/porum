@@ -12,228 +12,246 @@
 <body>
     <header>
         <!-- Logo -->
-        <div>
-            <img src="images/icon/logo.png" class="icon-logo"/>
-            <p class="title-format">Porum</p>
-        </div>
+        <a href="newsfeed.html" id="main-logo">
+            <img src="images/icon/logo.png" id="icon-logo"/>
+            <p id="main-title">Porum</p>
+        </a>
 
         <!-- Search bar -->
         <div>
-            <input id="search-format" type="text" placeholder="Search the forum" maxlength="240"/>
-            <i class="fa-solid fa-magnifying-glass icon-glass"></i>
+            <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+            <i id="icon-glass" class="fa-solid fa-magnifying-glass icon-base"></i>
         </div>
 
         <!-- Notification and Profile -->
         <div>
             <!-- Notif icon -->
-            <div id="notification">
-                <a href ="newsfeed.html">
-                    <i class="fa-solid fa-globe fa-2xl icon-newsfeed"></i>
-                    </a>
-                    <i class="fa-solid fa-bell icon-notification fa-xl"></i>
-                    <i class="fa-solid fa-message fa-xl icon-notification"></i>
-                    <a href="profile.html">
-                    <img src="images/users/user1.jpg" class="icon-user"></a>
-                    <i class="fa-solid fa-angle-down icon-arrowdown"></i>
-                    <a href="index.html">
-                    <i class="fa-solid fa-right-from-bracket fa-xl icon-logout"></i></a>
-            </div>
+            <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+
             <!-- Profile -->
             <div>
-                <img />
+                <a href="profile.html">
+                    <img src="images/users/user1.jpg" id="icon-user">
+                </a>
+                <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
             </div>
         </div>
     </header>
     <main>
         <section>
-
-            <!-- Filter -->
-            <div class = "filterBox1"> 
-                <i class="fa-solid fa-arrow-up-short-wide filter-pos"></i>
-                <p>Latest First</p>
-            </div>
-
-            <div class = "filterBox2"> 
-                <i class="fa-solid fa-arrow-down-short-wide filter-pos"></i>
-                <p>Oldest First</p>
-            </div>
-
-            <!-- Mark as all read -->
-            <div class = "mark-read"> 
-                <i class="fa-solid fa-list-check filter-pos"></i>
-                <p>Mark all as read</p>
-            </div>
-
-            
-
-            <div class="discussion-container">
-
-                <!--FIRST POST-->
-                <!--Blue dot-->
-                <div class="tag">
-                    <p class="dot-blue">&nbsp&nbsp&nbsp&nbsp&nbspIntroductions</p>
+            <div id="discussion-header">
+                <select id="filter" name="filter">
+                    <option value="Latest first">Latest first</option>
+                    <option value="Oldest first">Oldest first</option>
+                </select>
+                <div id="mark-read"> 
+                    <i class="fa-solid fa-list-check icon-mark-read"></i>
+                    Mark all as read
                 </div>
-
-                <div class="discussion">   
-                    <!--Blue dot-->
-                    <img src="images/users/user1.jpg" class="pic">
-
-                    <!--Dscussion Title-->
-                    <div class="content-title">
-                        <h3>Introduce Yourself!</h3>
+            </div>
+            <div id="discussion-container">
+                <!--FIRST POST-->
+                <div class="discussion-box"> 
+                    <div class="tag-container">
+                        <p class="tag" data-tag-clr="blue" data-tag-type="sub">Introductions</p>
                     </div>
+                    <div class="discussion">
+                        <a href="#" class="discussion-author"> 
+                            <img src="images/users/user1.jpg" class="img-author">
+                        </a>
 
-                    <!--Images of other people-->
-                    <img src="images/users/more.png" class="others-icon">
-                    <img src="images/users/user7.jpg" class="others-icon">
-                    <img src="images/users/user8.jpg" class="others-icon">
-                    <img src="images/users/user9.jpg" class="others-icon">
-                    <img src="images/users/user10.jpg" class="others-icon">
-                    
-                    <!--Reply notice-->
-                    <div class="reply-notice">
-                        <i class="fa-solid fa-reply icon-reply"></i>
-                        <p>Latest reply from @matt 5 minutes ago</p>
+                        <div class="discussion-body">
+                            <h1 class="title">Introduce Yourself!</h1>
+                            <p class="author-and-date">
+                                Posted by <span>harry31</span> &#8226; 2 months ago
+                            </p>
+                            <p class="content">
+                                Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
+                            </p>
+                        </div>
+                        
+                        <div class="discussion-footer">
+                            <div class="commenters">                                
+                                <img class="commenter commenter-more">
+                                <img src="images/users/user7.jpg" class="commenter">
+                                <img src="images/users/user8.jpg" class="commenter">
+                                <img src="images/users/user9.jpg" class="commenter">
+                                <img src="images/users/user10.jpg" class="commenter">
+                            </div>
+                            
+                            <div class="comment">
+                                <i class="fa-regular fa-comment icon-comment"></i>
+                                <span>25 Comments</span>
+                            </div>   
+                        </div>
                     </div>
-                
-
-                    <!--Discussion Content-->
-                    <div class="content">
-                        <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                    </div>
-                    
-                    <!--Number of comments-->
-                    <div class="others-comment">
-                            <span><i class="fa-regular fa-comment icon-comment"></i>25 Comments</span>
-                        </div>   
-                    </div>
-
+                </div>
 
                 <!--POST 2-->
-                <div class="tag">
-                    <p class="dot-pink">&nbsp&nbsp&nbsp&nbsp&nbspAnnouncements</p>
-                </div>
-                <div class="discussion">
-                    <img src="images/users/user3.jpg" class="pic">
-                    <div class="content-title">
-                        <h3>The 12 month member programme</h3>
+                <div class="discussion-box">
+                    <div class="tag-container">
+                        <p class="tag" data-tag-clr="pink" data-tag-type="sub">Announcements</p>
                     </div>
-                    <img src="images/users/more.png" class="others-icon">
-                    <img src="images/users/user4.jpg" class="others-icon">
-                    <img src="images/users/user6.jpg" class="others-icon">
-                    <img src="images/users/user8.jpg" class="others-icon">
-                    <img src="images/users/user10.jpg" class="others-icon">
-                    <div class="reply-notice">
-                        <i class="fa-solid fa-reply icon-reply"></i>
-                        <p>Latest reply from @matt 5 minutes ago</p>
+                    <div class="discussion">
+                        <a href="#" class="discussion-author"> 
+                            <img src="images/users/user3.jpg" class="img-author">
+                        </a>
+
+                        <div class="discussion-body">
+                            <h1 class="title">The 12 month member programme</h1>
+                            <p class="author-and-date">
+                                Posted by <span>matt5</span> &#8226; 3 months ago
+                            </p>
+                            <p class="content">
+                                Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
+                            </p>
+                        </div>
+
+                        <div class="discussion-footer">
+                            <div class="commenters">                                
+                                <img class="commenter commenter-more">
+                                <img src="images/users/user4.jpg" class="commenter">
+                                <img src="images/users/user6.jpg" class="commenter">
+                                <img src="images/users/user8.jpg" class="commenter">
+                                <img src="images/users/user10.jpg" class="commenter">
+                            </div>
+                            <div class="comment">
+                                <i class="fa-regular fa-comment icon-comment"></i>
+                                <span>27 Comments</span>
+                            </div>   
+                        </div>
                     </div>
-                    <div class="content">
-                        <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                    </div>
-                    <div class="others-comment">
-                        <span><i class="fa-regular fa-comment icon-comment"></i>25 Comments</span>
-                    </div> 
                 </div>
 
+                <div class="discussion-box"> 
+                    <div class="tag-container">
+                        <p class="tag" data-tag-clr="brown" data-tag-type="sub">Jobs</p>
+                    </div>
+                    <div class="discussion">
+                        <a href="#" class="discussion-author"> 
+                            <img src="images/users/user4.jpg" class="img-author">
+                        </a>
 
-                <div class="tag">
-                    <p class="dot-brown">&nbsp&nbsp&nbsp&nbsp&nbspJobs</p>
-                </div>
-                <div class="discussion">
-                    <img src="images/users/user4.jpg" class="pic">
-                    <div class="content-title">
-                        <h3>What jobs are you looking for?</h3>
-                    </div>
-                    <img src="images/users/user2.jpg" class="others-icon">
-                    <img src="images/users/user3.jpg" class="others-icon">
-                    <img src="images/users/user6.jpg" class="others-icon">
-                    <img src="images/users/user9.jpg" class="others-icon">
-                    <div class="reply-notice">
-                        <i class="fa-solid fa-reply icon-reply"></i>
-                        <p>Latest reply from @matt 5 minutes ago</p>
-                    </div>
-                    <div class="content">
-                        <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                    </div>
-                    <div class="others-comment">
-                        <span><i class="fa-regular fa-comment icon-comment"></i>4 Comments</span>
-                    </div> 
-                </div>
+                        <div class="discussion-body">
+                            <h1 class="title">What jobs are you looking for?</h1>
+                            <p class="author-and-date">
+                                Posted by <span>sukisekine</span> &#8226; 2 months ago
+                            </p>
+                            <p class="content">
+                                Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
+                            </p>
+                        </div>
+                        
+                        <div class="discussion-footer">
+                            <div class="commenters">                                
+                                <img class="commenter commenter-more">
+                                <img src="images/users/user2.jpg" class="commenter">
+                                <img src="images/users/user3.jpg" class="commenter">
+                                <img src="images/users/user6.jpg" class="commenter">
+                                <img src="images/users/user9.jpg" class="commenter">
+                            </div>
 
-            
-                <div class="tag">
-                    <p class="dot-purple">&nbsp&nbsp&nbsp&nbsp&nbspFeedback</p>
-                </div>
-                <div class="discussion">
-                    <img src="images/users/user5.jpg" class="pic">
-                    <div class="content-title">
-                        <h3>UI for a new airline app help needed!</h3>
+                            <div class="comment">
+                                <i class="fa-regular fa-comment icon-comment"></i>
+                                <span>4 Comments</span>
+                            </div>   
+                        </div>
                     </div>
-                    <img src="images/users/user3.jpg" class="others-icon">
-                    <img src="images/users/user7.jpg" class="others-icon">
-                    <img src="images/users/user8.jpg" class="others-icon">
-                    <img src="images/users/user10.jpg" class="others-icon">
-                    <div class="reply-notice">
-                        <i class="fa-solid fa-reply icon-reply"></i>
-                        <p>Latest reply from @matt 5 minutes ago</p>
-                    </div>
-                    <div class="content">
-                        <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                    </div>
-                    <div class="others-comment">
-                        <span><i class="fa-regular fa-comment icon-comment"></i>12 Comments</span>
-                    </div> 
                 </div>
 
+                
+                <div class="discussion-box"> 
+                    <div class="tag-container">
+                        <p class="tag" data-tag-clr="purple" data-tag-type="sub">Feedback</p>
+                    </div>
+                    <div class="discussion">
+                        <a href="#" class="discussion-author"> 
+                            <img src="images/users/user5.jpg" class="img-author">
+                        </a>
 
-                <div class="tag">
-                    <p class="dot-orange">&nbsp&nbsp&nbsp&nbsp&nbspFAQ's</p>
+                        <div class="discussion-body">
+                            <h1 class="title">UI for a new airline app help needed!</h1>
+                            <p class="author-and-date">
+                                Posted by <span>harry31</span> &#8226; 2 months ago
+                            </p>
+                            <p class="content">
+                                Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
+                            </p>
+                        </div>
+
+                        <div class="discussion-footer">
+                            <div class="commenters">                                
+                                <img class="commenter commenter-more">
+                                <img src="images/users/user3.jpg" class="commenter">
+                                <img src="images/users/user7.jpg" class="commenter">
+                                <img src="images/users/user8.jpg" class="commenter">
+                                <img src="images/users/user10.jpg" class="commenter">
+                            </div>
+                            
+                            <div class="comment">
+                                <i class="fa-regular fa-comment icon-comment"></i>
+                                <span>12 Comments</span>
+                            </div>   
+                        </div>
+                    </div>
                 </div>
-                <div class="discussion">
-                    <img src="images/users/user6.jpg" class="pic">
-                    <div class="content-title">
-                        <h3>Here are the top 5 FAQs</h3>
+
+                <div class="discussion-box"> 
+                    <div class="tag-container">
+                        <p class="tag" data-tag-clr="orange" data-tag-type="sub">FAQ's</p>
                     </div>
-                    <img src="images/users/user2.jpg" class="others-icon">
-                    <img src="images/users/user3.jpg" class="others-icon">
-                    <img src="images/users/user4.jpg" class="others-icon">
-                    <img src="images/users/user5.jpg" class="others-icon">
-                    <div class="reply-notice">
-                        <i class="fa-solid fa-reply icon-reply"></i>
-                        <p>Latest reply from @matt 5 minutes ago</p>
+                    <div class="discussion">
+                        <a href="#" class="discussion-author"> 
+                            <img src="images/users/user6.jpg" class="img-author">
+                        </a>
+
+                        <div class="discussion-body">
+                            <h1 class="title">Here are the top 5 FAQs</h1>
+                            <p class="author-and-date">
+                                Posted by <span>xirena</span> &#8226; 2 months ago
+                            </p>
+                            <p class="content">
+                                Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
+                            </p>
+                        </div>
+
+                        <div class="discussion-footer">
+                            <div class="commenters">                                
+                                <img class="commenter commenter-more">
+                                <img src="images/users/user2.jpg" class="commenter">
+                                <img src="images/users/user3.jpg" class="commenter">
+                                <img src="images/users/user4.jpg" class="commenter">
+                                <img src="images/users/user5.jpg" class="commenter">
+                            </div>
+                            
+                            <div class="comment">
+                                <i class="fa-regular fa-comment icon-comment"></i>
+                                <span>14 Comments</span>
+                            </div>   
+                        </div>
                     </div>
-                    <div class="content">
-                        <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                    </div>
-                    <div class="others-comment">
-                        <span><i class="fa-regular fa-comment icon-comment"></i>30 Comments</span>
-                    </div> 
                 </div>
             </div>
         </section>
         
         <aside>
-            <div class="new-discussion">
-                <p>Start New Discussion</p>
-            </div>
-            <div class="all-discussion">
+            <button id="new-discussion">Start New Discussion</button>
+            <div id="all-discussion">
                 <span> <i class="fa-regular fa-message icon-discussion fa-lg"></i>All Discussion</span>
             </div>
-            <div class="following">
+            <div id="following">
                 <span> <i class="fa-regular fa-star icon-following fa-lg"></i>Following</span>
             </div>
-            <div class="line-hr">
-                <hr>
-            </div>
-            <div class="category">
-                <p class="cat-orange">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFAQ's</p>
-                <p class="cat-green">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOff-&nbspTopic&nbspChatter</p>
-                <p class="cat-purple">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFeedback</p>
-                <p class="cat-red">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMember&nbspSpotlight</p>
-                <p class="cat-blue">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspIntroductions</p>
-                <p class="cat-pink">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAnnouncements</p>
-                <p class="cat-gray">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspShowcase</p>
-                <p class="cat-brown">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJobs</p>
+            <div id="line"></div>
+            <div class="category-container">
+                <p class="tag" data-tag-clr="orange" data-tag-type="main">FAQ's</p>
+                <p class="tag" data-tag-clr="green" data-tag-type="main">Off-Topic Chatter</p>
+                <p class="tag" data-tag-clr="purple" data-tag-type="main">Feedback</p>
+                <p class="tag" data-tag-clr="red" data-tag-type="main">Member Spotlight</p>
+                <p class="tag" data-tag-clr="blue" data-tag-type="main">Introductions</p>
+                <p class="tag" data-tag-clr="pink" data-tag-type="main">Announcements</p>
+                <p class="tag" data-tag-clr="gray" data-tag-type="main">Showcase</p>
+                <p class="tag" data-tag-clr="brown" data-tag-type="main">Jobs</p>
             </div>
         </aside>
     </main>

@@ -7,9 +7,16 @@
          url('font/Omnes.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
+@font-face {
+    font-family: 'Omnes Medium';
+    src: url('font/Omnes Medium.otf') format('opentype');
+}
+
 :root{
     --clr-blue: hsl(205, 99%, 62%);
     --clr-gray: hsl(0, 0%, 90%);
+    --clr-gray-500: hsl(210, 13%, 65%);
+    --clr-gray-600: hsl(203, 10%, 60%);
 
     --clr-txt-primary: hsl(208, 36%, 26%);
     --clr-txt-secondary: hsl(208, 24%, 53%);
