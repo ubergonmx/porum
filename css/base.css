@@ -31,9 +31,13 @@
     --clr-tag-brown: hsl(60, 20%, 73%);
 
     --font-type: 'Omnes', Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-type2: 'Omnes Medium', var(--font-type);
+
+    --transition: all 0.3s ease;
 }
 
 body{
+    display: grid;
     margin: 0;
     padding: 0;
     font-family: var(--font-type);
