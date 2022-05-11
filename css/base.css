@@ -14,9 +14,11 @@
 
 :root{
     --clr-blue: hsl(205, 99%, 62%);
-    --clr-gray: hsl(0, 0%, 90%);
-    --clr-gray-500: hsl(210, 13%, 65%);
+    --clr-gray: hsl(210, 13%, 65%);
+    --clr-gray-100: hsl(0, 0%, 90%);
+    --clr-gray-400: hsl(210, 15%, 74%);
     --clr-gray-600: hsl(203, 10%, 60%);
+    --clr-bg: hsl(214, 100%, 96%);
 
     --clr-txt-primary: hsl(208, 36%, 26%);
     --clr-txt-secondary: hsl(208, 24%, 53%);
@@ -41,4 +43,5 @@ body{
     margin: 0;
     padding: 0;
     font-family: var(--font-type);
+    background-color: var(--clr-bg);
 }
