@@ -7,40 +7,36 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
+    <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
     <title>Login - Porum</title>
 </head>
-<body style = "background: url(images/login/wallpaper.png)">
-    <div class="main-page">
-        <div>
+<body>
+    <main>
+        <div id="main-logo">
             <!-- Logo -->
-            <img src="images/icon/logo.png" class="icon-logo"/>
-            <p class="title-format">Porum</p>
-            <!--Login to your account-->
-            <p class="text-format">Log into your account</p>
+            <img src="images/icon/logo.png" id="icon-logo"/>
+            <!-- <p id="main-title">Porum</p> -->
         </div>
+        <h1 id="text-title">Hey, good to see you again!</h1>
+        <h2 id="text-subtitle">Log in to get going.</h2>
 
-    <!-- Forms -->
-        <div class="input-forms">
-            <input type="email" id="email" name="email" placeholder="Email Address" required><br><br>
-            <input type="password"id="password" name="password" placeholder="Password" required><br>
+        <div id="login-form">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password"id="password" name="password" placeholder="Password" required>
+            </div>
+            <button id="login">Log in</button>
         </div>
-
-        <div class="login-button">
-            <a href="newsfeed.html">
-            <button class="log-in">Log in</button>
-        </a>
+        
+        <div id="login-bottom-text">
+            <a href="signup.html" class="login-bottom-link">Sign up</a>
+            <span class="login-bottom-link">Forgot your password?</span>
         </div>
-
-        <div class="options">
-            <a href = "signup.html"><span class="option-format">Sign up</span></a>
-            <span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-            <span class="option-format">Forgot Password</span>
-        </div>
-
-    <!-- Log In Button -->
-
-    <!-- Sign Up -->
-    </div>
+    </main>
 </body>
 </html>

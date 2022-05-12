@@ -14,9 +14,10 @@
 
 :root{
     --clr-blue: hsl(205, 99%, 62%);
-    --clr-gray: hsl(210, 13%, 65%);
+    --clr-blue-500: hsl(205, 62%, 52%);
+    --clr-gray: hsl(210, 15%, 74%);
     --clr-gray-100: hsl(0, 0%, 90%);
-    --clr-gray-400: hsl(210, 15%, 74%);
+    --clr-gray-500: hsl(210, 13%, 65%);
     --clr-gray-600: hsl(203, 10%, 60%);
     --clr-bg: hsl(214, 100%, 96%);
 
@@ -44,4 +45,40 @@ body{
     padding: 0;
     font-family: var(--font-type);
     background-color: var(--clr-bg);
+}
+
+/* common styling */
+
+a, a:visited {
+    text-decoration: none;
+    color: var(--clr-txt-secondary);
+}
+
+input{
+    font-family: var(--font-type);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 3rem;
+}
+
+#main-logo{
+    display: flex;
+    flex-direction: row;
+}
+
+#main-title{
+    color:var(--clr-txt-primary);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: var(--font-type2);
+    margin: 2px 0 0 0;
+}
+
+#icon-logo{
+    height:65px;
+    width:65px;
 }

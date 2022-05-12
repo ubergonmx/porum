@@ -20,13 +20,7 @@ header > div:last-child{
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
     gap: 5rem;
-    padding: 3rem;
-    /* background-color: var(--clr-bg); */
 }
 
 section {
@@ -50,10 +44,6 @@ aside > * {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-}
-
 /* transition  */
 #search-bar,
 #icon-notification,
@@ -70,19 +60,6 @@ a {
     transition: var(--transition);
 }
 /* end */
-
-#main-title{
-    color:var(--clr-txt-primary);
-    font-size: 50px;
-    font-weight: bold;
-    font-family: var(--font-type2);
-    margin: 2px 0 0 0;
-}
-
-#icon-logo{
-    height:65px;
-    width:65px;
-}
 
 #search-bar{
     border-radius: 25px;
@@ -198,6 +175,15 @@ input::placeholder{
 #following:hover,
 .text-active{
     color: var(--clr-blue);
+}
+
+#icon-notification:active,
+#icon-arrowdown:active,
+#mark-read:active,
+#category-container .tag:active,
+#all-disussion:active,
+#following:active{
+    color: var(--clr-blue-500);
 }
 
 #discussion-container{
@@ -465,6 +451,10 @@ input::placeholder{
 
 #new-discussion:hover{
     box-shadow: 0 2px 10px rgb(62, 174, 254, 0.7);
+}
+
+#new-discussion:active{
+    background-color: var(--clr-blue-500);
 }
 
 .icon-discussion, .icon-following{
