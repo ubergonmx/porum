@@ -42,38 +42,6 @@ main {
     gap: 5px;
 }
 
-/* transition */
-#email, #password, #login, .option-format{
-    transition: var(--transition);
-}
-/* end */
-
-label{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--clr-txt-secondary);
-    font-weight: bold;
-    font-size: 12px;
-}
-
-#email:focus, #password:focus{
-    border-color: var(--clr-blue);
-    -webkit-box-shadow: none;
-	box-shadow: none;
-    outline: none;
-}
-
-#email, #password{
-    height:25px;
-    padding:10px;
-    border-radius: 5px;
-    border: 1px solid var(--clr-gray);
-}
-
-input:focus {
-    border: 3px solid var(--clr-txt-primary);
-}
-
 #login {
     border: none;
     border-radius: 5px;
@@ -93,7 +61,7 @@ input:focus {
     background-color: var(--clr-blue-500);
 }
 
-#login-bottom-text {
+#login-footer {
     display: flex;
     width: 350px;
     justify-content: space-around;
@@ -101,11 +69,16 @@ input:focus {
     color: var(--clr-txt-secondary);
 }
 
-.login-bottom-link:hover{
+.login-footer-link:hover{
     color: var(--clr-blue);
     cursor: pointer;
 }
 
-.login-bottom-link:active{
+.login-footer-link:active{
     color: var(--clr-blue-500);
+}
+
+/* transition */
+.login-footer-link{
+    transition: var(--transition);
 }

@@ -46,10 +46,12 @@ aside > * {
 
 /* transition  */
 #search-bar,
+#icon-search,
 #icon-notification,
 #icon-arrowdown,
 #filter,
 #mark-read,
+#discussion-container,
 .tag-container,
 .discussion, 
 #load-more-discussion, 
@@ -63,20 +65,11 @@ aside > * {
 
 #search-bar{
     border-radius: 25px;
-    border: 1px solid var(--clr-gray);
-    padding: 10px;
     width: max(500px, 40vw);
     height: 15px;
 }
 
-#search-bar:focus{
-    border-color: var(--clr-blue);
-    -webkit-box-shadow: none;
-	box-shadow: none;
-    outline: none;
-}
-
-#search-bar:focus ~ #icon-search{
+#search-bar:focus + #icon-search{
     color: var(--clr-blue);
 }
 

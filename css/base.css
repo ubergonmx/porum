@@ -54,8 +54,37 @@ a, a:visited {
     color: var(--clr-txt-secondary);
 }
 
+label{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-txt-secondary);
+    font-weight: bold;
+    font-size: 12px;
+}
+
 input{
     font-family: var(--font-type);
+}
+
+input[type=text], 
+input[type=username], 
+input[type=email], 
+input[type=password]{
+    height:25px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid var(--clr-gray);
+    font-size: 14px;
+}
+
+input[type=text]:focus, 
+input[type=username]:focus, 
+input[type=email]:focus, 
+input[type=password]:focus{
+    border-color: var(--clr-blue);
+    -webkit-box-shadow: none;
+	box-shadow: none;
+    outline: none;
 }
 
 main {
@@ -81,4 +110,10 @@ main {
 #icon-logo{
     height:65px;
     width:65px;
+}
+
+/* common transition */
+
+button, input{
+    transition: var(--transition);
 }
