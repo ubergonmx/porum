@@ -11,40 +11,50 @@
     <title>Create an account - Porum</title>
 </head>
 <body>
-    <!-- Outer Box -->
-    <div>
-        <div id="content">
-            <p id="text-title">
-                Welcome!
-                First things first...
-            </p>
-            <p id="text-subtitle">Create a profile to personalize how you'll appear to other users</p>
-            <img src="images/icon/logo-variation.png" class = "logo">
+    <main>
+        <div id="signup-header">
+            <h1 id="text-title">Welcome!<br>First things first...</h1>
+            <h2 id="text-subtitle">Create a profile to personalize how you'll appear to other users</h2>
+            <img src="images/design/poro-stack.png" id="img-design">
         </div>
-    </div>
 
-    <!-- Signup Form -->
-    <div id="signup-form">
-        <div class="profile-pic">
-            <span><img src="images/users/user1.jpg" class="user-pic"></span>
-            <button class="change-pic">CHANGE</button>
-        </div>  
-        <div class="input-forms">
-            <div class="field-format">First Name<br>
-            <input type="text" id="fname" name="firstname" required></div>
-            <div class="field-format">Last Name<br>
-            <input type="text"id="lname" name="lastname" required></div>
-            <div class="field-format">Email Address<br>
-            <input type="email"id="email" name="email" required></div>
-            <div class="field-format">Confirm Email Address<br>
-            <input type="email"id="confirmemail" name="confirmemail"required></div>
-            <div class="field-format">Password<br>
-            <input type="password"id="password" name="passowrd" required></div>
-            <div class="field-format">Confirm Password<br>
-            <input type="password"id="confirmpassword" name="confirmpassword" required></div>
-            <div class="create-format">
-            <a href = "newsfeed.html"><button class="create-account">Create Account</button></a></div>
+        <!-- Signup Form -->
+        <div id="signup-form">
+            <div>
+                <div id="user-pic-container">
+                    <img src="images/users/user1.jpg" id="user-pic">
+                    <button id="change-pic" class="button-secondary">Change</button>
+                </div>
+                <p class="text-error"><!--Please fill up all fields. --></p>
+            </div>
+            <div id="input-form">
+                <div>
+                    <div>
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="fname" name="firstname" required>
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name</label>
+                        <input type="text"id="lname" name="lastname" required>
+                    </div>
+                </div>
+                <label for="username">Username</label>
+                <input type="text"id="username" name="username"required>
+                <label for="email">Email Address</label>
+                <input type="email"id="email" name="email" required>
+                <div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <label for="confirmpassword">Confirm Password</label>
+                        <input type="password" id="confirmpassword" name="confirmpassword" required>
+                    </div>
+                </div>
+                <button id="create-account" class="button-primary">Create Account</button>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html> 

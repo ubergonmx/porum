@@ -47,6 +47,12 @@ body{
     background-color: var(--clr-bg);
 }
 
+/* common transition */
+
+button, input{
+    transition: var(--transition);
+}
+
 /* common styling */
 
 a, a:visited {
@@ -67,24 +73,24 @@ input{
 }
 
 input[type=text], 
-input[type=username], 
 input[type=email], 
 input[type=password]{
     height:25px;
     padding:10px;
     border-radius: 5px;
     border: 1px solid var(--clr-gray);
-    font-size: 14px;
+    font-size: 14px;    
+    /* background-color: var(--clr-bg); */
 }
 
 input[type=text]:focus, 
-input[type=username]:focus, 
 input[type=email]:focus, 
 input[type=password]:focus{
     border-color: var(--clr-blue);
     -webkit-box-shadow: none;
 	box-shadow: none;
-    outline: none;
+    outline: none;    
+    /* background-color: white; */
 }
 
 main {
@@ -112,8 +118,69 @@ main {
     width:65px;
 }
 
-/* common transition */
+#text-title {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: var(--font-type2);
+    color: var(--clr-txt-primary);
+}
 
-button, input{
-    transition: var(--transition);
+#text-subtitle {
+    font-weight: bold;
+    font-size:16px;
+    color: var(--clr-txt-secondary);
+}
+
+.text-error{
+    color: var(--clr-tag-red);
+    font-weight: bold;
+}
+
+.input-error{
+    border-color: var(--clr-tag-red);
+}
+
+.button-primary{
+    border: none;
+    border-radius: 5px;
+    background-color:var(--clr-blue);
+    font-family: var(--font-type2);
+    font-size: 14px;
+    color:white;
+    padding: 10px; 
+    box-shadow: 0 2px 10px rgb(62, 174, 254, 0.2);
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-primary:hover {
+    box-shadow: 0 2px 10px rgb(62, 174, 254, 0.7);
+}
+
+.button-primary:active{
+    background-color: var(--clr-blue-500);
+}
+
+.button-secondary{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: var(--font-type);
+    border: 1px solid var(--clr-gray);
+    border-radius: 5px;
+    background-color: white;
+    color: var(--clr-txt-secondary);
+    /* width: 75px; */
+    height: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-secondary:hover{
+    box-shadow: 0 2px 10px rgb(230, 230, 230, 0.5);
+}
+
+
+.button-secondary:active{
+    background-color: var(--clr-bg);
 }

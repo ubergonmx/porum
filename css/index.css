@@ -4,17 +4,10 @@ main {
 }
 
 #text-title {
-    font-weight: bold;
-    font-size: 30px;
-    font-family: var(--font-type2);
-    color: var(--clr-txt-primary);
     margin: 5px 0 0;
 }
 
 #text-subtitle {
-    font-weight: bold;
-    font-size:16px;
-    color: var(--clr-txt-secondary);
     margin-bottom: 25px;
 }
 
@@ -32,6 +25,14 @@ main {
     gap: 20px;
 }
 
+#login-form[data-type="forgotpwd"]{
+    height: 170px;
+}
+
+#login-form[data-type="forgotpwd"] > div:last-child{
+    display: none;
+}
+
 #login-form > * {
     width: 300px;
 }
@@ -40,25 +41,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
-
-#login {
-    border: none;
-    border-radius: 5px;
-    background-color:var(--clr-blue);
-    color:white;
-    font-family: var(--font-type2);
-    padding: 10px;
-    box-shadow: 0 2px 10px rgb(62, 174, 254, 0.2);
-    cursor: pointer;
-}
-
-#login:hover {
-    box-shadow: 0 2px 10px rgb(62, 174, 254, 0.7);
-}
-
-#login:active{
-    background-color: var(--clr-blue-500);
 }
 
 #login-footer {
@@ -79,6 +61,6 @@ main {
 }
 
 /* transition */
-.login-footer-link{
+#login-form, #login-form div,.login-footer-link{
     transition: var(--transition);
 }
