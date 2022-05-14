@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/newsfeed.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
+    <script src="js/base.js"></script>
     <script src="js/newsfeed.js"></script>
     <title>Porum</title>
 </head>
@@ -21,8 +22,11 @@
 
         <!-- Search bar -->
         <div>
-            <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
-            <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+            <form id="search-form" action="/search/">
+                <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+                <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+                <input type="submit" hidden />
+            </form>
         </div>
 
         <!-- Notification and Profile -->

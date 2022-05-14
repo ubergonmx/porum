@@ -8,46 +8,43 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
+    <script src="js/base.js"></script>
+    <script src="js/profile.js"></script>
     <title>Profile - Porum</title>
 </head>
-<body style = "background: url(images/login/wallpaper.png)">
-    <!-- Header -->
+<body>
     <header>
         <!-- Logo -->
-        <div>
-            <img src="images/icon/logo.png" class="icon-logo"/>
-            <p class="title-format">Porum</p>
-        </div>
+        <a href="newsfeed.html" id="main-logo">
+            <img src="images/design/logo.png" id="icon-logo"/>
+            <p id="main-title">Porum</p>
+        </a>
 
         <!-- Search bar -->
         <div>
-            <input id="search-format" type="text" placeholder="Search the forum" maxlength="240"/>
-            <i class="fa-solid fa-magnifying-glass icon-glass"></i>
+            <form id="search-form" action="/search/">
+                <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+                <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+                <input type="submit" hidden />
+            </form>
         </div>
 
         <!-- Notification and Profile -->
         <div>
             <!-- Notif icon -->
-            <div id="notification">
-                <a href ="newsfeed.html">
-                    <i class="fa-solid fa-globe fa-2xl icon-newsfeed"></i>
-                    </a>
-                    <i class="fa-solid fa-bell icon-notification fa-xl"></i>
-                    <i class="fa-solid fa-message fa-xl icon-notification"></i>
-                    <a href="profile.html">
-                    <img src="images/users/user1.jpg" class="icon-user"></a>
-                    <i class="fa-solid fa-angle-down icon-arrowdown"></i>
-                    <a href="index.html">
-                    <i class="fa-solid fa-right-from-bracket fa-xl icon-logout"></i></a>
+            <div id="notificon-container">
+                <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
             </div>
             <!-- Profile -->
             <div>
-                <img />
+                <a href="profile.html">
+                    <img src="images/users/user1.jpg" id="icon-user">
+                </a>
+                <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
             </div>
         </div>
     </header>
-
-
+    <main>
         <!-- BIO -->
         <img src="images/users/user1.jpg" class="profile-photo">
         <div class = "bio-container">
@@ -101,7 +98,6 @@
                 </div>
             </div>
         </div>
-
-
+    </main>
 </body>
 </html>

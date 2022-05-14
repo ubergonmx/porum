@@ -7,9 +7,41 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
+    <script src="js/base.js"></script>
+    <script src="js/startdiscussion.js"></script>
     <title>Start a discussion - Porum</title>
 </head>
 <body>
-    
+    <header>
+        <!-- Logo -->
+        <a href="newsfeed.html" id="main-logo">
+            <img src="images/design/logo.png" id="icon-logo"/>
+            <p id="main-title">Porum</p>
+        </a>
+
+        <!-- Search bar -->
+        <div>
+            <form id="search-form" action="/search/">
+                <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+                <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+                <input type="submit" hidden />
+            </form>
+        </div>
+
+        <!-- Notification and Profile -->
+        <div>
+            <!-- Notif icon -->
+            <div id="notificon-container">
+                <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+            </div>
+            <!-- Profile -->
+            <div>
+                <a href="profile.html">
+                    <img src="images/users/user1.jpg" id="icon-user">
+                </a>
+                <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+            </div>
+        </div>
+    </header>
 </body>
 </html>

@@ -1,3 +1,7 @@
+main{
+    flex-direction: column;
+}
+
 .discussion {
     border: 1px;
     border-color: var(--clr-gray);

@@ -1,5 +1,6 @@
 main{
     gap: 50px;
+    padding-bottom: 0px;
 }
 
 #img-design{
@@ -61,6 +62,7 @@ main{
 #input-form div {
     display: flex;
     gap: 20px;
+    width: 100%;
 }
 
 #input-form > div > div{
