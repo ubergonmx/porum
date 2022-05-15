@@ -252,6 +252,7 @@ aside > * {
     align-items: flex-end;
     justify-content: center;
     gap: 1em;
+    min-width: 120px;
 }
 
 .discussion-footer > *{
