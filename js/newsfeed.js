@@ -112,16 +112,21 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
         commenters: commenters
     }
 }
-
+/**
+ * This calculates the time difference between the actual date posted and today
+ * @param  {Date} datePosted
+ */
 function calcDate(datePosted){
     const dateToday = new Date();
-    const year = dateToday.getFullYear() - datePosted.getFullYear();
+    const year = dateToday.getFullYear() - datePosted.getFullYear()
     const month = monthDiff(datePosted, dateToday);
     const day = dayDiff(datePosted, dateToday);
     const hour = hourDiff(datePosted, dateToday);
     const minute = minuteDiff(datePosted, dateToday);
     const second = secondDiff(datePosted, dateToday);
     //console.log(`${dateToday.toISOString().slice(0, 10)} - ${datePosted.toISOString().slice(0, 10)}:\n ${year} ${month} ${day} ${hour} ${minute} ${second} `);
+
+
     if(year != 0)
         return `${year} year${year > 1 ? 's': ''} ago`;
     if(month != 0)
@@ -194,11 +199,12 @@ document.addEventListener("click", (e)=>{
         window.location.href = discussionBox.getAttribute("data-link");
 });
 
-
+/**
+ * This shows all the discussions in HTML
+ * @param  {array} discussionArr
+ */
 function loadDiscussions(discussionArr){
     for(const discussion of discussionArr){
-        // console.log(discussion.author.imgSrc);
-        // discussion.commenters.forEach((user) => console.log(`<img src="${user.imgSrc}" class="commenter">`));
         let discussionHtml = 
         `<div class="discussion-box" data-link="${discussion.id}"> 
             <div class="tag-container">
@@ -221,11 +227,11 @@ function loadDiscussions(discussionArr){
                     </div>
                 </div>
                 <div class="discussion-footer">
-                    <div class="commenters">                     
+                    <div class="commenters">                  
                         ${discussion.commenters.length > limit ? '<img src="images/icon/more.png"class="commenter commenter-more"/>' : ''}            
                         ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" class="commenter">`), '')}
                     </div>
-                    
+
                     <div class="comment">
                         <i class="fa-regular fa-comment icon-comment"></i>
                         <span>${discussion.comments_num} Comment${discussion.comments_num > 1 ? 's' : '' }</span>
