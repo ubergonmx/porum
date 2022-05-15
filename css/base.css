@@ -1,10 +1,9 @@
 @font-face {
     font-family: 'Omnes';
-    src: url('font/Omnes.eot'); /* IE9 Compat Modes */
-    src: url('font/Omnes.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    src: url('font/Omnes.eot') format('embedded-opentype'), /* IE6-IE8 */
          url('font/Omnes.woff') format('woff'),
          url('font/Omnes.woff2') format('woff2'), /* Modern Browsers */
-         url('font/Omnes.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('font/Omnes.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
