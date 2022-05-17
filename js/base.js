@@ -1,4 +1,8 @@
-var errorTimeout;
+const emailRegex = RegExp(
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+);
+
+var errorTimeout, tempFields = [];
 var arrowDown, profileActive = 0,profileDropdown;
 var hasNotif = 1, notification, notifDropdown;
 
@@ -76,14 +80,19 @@ function truncate( str, n, useWordBoundary = 1 ){
       : subString) + "&hellip;";
 };
 /**
- * Shows the error message for 5 seconds and highlights 
- * all the inputs in elements array.
+ * Shows the error message and highlights all the
+ * inputs in elements array for 5 seconds.
  * @param  {element} error
  * @param  {string} message
  * @param  {element[]} elements
  */
 function showError(error, message, elements){
     clearTimeout(errorTimeout);
+    for(const oldInput of tempFields){
+        oldInput.classList.remove("error");
+    }
+    tempFields = elements.slice();
+
     error.innerHTML = message;
     error.classList.add("active");
     for(const input of elements){

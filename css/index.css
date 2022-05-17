@@ -33,8 +33,9 @@ main {
 }
 
 .text-error {
-    top: 25px;
+    top: 27px;
     position: absolute;
+    text-align: right;
 }
 
 #login-footer {

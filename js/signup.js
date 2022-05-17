@@ -1,7 +1,3 @@
-emailRegex = RegExp(
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-);
-
 window.addEventListener("load", function(e){
     const firstname = this.document.querySelector("#firstname");
     const lastname = this.document.querySelector("#lastname");
@@ -19,7 +15,6 @@ window.addEventListener("load", function(e){
             if(isEmptyOrSpaces(input.value)){
                 emptyFields.push(input);
             }
-            else input.classList.remove("error");
         }
         if(emptyFields.length > 0){
             showError(error, "Please fill out all fields.", emptyFields);
