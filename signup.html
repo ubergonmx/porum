@@ -8,19 +8,26 @@
     <link rel="stylesheet" href="css/signup.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
+    <script src="js/base.js"></script>
     <script src="js/signup.js"></script>
     <title>Create an account - Porum</title>
 </head>
 <body>
     <main>
         <div id="signup-header">
-            <h1 id="text-title">Welcome!<br>First things first...</h1>
+            <div>
+                <h1 id="text-title">Welcome!<br>First things first...</h1>
+                <div id="goback-container">
+                    <a href="index.html" class="goback-text">Go back</a>
+                    <i class="fa-solid fa-arrow-left icon-return"></i>
+                </div>
+            </div>
             <h2 id="text-subtitle">Create a profile to personalize how you'll appear to other users</h2>
             <img src="images/design/poro-stack.png" id="img-design">
         </div>
 
         <!-- Signup Form -->
-        <div id="signup-form">
+        <div id="signup-form" class="def-container">
             <div>
                 <div id="user-pic-container">
                     <img src="images/users/user1.jpg" id="user-pic">
@@ -32,11 +39,11 @@
                 <div>
                     <div>
                         <label for="firstname">First Name</label>
-                        <input type="text" id="fname" name="firstname" required>
+                        <input type="text" id="firstname" name="firstname" required>
                     </div>
                     <div>
                         <label for="lastname">Last Name</label>
-                        <input type="text"id="lname" name="lastname" required>
+                        <input type="text" id="lastname" name="lastname" required>
                     </div>
                 </div>
                 <label for="username">Username</label>

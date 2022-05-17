@@ -1,93 +1,5 @@
 var container;
-const limit = 4;
-// structure might change soon
-const tags = [
-    new tag("FAQ's", "orange"), 
-    new tag("Off-Topic Chatter", "green"), 
-    new tag("Feedback", "purple"), 
-    new tag("Member Spotlight", "red"), 
-    new tag("Introductions", "blue"), 
-    new tag("Announcements", "pink"), 
-    new tag("Showcase", "gray"), 
-    new tag("Jobs", "brown"),
-];
-
-const users = [
-    new user("harry31", "images/users/user1.jpg", "user1.html"),    
-    new user("i_am_john", "images/users/user2.jpg", "user2.html"),    
-    new user("matt5", "images/users/user3.jpg", "user3.html"),    
-    new user("sukisekine", "images/users/user4.jpg", "user4.html"),    
-    new user("real_sarah", "images/users/user5.jpg", "user5.html"),    
-    new user("rena", "images/users/user6.jpg", "user6.html"),    
-    new user("shirley.mood", "images/users/user7.jpg", "user7.html"),    
-    new user("ferrari_von", "images/users/user8.jpg", "user8.html"),    
-    new user("dimbutcher", "images/users/user9.jpg", "user9.html"),    
-    new user("designer1", "images/users/user10.jpg", "user10.html"),
-];
-
-var discussions = [
-    new discussion("discussion1.html",
-        "Introduce Yourself",
-        users[0],
-        tags[4],
-        new Date(2022, 4, 14),
-        "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
-        25,
-        [users[6], users[7], users[8], users[9], users[0]]
-    ),
-    new discussion("discussion2.html",
-        "The 12 month member programme",
-        users[2],
-        tags[5],
-        new Date(2022, 3, 1),
-        "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
-        27,
-        [users[3], users[5], users[7], users[9], users[0]]
-    ),
-    new discussion("discussion3.html",
-        "What jobs are you looking for?",
-        users[3],
-        tags[7],
-        new Date(2022, 4, 4),
-        "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
-        5,
-        [users[1], users[2], users[5], users[8]]
-    ),
-    new discussion("discussion4.html",
-        "UI for a new airline app help needed!",
-        users[4],
-        tags[2],
-        new Date(2022, 1, 14),
-        "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
-        12,
-        [users[2], users[6], users[7], users[9], users[0]]
-    ),
-    new discussion("discussion5.html",
-        "Here are the top 5 FAQs",
-        users[5],
-        tags[0],
-        new Date(2022, 3, 19),
-        "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
-        14,
-        [users[1], users[2], users[3], users[4], users[0]]
-    ),   
-];
-
-function user(username, imgSrc, profile){
-    return {
-        username: username,
-        imgSrc: imgSrc,
-        profile: profile
-    }
-}
-
-function tag(name, color){
-    return {
-        name: name,
-        color: color
-    }
-}
-
+const limit = 4, contentLimit = 170;
 
 /**
  * @param  {string} id
@@ -97,7 +9,7 @@ function tag(name, color){
  * @param  {Date} date - reminder that month is 0-indexed
  * @param  {string} content
  * @param  {int} comments_num
- * @param  {array} commenters
+ * @param  {user[]} commenters
  */
 function discussion(id, title, author, tag, date, content, comments_num, commenters){
     return {
@@ -200,7 +112,7 @@ document.addEventListener("click", (e)=>{
 
 /**
  * This shows all the discussions in HTML
- * @param  {array} discussionArr
+ * @param  {discussion[]} discussionArr
  */
 function loadDiscussions(discussionArr){
     for(const discussion of discussionArr){
@@ -221,7 +133,7 @@ function loadDiscussions(discussionArr){
                             Posted by <span>${discussion.author.username}</span> &#8226; ${calcDate(discussion.date)}
                         </p>
                         <p class="content">
-                            ${discussion.content}
+                            ${truncate(discussion.content, contentLimit)}
                         </p>
                     </div>
                 </div>

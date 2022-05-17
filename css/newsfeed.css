@@ -243,7 +243,6 @@ aside > * {
     line-height: 1.5;
     max-height: 100px;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .discussion-footer{

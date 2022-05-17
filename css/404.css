@@ -22,28 +22,3 @@ main {
     margin-bottom: 25px;
 }
 
-#notfound-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 5px;
-    width: 350px;
-    margin-top: 20px;   
-    color: var(--clr-txt-secondary);
-}
-
-.notfound-footer-link:hover, .notfound-footer-link:hover + .icon-return{
-    color: var(--clr-blue);
-    cursor: pointer;
-}
-
-.notfound-footer-link:active, .notfound-footer-link:active + .icon-return {
-    color: var(--clr-blue-500);
-}
-
-
-/* transition  */
-.notfound-footer-link, .icon-return{
-    transition: var(--slow);
-}
-
