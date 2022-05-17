@@ -70,8 +70,7 @@ var discussions = [
         "Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...",
         14,
         [users[1], users[2], users[3], users[4], users[0]]
-    ),
-    
+    ),   
 ];
 
 function user(username, imgSrc, profile){
