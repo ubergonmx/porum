@@ -21,8 +21,8 @@
         </a>
 
         <!-- Search bar -->
-        <div>
-            <form id="search-form" action="/search/">
+        <div id="search-container">
+            <form id="search-form" action="#" method="GET">
                 <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
                 <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
                 <input type="submit" hidden />
@@ -32,24 +32,49 @@
         <!-- Notification and Profile -->
         <div>
             <!-- Notif icon -->
-            <div id="notificon-container">
+            <div id="notification-container" class="has-notification">
                 <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+                <div id="notification-dropdown" class="dropdown">
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!-- Profile -->
-            <div>
-                <a href="profile.html">
-                    <img src="images/users/user1.jpg" id="icon-user">
-                </a>
+            <div id="profile-container">
+                <img src="images/users/user1.jpg" id="icon-user">
+
                 <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+                <div id="profile-dropdown" class="dropdown">
+                    <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
+                    <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
+                    <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </div>
             </div>
         </div>
     </header>
     <main>
-
         <section>
             
         </section>
-        <!-- BIO -->
+
+        <aside>
+
+        </aside>
+        <!-- BIO
         <img src="images/users/user1.jpg" class="profile-photo">
         <div class = "bio-container">
             <p class = "count">Posts: 1</p>
@@ -61,50 +86,39 @@
         </div>
 
         <div class="posts">
-        <!-- POSTS -->
             <div class="post">
                 <div class="tag">
                     <p class="dot-blue">&nbsp&nbsp&nbsp&nbsp&nbspIntroductions</p>
                 </div>
 
             <div class="discussion">   
-                <!--Blue dot-->
             <img src="images/users/user1.jpg" class="pic">
 
-            <!--Dscussion Title-->
                 <div class="content-title">
                     <h3>Introduce Yourself!</h3>
                 </div>
 
-            <!--Images of other people-->
                 <img src="images/users/more.png" class="others-icon">
                 <img src="images/users/user7.jpg" class="others-icon">
                 <img src="images/users/user8.jpg" class="others-icon">
                 <img src="images/users/user9.jpg" class="others-icon">
                 <img src="images/users/user10.jpg" class="others-icon">
             
-            <!--Reply notice-->
                 <div class="reply-notice">
                     <i class="fa-solid fa-reply icon-reply"></i>
                     <p>Latest reply from @matt 5 minutes ago</p>
                 </div>
         
-
-                <!--Discussion Content-->
                 <div class="content">
                     <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
                 </div>
             
-            <!--Number of comments-->
                 <div class="others-comment">
                     <span><i class="fa-regular fa-comment icon-comment"></i>25 Comments</span>
                 </div>   
                 </div>
             </div>
-        </div>
+        </div>-->
     </main>
-    <aside>
-
-    </aside>
 </body>
 </html>

@@ -229,7 +229,7 @@ function loadDiscussions(discussionArr){
                 <div class="discussion-footer">
                     <div class="commenters">                  
                         ${discussion.commenters.length > limit ? '<img src="images/icon/more.png"class="commenter commenter-more"/>' : ''}            
-                        ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" class="commenter">`), '')}
+                        ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')}
                     </div>
 
                     <div class="comment">

@@ -9,7 +9,7 @@
 #all-discussion,
 #following,
 #category-container .tag{
-    transition: var(--transition);
+    transition: var(--slow);
 }
 /* end */
 
@@ -82,8 +82,6 @@ aside > * {
     color: var(--clr-blue);
 }
 
-#icon-notification:active,
-#icon-arrowdown:active,
 #mark-read:active,
 #category-container .tag:active,
 #all-disussion:active,
@@ -211,6 +209,7 @@ aside > * {
 .discussion-author{
     height: 50%;
     margin: 7px 10px 10px;
+    user-select: none;
 }
 
 .img-author{
@@ -253,6 +252,7 @@ aside > * {
     justify-content: center;
     gap: 1em;
     min-width: 120px;
+    user-select: none;
 }
 
 .discussion-footer > *{

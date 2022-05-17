@@ -62,5 +62,5 @@ main {
 
 /* transition */
 #login-form, #login-form div,.login-footer-link{
-    transition: var(--transition);
+    transition: var(--slow);
 }

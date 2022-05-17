@@ -21,8 +21,8 @@
         </a>
 
         <!-- Search bar -->
-        <div>
-            <form id="search-form" action="/search/">
+        <div id="search-container">
+            <form id="search-form" action="#" method="GET">
                 <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
                 <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
                 <input type="submit" hidden />
@@ -32,15 +32,37 @@
         <!-- Notification and Profile -->
         <div>
             <!-- Notif icon -->
-            <div id="notificon-container">
+            <div id="notification-container" class="has-notification">
                 <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+                <div id="notification-dropdown" class="dropdown">
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!-- Profile -->
-            <div>
-                <a href="profile.html">
-                    <img src="images/users/user1.jpg" id="icon-user">
-                </a>
+            <div id="profile-container">
+                <img src="images/users/user1.jpg" id="icon-user">
+
                 <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+                <div id="profile-dropdown" class="dropdown">
+                    <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
+                    <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
+                    <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </div>
             </div>
         </div>
     </header>

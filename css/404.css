@@ -44,6 +44,6 @@ main {
 
 /* transition  */
 .notfound-footer-link, .icon-return{
-    transition: var(--transition);
+    transition: var(--slow);
 }
 
