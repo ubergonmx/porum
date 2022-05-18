@@ -1,5 +1,39 @@
 main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 3rem;
+    gap: 50px;
+}
+
+
+#profile-box{
+    border:1px, solid, white;
+    max-height: 750px;
+    width: 300px;
+    height:400px;
     flex-direction: column;
+}
+
+#posts-box{
+    border:1px,solid,white;
+    max-height: 550px;
+    width:350px;
+    height:600px;
+    padding: 2rem 3rem;
+    flex-direction: column;
+}
+
+#cover-photo{
+    width:300px;
+    max-height:100px;
+}
+
+#profile-pic{
+    width:90px;
+    max-height:90px;
+    position:relative;
+    top:-10px;
 }
 
 .discussion {
@@ -90,3 +124,6 @@ button:hover{
     font-size: 15px;
     font-weight: bold;
 }
+
+ 
+
