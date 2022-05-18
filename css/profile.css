@@ -37,9 +37,18 @@ main{
     /* gap: 100px; */
 }
 
-.filter-name{
-    font-size: 10px;
-    margin-bottom: 50px;
+#filter-name {
+   font-size: 10px;
+   width: 50px;
+   height: 20px;
+}
+
+#filter-name:hover{
+    box-shadow: 0 2px 10px rgb(62, 174, 254, 0.7);
+}
+
+#filter-name:active{
+    background-color: white;
 }
 
 #cover-photo{
