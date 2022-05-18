@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 document.addEventListener("click", function(e){
-    console.log(e.target);
     if(e.target.closest("#icon-arrowdown")){
         profileActive = !profileActive;
         if(!arrowDown) arrowDown = e.target.closest("#icon-arrowdown");
@@ -79,6 +78,7 @@ function truncate( str, n, useWordBoundary = 1 ){
       ? subString.substr(0, subString.lastIndexOf(" ")) 
       : subString) + "&hellip;";
 };
+
 /**
  * Shows the error message and highlights all the
  * inputs in elements array for 5 seconds.
@@ -104,4 +104,42 @@ function showError(error, message, elements){
             input.classList.remove("error");
         }
     }, 5000);
+}
+
+/**
+ * Clears content/innerHTML of the given element
+ * @param  {element} element
+ */
+function clear(element){
+    element.innerHTML = "";
+}
+
+/**
+ * Toggles element's visibility if display is not defined,
+ * otherwise toggles the display style.
+ * 
+ * Note that if the element has a transition property,
+ * Visibility property allows transition
+ * Display property doesnt allow transition
+ * @param  {element} element
+ * @param  {boolean} show=undefined
+ * @param  {boolean} display=undefined
+ */
+function toggle(element, show=undefined, display=undefined){
+    if(display === undefined){
+        element.style.transition = "all 0.3s ease";
+        if(show === undefined){
+            element.style.visibility = (element.style.visibility == "visible" || !element.style.visibility) ? "hidden" : "visible";
+            element.style.opacity = (element.style.opacity == "1" || !element.style.opacity) ? "0" : "1";
+        }
+        else {
+            element.style.visibility = (!show) ? "hidden" : "visible";
+            element.style.opacity = (!show) ? "0" : "1";
+        }
+    }
+    else{
+        if(show === undefined)
+            element.style.display = (element.style.display != "none" || !element.style.display) ? "none" : "block";
+        else element.style.display = (!show) ? "none" : "block";
+    }
 }

@@ -18,8 +18,7 @@ main {
 }
 
 section {
-    display: flex;
-    justify-content: space-around;    
+    display: flex;   
     flex-direction:column;
     gap: 25px;
 }
@@ -79,7 +78,7 @@ aside > * {
 #all-disussion:hover,
 #following:hover,
 .text-active{
-    color: var(--clr-blue);
+    color: var(--clr-blue) !important;
 }
 
 #mark-read:active,

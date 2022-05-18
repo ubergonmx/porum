@@ -1,4 +1,4 @@
-var container;
+var container, scaffold, loadMore, tempSideFilter;
 const limit = 4, contentLimit = 170;
 
 /**
@@ -81,13 +81,18 @@ function secondDiff(date1, date2) {
 }
 
 window.addEventListener("load", function(e){
+    scaffold = document.querySelector("#scaffold");
+    tempSideFilter = document.querySelector("#all-discussion");
+    loadMore = document.querySelector("#load-more-discussion");
     container = document.querySelector("#discussion-container");
     container.innerHTML = "";
+
+    toggle(loadMore);
     loadDiscussions(discussions);
 
     const filter = document.querySelector("#filter");
     filter.addEventListener("change", (e)=>{
-        container.innerHTML = "";
+        clear(container);
         switch(filter.value){
             case "Latest first":
                 let latest = discussions.sort((a,b) => b.date - a.date);
@@ -98,6 +103,13 @@ window.addEventListener("load", function(e){
                 loadDiscussions(oldest);
                 break;
         }
+        
+        // toggle(loadMore, 1);
+    });
+
+    const newDiscussion = document.querySelector("#new-discussion");
+    newDiscussion.addEventListener("click", () => {
+        window.location.href = "startdiscussion.html";
     });
 });
 
@@ -108,7 +120,54 @@ document.addEventListener("click", (e)=>{
     let discussionBox = e.target.closest(".discussion-box");
     if(discussionBox && discussionBox.hasAttribute("data-link"))
         window.location.href = discussionBox.getAttribute("data-link");
+
+    let tag = e.target.closest(".tag");
+    if(tag && tag.hasAttribute("data-tag-type") && !tag.classList.contains("text-active")){
+        setSideFilter(tag);
+        
+        clear(container);
+        let selected = discussions.filter((a) => a.tag.name == tag.innerHTML);
+        if(selected === undefined || selected.length == 0){
+            container.innerHTML = 
+            `<div id="scaffold">
+                <img src="images/design/404.png">
+                <h1 id="text-title">No discussions yet</h1>
+            </div>`;
+            // toggle(loadMore, 0);
+        }
+        else {
+            // toggle(loadMore, 1);
+            loadDiscussions(selected);
+        }
+    }
+
+    let allDiscussion = e.target.closest("#all-discussion");
+    if(allDiscussion && !allDiscussion.classList.contains("text-active")){
+        setSideFilter(allDiscussion);
+        clear(container);
+        loadDiscussions(discussions);
+        // toggle(loadMore, 1);
+    }
+
+    let following = e.target.closest("#following");
+    if(following && !following.classList.contains("text-active")){
+        setSideFilter(following);
+        clear(container);
+        loadDiscussions(discussions);
+        // toggle(loadMore, 1);
+    }
 });
+
+/**
+ * Set the element inside aside tag to be active
+ * @param  {element} element
+ */
+function setSideFilter(element){
+    if(tempSideFilter)
+        tempSideFilter.classList.toggle("text-active");
+    tempSideFilter = element;
+    tempSideFilter.classList.toggle("text-active");
+}
 
 /**
  * This shows all the discussions in HTML
