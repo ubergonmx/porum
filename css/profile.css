@@ -25,6 +25,20 @@ main{
     flex-direction: column;
 }
 
+#filter-box{
+    border:1px,solid,white;
+    width: 380px;
+    height:5px;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    /* gap: 100px; */
+}
+
+.filter-name{
+    font-size: 10px;
+    margin-bottom: 50px;
+}
+
 #cover-photo{
     width:300px;
     max-height:100px;
