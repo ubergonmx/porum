@@ -9,15 +9,6 @@ main{
 }
 
 
-#profile-box{
-    border:1px, solid, white;
-    max-height: 750px;
-    width: 300px;
-    height:350px;
-    gap:15px;
-    flex-direction: column;
-    align-items: center;
-}
 
 #posts-box{
     border:1px,solid,white;
@@ -51,18 +42,36 @@ main{
     background-color: white;
 }
 
+
+#profile-box{
+    border:1px, solid, white;
+    max-height: 750px;
+    width: 300px;
+    height:350px;
+    gap:15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-header{
+    height:125px;
+    position: relative;
+}
+
 #cover-photo{
     width:300px;
     max-height:100px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #profile-pic{
     width:90px;
     max-height:90px;
-    position:relative;
-    top:-75px;
+    position: absolute;
+    top: 30px;
     left:20px;
-    border: 4px solid black;
+    border: 4px solid var(--clr-txt-primary);
     border-radius: 10px;
 }
 
@@ -71,10 +80,6 @@ main{
     gap:10px;
     justify-content: space-between;
     align-items: center;
-}
-
-.photos{
-    height:125px;
 }
 
 .settings-button{
@@ -99,17 +104,18 @@ main{
     width:250px;
 }
 
-.profile-content{
+#profile-content{
     margin:5px;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:5px;
+    color: var(--clr-txt-primary);
 }
 
 .header-format{
-    margin:0px;
+    margin: 0;
 }
-
+/* 
 .discussion {
     border: 1px;
     border-color: var(--clr-gray);
@@ -187,7 +193,7 @@ button:hover{
     color:var(--clr-txt-secondary);
     font-size: 15px;
     font-weight: bold;
-}
+} */
 
  
 
