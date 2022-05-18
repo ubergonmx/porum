@@ -47,6 +47,8 @@ main{
 #user-pic{
     border-radius:100%;
     width:75px;
+    height: 75px;
+    object-fit: cover;
 }
 
 .text-error{

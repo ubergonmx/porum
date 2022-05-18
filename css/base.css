@@ -130,6 +130,10 @@ input::placeholder{
     color: var(--clr-txt-secondary);
 }
 
+input[type=file]{
+    display: none;
+}
+
 input[type=text], 
 input[type=email], 
 input[type=password]{
@@ -451,10 +455,10 @@ input.error{
     border-radius: 5px;
     background-color: white;
     color: var(--clr-txt-secondary);
-    /* width: 75px; */
-    height: 25px;
     cursor: pointer;
     text-align: center;
+    letter-spacing: normal;
+    padding: 5px;
 }
 
 .button-secondary:hover{

@@ -1,4 +1,6 @@
 window.addEventListener("load", function(e){
+    const userPic = this.document.querySelector("#user-pic");
+    const changePic = this.document.querySelector("#change-pic");
     const firstname = this.document.querySelector("#firstname");
     const lastname = this.document.querySelector("#lastname");
     const username = this.document.querySelector("#username");
@@ -34,5 +36,9 @@ window.addEventListener("load", function(e){
         }        
 
         this.window.location.href = "newsfeed.html";
+    });
+
+    changePic.addEventListener("change", ()=>{
+        userPic.src = URL.createObjectURL(changePic.files[0]);
     });
 });
