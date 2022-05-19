@@ -68,9 +68,36 @@
     </header>
     <main>
         <div id="settings-box" class="def-container">
-            <h1>Customize Profile</h1>
+            <h2>Change / Add Information</h2>
             <label for="birthday">Add Birthday</label>
-            <input type="date"id="birthday" name="birthday">
+            <input type="date"id="birthday" name="birthday" class="input1">
+            <label for="telephone-no">Add Phone Number</label>
+            <input type="tel"id="telephone-no" name="telephone-no" class="input1">
+            <div class="div-format">
+                <div>
+                    <label for="password">Change Password</label><br>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div>
+                    <label for="confirmpassword">Confirm Password</label><br>
+                    <input type="password" id="confirmpassword" name="confirmpassword">
+                </div>
+            </div>
+            <h2>Privacy Settings</h2>
+            <div class="div-format">
+
+                <div>
+                <form>
+                <input type="checkbox" id="enable-birthday" name="enable-birthday" value="enable-birthday">
+                <label for="enable-birthday"> Display Birthday</label>
+                </div>
+                <div>
+                <input type="checkbox" id="enable-number" name="enable-number" value="enable-number">
+                <label for="enable-number"> Display Phone Number</label>
+                </form>
+                </div>
+            </div>
+            <button id="save-button" class="button-primary">Save Changes</button>
         </div>
     </main>
 </body>
