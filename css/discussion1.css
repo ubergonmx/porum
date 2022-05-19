@@ -7,6 +7,7 @@ main{
     flex-direction:column;
     padding:25px;
     gap:10px;
+    margin-left:20px;
 }
 
 #post-header{
@@ -38,13 +39,13 @@ main{
 
 #content-text{
     font-family: var(--font-type);
+    text-align:justify;
     letter-spacing:2px;
 }
 
 #content-box{
     display:flex;
     flex-direction:column;
-    margin-left:20px;
     margin-right:10px;
     padding:10px;
 }
@@ -53,6 +54,37 @@ main{
     display:flex;
     flex-direction:row;
     gap:20px;
-    margin-left:20px;
     padding:5px;
+}
+
+#comments-box{
+    display:flex;
+    gap:10px;
+    padding:10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.commenter-pic{
+    border-radius:100%;
+    width:50px;
+}
+
+.commenter-user{
+    font-family: var(--font-type2);
+}
+
+.comments{
+    text-align:justify;
+    font-family: var(--font-type);
+}
+
+.commenter-date{
+    color:var(--clr-gray-500);
+}
+
+#comment-content{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
