@@ -12,13 +12,13 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
     }
 }
 
-function user(username, imgSrc, profile, comments){
+function user(username, imgSrc, profile, comments, bio){
     return {
         username: username,
         imgSrc: imgSrc,
         profile: profile,
-        comments: comments
-        discussion: discussion
+        comments: comments,
+        bio: bio
     }
 }
 
