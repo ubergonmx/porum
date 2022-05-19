@@ -115,3 +115,22 @@ main{
     flex-direction: row;
     gap: 10px;
 }
+
+.input{
+    width:900px;
+    padding:10px;
+    font-size:14px;
+    align-self: center;
+}
+
+#create-button{
+    margin-top:25px;
+    width:250px;
+}
+
+.comment-button{
+    display:flex;
+    flex-direction: row-reverse;
+    margin-right: 21px;
+    margin-top: 0px;
+}
