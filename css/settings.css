@@ -1,0 +1,9 @@
+main{
+    font-family: var(--font-type2);
+}
+
+#settings-box{
+    width:1000px;
+    padding:25px;
+    flex-direction:column;
+}
