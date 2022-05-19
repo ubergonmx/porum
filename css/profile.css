@@ -110,6 +110,7 @@ main{
     flex-direction:column;
     gap:5px;
     color: var(--clr-txt-primary);
+    width:250px;
 }
 
 .header-format{
