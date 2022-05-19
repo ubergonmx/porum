@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/startdiscussion.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
@@ -66,8 +67,27 @@
         </div>
     </header>
     <main>
-        <div>
-            
+        <div id="start-box" class="def-container">
+            <div class="create-container">
+                <h2>Create a New Discussion</h2>
+            </div>
+            <div>
+                <label for="creatediscussion">New Discussion</label>
+            </div>
+            <div>
+                <select id="filter" name="filter">
+                    <option value="FAQs">FAQs</option>
+                    <option value="Off-Topic Chatter">Off-Topic Chatter</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Member Spotlight">Member Spotlight</option>
+                    <option value="Introductions">Introductions</option>
+                    <option value="Announcements">Announcements</option>
+                    <option value="Showcase">Showcase</option>
+                    <option value="Jobs">Jobs</option>
+                </select>
+            </div>
+                <input type="text" id="discussion" name="discussion" class="input">
+                <button id="create-button" class="button-primary">Create Discussion</button>
         </div>
     </main>
 </body>

@@ -1,0 +1,51 @@
+main{
+    font-family: var(--font-type2);
+}
+
+#start-box{
+    width:1000px;
+    padding:25px;
+    flex-direction:column;
+    gap:15px;
+    align-items: center;
+}
+
+.create-container{
+    border:1px,solid,white;
+    padding: 1rem 2rem;
+    display:flex;
+    background-color:var(--clr-gray);
+    justify-content: space-evenly;
+    color:white;
+    align-items: center;
+    width:988px;
+    height:25px;
+}
+
+.input{
+    width:800px;
+    padding:10px;
+    font-size:14px;
+}
+
+#create-button{
+    margin-top:25px;
+    width:250px;
+}
+
+#filter{
+    font-family: var(--font-type2);
+    font-weight: bold;
+    color: var(--clr-txt-secondary);
+    border: 1px solid var(--clr-gray);
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+
+#filter:focus{
+    border-color: var(--clr-blue);
+    -webkit-box-shadow: none;
+	box-shadow: none;
+    outline: none;
+}
