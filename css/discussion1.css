@@ -12,7 +12,7 @@ main{
 
 #post-header{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:15px;
 }
 
@@ -22,7 +22,7 @@ main{
 }
 
 #username-text{
-    font-size:30px;
+    font-size:15px;
     color:var(--clr-blue-500);
 }
 
@@ -33,14 +33,18 @@ main{
 }
 
 #title-text{
-    color:var(--clr-txt-secondary);
-    margin-bottom:0px;
+    font-family: var(--font-type2);
+    color: var(--clr-txt-primary);
+    font-size: 20px;
+    margin: 10px 0 5px 0;
 }
 
 #content-text{
-    font-family: var(--font-type);
-    text-align:justify;
-    letter-spacing:2px;
+    color:var(--clr-txt-secondary);
+    font-size:14px;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow: hidden;
 }
 
 #content-box{
@@ -52,9 +56,22 @@ main{
 
 #options{
     display:flex;
-    flex-direction:row;
+    flex-direction:row-reverse;
     gap:20px;
     padding:5px;
+    color: var(--clr-txt-primary);
+}
+
+.comm:hover{
+    color: var(--clr-blue);
+}
+
+.share:hover{
+    color: var(--clr-blue);
+}
+
+.follow:hover{
+    color: var(--clr-blue);
 }
 
 #comments-box{
@@ -85,6 +102,16 @@ main{
 
 #comment-content{
     display:flex;
-    flex-direction:column;
-    gap:25px;
+    flex-direction: column;
+    color:var(--clr-txt-secondary);
+    font-weight: 500;
+    font-size:14px;
+    line-height: 1.5;
+    gap:20px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
