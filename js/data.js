@@ -12,13 +12,13 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
     }
 }
 
-function user(username, imgSrc, profile, comments, bio){
+function user(username, imgSrc, profile, comments){
     return {
         username: username,
         imgSrc: imgSrc,
         profile: profile,
-        comments: comments,
-        bio: bio
+        comments: comments
+        discussion: discussion
     }
 }
 
@@ -123,15 +123,15 @@ new comment("I'm always craving for Aristocrat boneless chicken barbeque and eve
 
 var users = [
     new user("harry31", "images/users/user1.jpg", "user1.html",[comments[11]], "Hi I’m Harry Higgins I have been a freelancer since 2019 and I enjoy my profession."),    
-    new user("i_am_john", "images/users/user2.jpg", "user2.html", [comments[5], comments[13],]),    
-    new user("matt5", "images/users/user3.jpg", "user3.html", [comments[0], comments[12], comments[17]]),    
-    new user("sukisekine", "images/users/user4.jpg", "user4.html", [comments[8], comments[14]]),    
-    new user("real_sarah", "images/users/user5.jpg", "user5.html", [comments[1], comments[7], comments[18]]),    
-    new user("rena", "images/users/user6.jpg", "user6.html", [comments[2], comments[9]]),    
-    new user("shirley.mood", "images/users/user7.jpg", "user7.html", [comments[3], comments[21]]),    
-    new user("ferrari_von", "images/users/user8.jpg", "user8.html", [comments[6], comments[15], comments[19]]),    
-    new user("dimbutcher", "images/users/user9.jpg", "user9.html", [comments[16], comments[20]]),   
-    new user("designer1", "images/users/user10.jpg", "user10.html", [comments[4], comments[10]]),
+    new user("i_am_john", "images/users/user2.jpg", "user2.html", [comments[5], comments[13],], "Hey there! I’m John Patterson, I have a passion for cooking and currently I have my own food blog."),    
+    new user("matt5", "images/users/user3.jpg", "user3.html", [comments[0], comments[12], comments[17]], "Hello, My name is Matthew Wright. I am graduate in business management major and I currently work as a CEO of my company in Dallas."),    
+    new user("sukisekine", "images/users/user4.jpg", "user4.html", [comments[8], comments[14]], " Hi! I am Suki Sekine. I was born and raised in Thailand. I enjoy my neighborhood and I am a housewife with 2 loving children." ),    
+    new user("real_sarah", "images/users/user5.jpg", "user5.html", [comments[1], comments[7], comments[18]], "Hey! Welcome to my profile, I’m the real Sarah Li. I live in China where I have similar names here in my town that’s why my name is very common. I have 3 dogs and 2 cats. I am an animal lover!"),    
+    new user("rena", "images/users/user6.jpg", "user6.html", [comments[2], comments[9]], "Hi, my name is Renata Glasc, I am currently a senior student at Moscow State University taking up a major in Civil Engineering. I can’t wait to finally graduate and apply for the best company here in Moscow."),    
+    new user("shirley.mood", "images/users/user7.jpg", "user7.html", [comments[3], comments[21]], "Hello there! I’m Shirley Cobb. I work as a nurse at UCLA Medical Center since 2010 and I love my job especially taking care of our patients."),    
+    new user("ferrari_von", "images/users/user8.jpg", "user8.html", [comments[6], comments[15], comments[19]], "Hi, my name is Von Miller. I am a car enthusiast and Ferrari is one of my favorite car brands. I currently own 4 Ferrari gallardo."),    
+    new user("dimbutcher", "images/users/user9.jpg", "user9.html", [comments[16], comments[20]], "Hey! I’m Dimitri Howard. I'm currently taking up Computer Science at the University of Toronto."),   
+    new user("designer1", "images/users/user10.jpg", "user10.html", [comments[4], comments[10]], "Hi there! My name is Matylda Patterson I am a fashion designer at Versace. Donatella Versace is a good friend of mine."),
 ];
 
 var discussions = [
