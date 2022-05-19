@@ -72,7 +72,7 @@
 
             <div id="posts-box" class="def-container">            
                 <div id = "filter-box" class="def-container">
-
+                    
                     <div id = "filter-icon">
                     <i class="fa-solid fa-pen"></i>
                     <p id = "filter-name">Posts</p>
@@ -109,7 +109,9 @@
                 <div id="profile-header">
                     <img id="cover-photo" src="images/design/cover-photo.jpg">
                     <img id="profile-pic" src="images/users/user1.jpg">
-                    <i class="fa-solid fa-gear settings-button"></i>
+                    <a href = "settings.html">
+                        <i class="fa-solid fa-gear settings-button"></i>
+                    </a>
                 </div>
 
                 <div id="profile-content">
@@ -120,39 +122,14 @@
                         <div><h4>Birthday: <br><span id="birthday">March 27, 2001</span> </h4></div>
                         <div><h4>Phone Number: <br><span id="phone-number">-</span> </h4></div>
                     </div>
-                    <button id="settings" class="button-primary">New Post</button>
+
+                    <!-- New post button redirect to start discussion -->
+                    <a href = "startdiscussion.html">
+                        <button id="settings" class="button-primary">New Post</button>
+                    </a>
                 </div>
             </div>
         </aside>
-
-            <!-- <div class="discussion">   
-            <img src="images/users/user1.jpg" class="pic">
-
-                <div class="content-title">
-                    <h3>Introduce Yourself!</h3>
-                </div>
-
-                <img src="images/users/more.png" class="others-icon">
-                <img src="images/users/user7.jpg" class="others-icon">
-                <img src="images/users/user8.jpg" class="others-icon">
-                <img src="images/users/user9.jpg" class="others-icon">
-                <img src="images/users/user10.jpg" class="others-icon">
-            
-                <div class="reply-notice">
-                    <i class="fa-solid fa-reply icon-reply"></i>
-                    <p>Latest reply from @matt 5 minutes ago</p>
-                </div>
-        
-                <div class="content">
-                    <p>Hey @everyone, new member alert here! Thought I'd write a bit about myself and why I'm here. First of my name is Harry and I'm 31 years old massive fan of...</p>
-                </div>
-            
-                <div class="others-comment">
-                    <span><i class="fa-regular fa-comment icon-comment"></i>25 Comments</span>
-                </div>   
-                </div>
-            </div>
-        </div> -->
     </main>
 </body>
 </html>
