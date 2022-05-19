@@ -23,11 +23,17 @@ main{
     justify-content: space-evenly;
 }
 
+#filter-icon{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
 #filter-name {
     color: white;
     font-family: var(--font-type2);
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 7px;
 }
 
 #filter-name:hover{
