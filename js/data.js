@@ -12,12 +12,13 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
     }
 }
 
-function user(username, imgSrc, profile, comments){
+function user(username, imgSrc, profile, comments, bio){
     return {
         username: username,
         imgSrc: imgSrc,
         profile: profile,
-        comments: comments
+        comments: comments,
+        bio: bio
     }
 }
 
@@ -121,7 +122,7 @@ new comment("I'm always craving for Aristocrat boneless chicken barbeque and eve
 ];
 
 var users = [
-    new user("harry31", "images/users/user1.jpg", "user1.html",[comments[11]]),    
+    new user("harry31", "images/users/user1.jpg", "user1.html",[comments[11]], "Hi I’m Harry Higgins I have been a freelancer since 2019 and I enjoy my profession."),    
     new user("i_am_john", "images/users/user2.jpg", "user2.html", [comments[5], comments[13],]),    
     new user("matt5", "images/users/user3.jpg", "user3.html", [comments[0], comments[12], comments[17]]),    
     new user("sukisekine", "images/users/user4.jpg", "user4.html", [comments[8], comments[14]]),    
