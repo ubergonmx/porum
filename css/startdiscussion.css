@@ -8,6 +8,7 @@ main{
     flex-direction:column;
     gap:15px;
     align-items: center;
+    text-align:center;
 }
 
 .create-container{
@@ -22,15 +23,29 @@ main{
     height:25px;
 }
 
-.input{
-    width:800px;
+#input-title{
+    width:500px;
+    padding:10px;
+    font-size:14px;
+}
+
+#input-content{
+    width:500px;
+    height:250px;
     padding:10px;
     font-size:14px;
 }
 
 #create-button{
-    margin-top:25px;
+    margin-top:15px;
     width:250px;
+}
+
+.div-format{
+    display:flex;
+    gap:50px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #filter{

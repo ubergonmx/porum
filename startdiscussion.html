@@ -71,23 +71,31 @@
             <div class="create-container">
                 <h2>Create a New Discussion</h2>
             </div>
-            <div>
-                <label for="creatediscussion">New Discussion</label>
-            </div>
-            <div>
-                <select id="filter" name="filter">
-                    <option value="FAQs">FAQs</option>
-                    <option value="Off-Topic Chatter">Off-Topic Chatter</option>
-                    <option value="Feedback">Feedback</option>
-                    <option value="Member Spotlight">Member Spotlight</option>
-                    <option value="Introductions">Introductions</option>
-                    <option value="Announcements">Announcements</option>
-                    <option value="Showcase">Showcase</option>
-                    <option value="Jobs">Jobs</option>
-                </select>
-            </div>
-                <input type="text" id="discussion" name="discussion" class="input">
+                <div>
+                    <form>
+                    <label for="title">Title</label><br>
+                    <input type="text" id="input-title" name="title" required>
+                </div>
+                <div>
+                <label for="discussion">Content</label><br>
+                <textarea id="input-content" required></textarea>
+                </div>
+                <div>
+                    <select id="filter" name="filter">
+                        <option value="FAQs">FAQs</option>
+                        <option value="Off-Topic Chatter">Off-Topic Chatter</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Member Spotlight">Member Spotlight</option>
+                        <option value="Introductions">Introductions</option>
+                        <option value="Announcements">Announcements</option>
+                        <option value="Showcase">Showcase</option>
+                        <option value="Jobs">Jobs</option>
+                    </select>
+                </div>
+                <a href="newsfeed.html">
                 <button id="create-button" class="button-primary">Create Discussion</button>
+                </a>
+            </form>
         </div>
     </main>
 </body>
