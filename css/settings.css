@@ -23,14 +23,16 @@ main{
     border:1px,solid,white;
     padding: 1rem 2rem;
     display:flex;
-    background-color:var(--clr-tag-brown);
+    background-color:var(--clr-blue);
     justify-content: space-evenly;
+    color:white;
     align-items: center;
-    border-radius: 50px;
+    width:988px;
+    height:25px;
 }
 
 .input1{
-    width:250px;
+    width:350px;
     height:25px;
     padding:10px;
     font-size:14px;
