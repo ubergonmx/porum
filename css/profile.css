@@ -190,3 +190,7 @@ main{
 #username{
     color: var(--clr-blue)
 }
+
+.chosen{
+    border-bottom: 2px solid white;
+}
