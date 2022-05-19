@@ -10,7 +10,6 @@ main{
 
 #posts-box{
     border:1px,solid,white;
-    max-height: 550px;
     width:550px;
     height:600px;
     padding: 2rem 3rem;
