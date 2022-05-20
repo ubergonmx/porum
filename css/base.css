@@ -441,7 +441,7 @@ main {
     visibility: visible;
 }
 
-input.error{
+input.error, textarea.error{
     border-color: var(--clr-tag-red);
 }
 
