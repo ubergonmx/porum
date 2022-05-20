@@ -71,7 +71,7 @@ function loadNotifications(notificationArr){
                 <span class="notif-date">${calcDate(notif.commenter.comments[0].date)}</span>
             </div>
         </div>`;
-        notifDropdown.insertAdjacentHTML('beforeend', notifHTML);
+        notifDropdown.insertAdjacentHTML('afterbegin', notifHTML);
     }
 }
 
