@@ -23,62 +23,6 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
         commenters: commenters
     }
 }
-/**
- * This calculates the time difference between the actual date posted and today
- * @param  {Date} datePosted
- */
-function calcDate(datePosted){
-    const dateToday = new Date();
-    const year = dateToday.getFullYear() - datePosted.getFullYear()
-    const month = monthDiff(datePosted, dateToday);
-    const day = dayDiff(datePosted, dateToday);
-    const hour = hourDiff(datePosted, dateToday);
-    const minute = minuteDiff(datePosted, dateToday);
-    const second = secondDiff(datePosted, dateToday);
-    //console.log(`${dateToday.toISOString().slice(0, 10)} - ${datePosted.toISOString().slice(0, 10)}:\n ${year} ${month} ${day} ${hour} ${minute} ${second} `);
-
-
-    if(year != 0)
-        return `${year} year${year > 1 ? 's': ''} ago`;
-    if(month != 0)
-        return `${month} month${month > 1 ? 's': ''} ago`;
-    if(day != 0)
-        return `${day} day${day > 1 ? 's': ''} ago`;
-    if(hour != 0)
-        return `${hour} hour${hour > 1 ? 's': ''} ago`;
-    if(minute != 0)
-        return `${minute} minute${minute > 1 ? 's': ''} ago`;
-    
-    return `${month} second${year > 1 ? 's': ''} ago`;
-}
-
-function monthDiff(d1, d2) {
-    var months;
-    months = (d2.getFullYear() - d1.getFullYear()) * 12;
-    months -= d1.getMonth();
-    months += d2.getMonth();
-    return months <= 0 ? 0 : months;
-}
-
-function dayDiff(date1, date2) {
-    const diffInMs = Math.abs(date2 - date1);
-    return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-}
-  
-function hourDiff(date1, date2) {
-    const diffInMs = Math.abs(date2 - date1);
-    return Math.floor(diffInMs / (1000 * 60 * 60));
-}
-  
-function minuteDiff(date1, date2) {
-    const diffInMs = Math.abs(date2 - date1);
-    return Math.floor(diffInMs / (1000 * 60));
-}
-  
-function secondDiff(date1, date2) {
-    const diffInMs = Math.abs(date2 - date1);
-    return Math.floor(diffInMs / 1000);
-}
 
 window.addEventListener("load", function(e){
     scaffold = document.querySelector("#scaffold");

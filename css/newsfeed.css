@@ -1,5 +1,4 @@
 /* transition  */
-#filter,
 #mark-read,
 #discussion-container,
 .tag-container,
@@ -44,23 +43,6 @@ aside > * {
 }
 
 
-#filter{
-    font-family: var(--font-type2);
-    font-weight: bold;
-    color: var(--clr-txt-secondary);
-    border: 1px solid var(--clr-gray);
-    border-radius: 5px;
-    padding: 10px 5px;
-}
-
-
-#filter:focus{
-    border-color: var(--clr-blue);
-    -webkit-box-shadow: none;
-	box-shadow: none;
-    outline: none;
-}
-
 .icon-mark-read{
     margin-right: 5px;
 }
@@ -75,15 +57,14 @@ aside > * {
 
 #mark-read:hover,
 #category-container .tag:hover,
-#all-disussion:hover,
-#following:hover,
-.text-active{
-    color: var(--clr-blue) !important;
+#all-discussion:hover,
+#following:hover{
+    color: var(--clr-blue);
 }
 
 #mark-read:active,
 #category-container .tag:active,
-#all-disussion:active,
+#all-discussion:active,
 #following:active{
     color: var(--clr-blue-500);
 }

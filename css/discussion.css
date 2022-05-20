@@ -51,7 +51,7 @@ main{
     display:flex;
     flex-direction:column;
     margin-right:10px;
-    padding:10px;
+    padding: 20px;
 }
 
 #options{
@@ -62,22 +62,10 @@ main{
     color: var(--clr-txt-primary);
 }
 
-.comm:hover{
-    color: var(--clr-blue);
-}
-
-.share:hover{
-    color: var(--clr-blue);
-}
-
-.follow:hover{
-    color: var(--clr-blue);
-}
-
-#comments-box{
+.comment-box{
     display:flex;
     gap:10px;
-    padding:10px;
+    padding: 0 20px;
     justify-content: flex-start;
     align-items: center;
 }
@@ -116,10 +104,9 @@ main{
     gap: 10px;
 }
 
-.input{
-    width:900px;
-    padding:10px;
-    font-size:14px;
+.comment-input{
+    width: 900px;
+    height: 100px;
     align-self: center;
 }
 

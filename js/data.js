@@ -22,8 +22,9 @@ function user(username, imgSrc, profile, comments, bio){
     }
 }
 
-function comment(content,date){
+function comment(discussion, content, date){
     return{
+        discussion: discussion,
         content: content,
         date: date
     }
@@ -34,6 +35,13 @@ function tag(name, color){
         name: name,
         color: color
     }
+}
+
+function notification (type, commenter){
+    return {
+        type: type,
+        commenter: commenter,
+    };
 }
 
 const tags = [
@@ -47,78 +55,123 @@ const tags = [
     new tag("Jobs", "brown"),
 ];
 
+//discussion is used as string for now
 var comments = [
-// Disc 1
-new comment("Hi, welcome! Yes, there are many subs where people share info/advice/opinions etc. Having said that, you might not be able to post or comment right away due to being new. Id suggest you take a look around and find some subs that interest you, then you can see what their posting requirements (if any) might be. There's also a list of new Porum friendly subs in the links Automod gave. If you need anything else, just let us know",
-    new Date(2022, 5, 1)
-),
-new comment("Hi and welcome! Porum is more than a q&a site, but not quite social media. On top of that, different cultures exist on different subs. I highly recommend reading the rules of a sub and get a feeling for the way posts go there before posting. The info available about this sub is very helpful and I always suggest people take the time to read it. It probably depends on the sub, but you might have more fun watching the posts for subjects you have expertise in rather than posting randomly about your skills that might not even be seen by the people who most want to know.",
-    new Date(2022, 5, 2)
-),
-new comment("Congrats! Now let’s share some content on Porum! Have fun out there!",
-    new Date(2022, 5, 2)
-),
-new comment("Welcome and yeah for pushing a new learning, because it's about porum band learning. First things first , read r/newtoPorum. (Sorry I haven't learn to link in yet). Then reread my best advice plus be kind, nice or funny.",
-    new Date(2022, 5, 5)
-),
-new comment("Welcome to Porum! Porum isn't like other social media. People don't share personal stuff here that much, it's a place where anonymity is valued. You can still make friends here, but the content is the focus.",
-    new Date(2022, 5, 5)
-),
-// Disc 2
-new comment("I work for the Infectious Disease Bureau at the Boston Public Health Commission. This post is outstanding. Like...whoa. (bowing my head)",
-    new Date(2022, 5, 13)
-),
-new comment("I’m supposed to get on an airplane next week with my toddler with 0 safety measures in place this is insane.",
-    new Date(2022, 5, 14)
-),
-new comment("Please do what you need to do to protect yourselves. CDC in the U.S. seems to be the only one ignoring the link between child hepatitis cases and SARS2. Other countries have recognized the possible link and are leaning in that direction. We are not in a good spot right now as far as transparency goes.",
-    new Date(2022, 5, 14)
-),
-// Disc 3
-new comment("As a general rule, you can apply for a visa from a country where you a resident, and it need not be your country of citizenship.",
-    new Date(2020, 5, 13)
-),
-new comment("It really just depends on the rules of your home country. Depending on your visa, and how long it's valid sometimes 2 months before it expires (minimum) you would be able to go to the Swiss embassy or consulate in France and apply for your visa there, because technically at the moment you're considered a resident of France (like I said depending on your visa and how long you've been there) . I would check on the Swiss site and maybe contact the Japanese embassy in France to ask.",
-    new Date(2020, 8, 20)
-),
-new comment("You can apply from the country you are living in. I am a Russian living in UAE and every time I had to travel I applied from the consulate here. Everything was ok. No problem at all.",
-    new Date(2020, 10, 23)
-),
-new comment("Hi! Here’s a  useful link . Found them recently. Not sure if they all info but world map visa think is very much up to date: https://www.holidayhare.com/travel-visa-checker",
-    new Date(2021, 1, 2)
-),
-new comment("Hey there, from my experience you are allowed to apply from the country you are residing in. I often apply from the embassy here in Vietnam and everything works as it should.",
-    new Date(2021, 1, 4)
-),
-// Disc 4
-new comment("Good Day! Can you send detailed information about the listing in my inbox?",
-    new Date(2022, 5, 15)
-),
-new comment("Hello! I've sent you a DM to inquire about more details :)",
-    new Date(2022, 5, 16)
-),
-new comment("Trying to find out more about this listing. Sent you a dm!",
-    new Date(2022, 5, 16)
-),
-new comment("Hi! Can you DM me?",
-    new Date(2022, 5, 17)
-),
-// Disc 5
-new comment("This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
-    new Date(2022, 5, 25)
-),
-new comment("Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
-    new Date(2022, 5, 25)
-),
-new comment("Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
-    new Date(2022, 5, 26)
-),
-new comment("Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
-    new Date(2022, 5, 27)
-),
-new comment("I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
-    new Date(2022, 5, 27)
-),
+    // Disc 1
+    new comment(
+        "discussion1.html#comment1",
+        "Hi, welcome! Yes, there are many subs where people share info/advice/opinions etc. Having said that, you might not be able to post or comment right away due to being new. Id suggest you take a look around and find some subs that interest you, then you can see what their posting requirements (if any) might be. There's also a list of new Porum friendly subs in the links Automod gave. If you need anything else, just let us know",
+        new Date(2022, 5, 1)
+    ),
+    new comment(
+        "discussion1.html#comment2",
+        "Hi and welcome! Porum is more than a q&a site, but not quite social media. On top of that, different cultures exist on different subs. I highly recommend reading the rules of a sub and get a feeling for the way posts go there before posting. The info available about this sub is very helpful and I always suggest people take the time to read it. It probably depends on the sub, but you might have more fun watching the posts for subjects you have expertise in rather than posting randomly about your skills that might not even be seen by the people who most want to know.",
+        new Date(2022, 5, 2)
+    ),
+    new comment(
+        "discussion1.html#comment3",
+        "Congrats! Now let’s share some content on Porum! Have fun out there!",
+        new Date(2022, 5, 2)
+    ),
+    new comment(
+        "discussion1.html#comment4",
+        "Welcome and yeah for pushing a new learning, because it's about porum band learning. First things first , read r/newtoPorum. (Sorry I haven't learn to link in yet). Then reread my best advice plus be kind, nice or funny.",
+        new Date(2022, 5, 5)
+    ),
+    new comment(
+        "discussion1.html#comment5",
+        "Welcome to Porum! Porum isn't like other social media. People don't share personal stuff here that much, it's a place where anonymity is valued. You can still make friends here, but the content is the focus.",
+        new Date(2022, 5, 5)
+    ),
+    // Disc 2
+    new comment(
+        "discussion2.html#comment6",
+        "I work for the Infectious Disease Bureau at the Boston Public Health Commission. This post is outstanding. Like...whoa. (bowing my head)",
+        new Date(2022, 5, 13)
+    ),
+    new comment(
+        "discussion2.html#comment7",
+        "I’m supposed to get on an airplane next week with my toddler with 0 safety measures in place this is insane.",
+        new Date(2022, 5, 14)
+    ),
+    new comment(
+        "discussion2.html#comment8",
+        "Please do what you need to do to protect yourselves. CDC in the U.S. seems to be the only one ignoring the link between child hepatitis cases and SARS2. Other countries have recognized the possible link and are leaning in that direction. We are not in a good spot right now as far as transparency goes.",
+        new Date(2022, 5, 14)
+    ),
+    // Disc 3
+    new comment(
+        "discussion3.html#comment9",
+        "As a general rule, you can apply for a visa from a country where you a resident, and it need not be your country of citizenship.",
+        new Date(2020, 5, 13)
+    ),
+    new comment(
+        "discussion3.html#comment10",
+        "It really just depends on the rules of your home country. Depending on your visa, and how long it's valid sometimes 2 months before it expires (minimum) you would be able to go to the Swiss embassy or consulate in France and apply for your visa there, because technically at the moment you're considered a resident of France (like I said depending on your visa and how long you've been there) . I would check on the Swiss site and maybe contact the Japanese embassy in France to ask.",
+        new Date(2020, 8, 20)
+    ),
+    new comment(
+        "discussion3.html#comment11",
+        "You can apply from the country you are living in. I am a Russian living in UAE and every time I had to travel I applied from the consulate here. Everything was ok. No problem at all.",
+        new Date(2020, 10, 23)
+    ),
+    new comment(
+        "discussion3.html#comment12",
+        "Hi! Here’s a  useful link . Found them recently. Not sure if they all info but world map visa think is very much up to date: https://www.holidayhare.com/travel-visa-checker",
+        new Date(2021, 1, 2)
+    ),
+    new comment(
+        "discussion3.html#comment13",
+        "Hey there, from my experience you are allowed to apply from the country you are residing in. I often apply from the embassy here in Vietnam and everything works as it should.",
+        new Date(2021, 1, 4)
+    ),
+    // Disc 4
+    new comment(
+        "discussion4.html#comment14",
+        "Good Day! Can you send detailed information about the listing in my inbox?",
+        new Date(2022, 5, 15)
+    ),
+    new comment(
+        "discussion4.html#comment15",
+        "Hello! I've sent you a DM to inquire about more details :)",
+        new Date(2022, 5, 16)
+    ),
+    new comment(
+        "discussion4.html#comment16",
+        "Trying to find out more about this listing. Sent you a dm!",
+        new Date(2022, 5, 16)
+    ),
+    new comment(
+        "discussion4.html#comment17",
+        "Hi! Can you DM me?",
+        new Date(2022, 5, 17)
+    ),
+    // Disc 5
+    new comment(
+        "discussion5.html#comment18",
+        "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
+        new Date(2022, 5, 25)
+    ),
+    new comment(
+        "discussion5.html#comment19",
+        "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
+        new Date(2022, 5, 25)
+    ),
+    new comment(
+        "discussion5.html#comment20",
+        "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
+        new Date(2022, 5, 26)
+    ),
+    new comment(
+        "discussion5.html#comment21",
+        "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
+        new Date(2022, 5, 27)
+    ),
+    new comment(
+        "discussion5.html#comment22",
+        "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
+        new Date(2022, 5, 27)
+    ),
 ];
 
 var users = [
@@ -187,3 +240,10 @@ var discussions = [
     ),   
 ];
 
+var notifications = [
+    new notification("discussion", users[2]),
+    new notification("discussion", users[4]),
+    new notification("discussion", users[5]),
+    new notification("discussion", users[6]),
+    new notification("discussion", users[9]),
+]
