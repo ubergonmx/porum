@@ -1,0 +1,26 @@
+{
+  "name": "s15g12_porum",
+  "version": "1.0.0",
+  "description": "an online forum similar to reddit and stackoverflow",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubergonmx/s15g12.git"
+  },
+  "keywords": [
+    "forum"
+  ],
+  "author": "ubergonmx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ubergonmx/s15g12/issues"
+  },
+  "homepage": "https://github.com/ubergonmx/s15g12#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
+  }
+}

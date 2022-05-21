@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
+    <script src="js/base.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/profile.js"></script>
+    <title>Profile - Porum</title>
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <a href="newsfeed.html" id="main-logo">
+            <img src="images/design/logo.png" id="icon-logo"/>
+            <p id="main-title">Porum</p>
+        </a>
+
+        <!-- Search bar -->
+        <div id="search-container">
+            <form id="search-form" action="#" method="GET">
+                <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+                <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+                <input type="submit" hidden />
+            </form>
+        </div>
+
+        <!-- Notification and Profile -->
+        <div>
+            <!-- Notif icon -->
+            <div id="notification-container" class="has-notification">
+                <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+                <div id="notification-dropdown" class="dropdown">
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <img src="images/users/user7.jpg" class="notif-commenter">
+                        <div class="notif-body">
+                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                            <span class="notif-date">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile -->
+            <div id="profile-container">
+                <img src="images/users/user1.jpg" id="icon-user">
+
+                <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+                <div id="profile-dropdown" class="dropdown">
+                    <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
+                    <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
+                    <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="posts-box" class="def-container">            
+                <div id = "filter-box" class="def-container">
+                    <div id = "filter-icon">
+                        <i class="fa-solid fa-eye"></i>
+                        <p id = "filter-name" class="chosen">Overview</p>
+                        </div>
+                    <div id = "filter-icon">
+                    <i class="fa-solid fa-pen"></i>
+                    <p id = "filter-name">Posts</p>
+                    </div>
+
+                    <div id = "filter-icon">
+                    <i class="fa-solid fa-message"></i>
+                    <p id = "filter-name">Comments</p>
+                    </div>
+
+                    <div id = "filter-icon">
+                        <i class="fa-solid fa-star"></i>
+                        <p id = "filter-name">Following</p>
+                    </div>
+
+                </div>
+                <div id="posts-container">
+                    <a href="discussion4.html"><div class="discussion-box" > 
+                        <div class="discussion">
+                            <div class="discussion-body">
+                                <h1 class="title">Sales Person - $20/hr</h1>
+                                <p class="date">May 15, 2022</p>
+                                <p class="content">We are urgently looking for a part-time Sales Person for B2B Inside Sales. This will be a work-from-home opportunity. You would need to get on video calls or phone calls with our clients and guide them regarding the services we are offering, trying your best to crack a deal with them. We are looking for someone who is expressive and holds excellent communication skills. Also, we are looking for a US-based salesperson since you will be required to deal with our US-based clients. Pay: $20/hr For this profile, you would need a Laptop/computer, cellphone, and stable internet. </p>  
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="discussion1.html#comment5"><div class="discussion-box" > 
+                        <div class="discussion">
+                            <div class="discussion-body">
+                                <h1 class="title"><i class="fa-solid fa-reply"></i> Replied to: Hi All, new to Porum here, and have a question</h1>
+                                <p class="date">May 5, 2022</p>
+                                <p class="content">Welcome to Porum! Porum isn't like other social media. People don't share personal stuff here that much, it's a place where anonymity is valued. You can still make friends here, but the content is the focus.</p>  
+                            </div>
+                        </div>
+                    </div></a>
+
+                    <a href="discussion3.html#comment11"><div class="discussion-box" > 
+                        <div class="discussion">
+                            <div class="discussion-body">
+                                <h1 class="title"><i class="fa-solid fa-reply"></i> Replied to: Is it possible to apply for a Swiss student visa from a country outside of your home country?                                </h1>
+                                <p class="date">October 23,2020</p>
+                                <p class="content">You can apply from the country you are living in. I am a Russian living in UAE and every time I had to travel I applied from the consulate here. Everything was ok. No problem at all.                                </p>  
+                            </div>
+                        </div>
+                    </div></a>
+
+
+
+                </div>  
+        </section>
+
+        <aside>
+            <div id="profile-box" class="def-container">
+                <div id="profile-header">
+                    <img id="cover-photo" src="images/design/cover-photo.jpg">
+                    <img id="profile-pic" src="images/users/user10.jpg">
+                </div>
+
+                <div id="profile-content">
+                    <h1 id="full-name" class="header-format">Matylda Patterson</h1>
+                    <h4 id="username" class="header-format">@designer1</h3>
+                        <h5 class="bio-format"><span id="bio">Hi there! My name is Matylda Patterson I am a fashion designer at Versace. Donatella Versace is a good friend of mine.</span> </h5>
+                    <div class="other-info">
+                        <div><h4>Birthday: <br><span id="birthday">December 3, 1989</span> </h4></div>
+                        <div><h4>Phone Number: <br><span id="phone-number">-</span> </h4></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+    </main>
+</body>
+</html>
