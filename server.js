@@ -1,11 +1,19 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
+import 'dotenv/config';
+import { connectToMongo, getDb } from './db/conn.js';
+import express from 'express';
+import exphbs from 'express-handlebars';
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 // Set port
 const port = 8080;
 // Set static folder
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname,"/public")));
 // Set handlebars as the app's view engine.
 // `{extname: 'hbs'}` informs the handlebars engine that the file extension to read is .hbs 
 app.engine("hbs", exphbs.engine({extname: 'hbs'}));
@@ -16,11 +24,46 @@ app.set("views", "./views");
 // Set view cache to false so browsers wouldn't save views into their cache
 app.set("view cache", false);
 
+connectToMongo( (err) => {
+    if (err){
+        console.log("error occured");
+        console.err(err);
+        process.exit();
+    }
+
+    console.log("Successfully connected to MongoDB...");
+
+    const db = getDb();
+
+    /* LONG WAY TO CREATE A COLLECTION
+    db.createCollection("users",
+    (error, collection) =>{
+        if (error) {
+            console.log("collection creation error");
+            return;
+        }
+        console.log("collection creation successful")
+    });*/
+
+    // SHORT WAY TO CREATE A COLLECTION
+    const users = db.collection("users");
+    
+    users.insertOne({
+        firstname: "Harry",
+        lastname: "Higgins"
+    }).then( result => {
+        console.log("successful insertOne operation");
+        console.log(result);
+    }).catch( err => {
+        console.log("error occured: " + err);
+    });
+});
+
 // Stores the user that is currently logged in
 var currentUser;
 
-
-// Fake database
+// Fake database (UPDATE!!!) - will now be removed
+// (UPDATE!!!) the user below will be converted to MongoDB operation
 var db = [
     new user(
         "harry31",
