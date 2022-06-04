@@ -45,6 +45,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: "images/user/coverDefault.jpg",
     },
+    followers: {
+        type: [String],
+        default: [],
+    },
+    followings: {
+        type: [String],
+        default: [],
+    },
     isAdmin: {
         type: Boolean,
         default: false,
