@@ -12,6 +12,7 @@
 }
 
 :root{
+    --clr-white: var(--clr-white);
     --clr-blue: hsl(205, 99%, 62%);
     --clr-blue-500: hsl(205, 62%, 52%);
     --clr-gray: hsl(210, 15%, 74%);
@@ -58,6 +59,7 @@ select,
 /* common styling */
 html {
   scroll-behavior: smooth;
+  /* scroll-padding-top: 0px; */
 }
 
 ::-webkit-scrollbar {
@@ -88,7 +90,7 @@ header {
     align-items: center;
     gap: 20px;
     z-index: 1;
-    background-color: white;
+    background-color: var(--clr-white);
     box-shadow: 0 2px 10px rgb(205, 219, 225, 0.7);
     padding: 25px 15px;
     max-height: 65px;
@@ -177,7 +179,7 @@ input[type=password]:focus,
     -webkit-box-shadow: none;
 	box-shadow: none;
     outline: none;    
-    /* background-color: white; */
+    /* background-color: var(--clr-white); */
 }
 
 main {
@@ -261,7 +263,7 @@ main {
     right: -1px;
     top: 49px;
     z-index: 2;
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 5px;
     filter: drop-shadow(0 2px 10px rgb(205, 219, 225, 0.9));
     transition: var(--fast);
@@ -277,7 +279,7 @@ main {
     position: absolute;
     top: -12px;
     right: 10px;
-    border-top: 12px solid white;
+    border-top: 12px solid var(--clr-white);
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
     transform: rotate(180deg);
@@ -360,7 +362,7 @@ main {
 .has-notification::after{
     content: ''; 
     background-color: var(--clr-tag-red);
-    border: 2px solid white;
+    border: 2px solid var(--clr-white);
     border-radius: 100%;
     height: 5px;
     width: 5px;
@@ -462,7 +464,7 @@ input.error, textarea.error{
     display: flex;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgb(205, 219, 225, 0.7);
-    background-color:white;
+    background-color:var(--clr-white);
 }
 
 .button-primary{
@@ -471,7 +473,7 @@ input.error, textarea.error{
     background-color:var(--clr-blue);
     font-family: var(--font-type2);
     font-size: 14px;
-    color:white;
+    color:var(--clr-white);
     padding: 10px; 
     box-shadow: 0 2px 10px rgb(62, 174, 254, 0.2);
     cursor: pointer;
@@ -493,7 +495,7 @@ input.error, textarea.error{
     font-family: var(--font-type);
     border: 1px solid var(--clr-gray);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--clr-white);
     color: var(--clr-txt-secondary);
     cursor: pointer;
     text-align: center;

@@ -82,7 +82,7 @@ aside > * {
 }
 
 .discussion {
-    background-color: white;
+    background-color: var(--clr-white);
     border: 1px solid var(--clr-gray);
     border-radius: 5px;
     box-shadow: 0 2px 10px rgb(230, 230, 230, 0.5);
@@ -263,7 +263,7 @@ aside > * {
 }
 
 .commenter {
-    border: 2px solid white;
+    border: 2px solid var(--clr-white);
     border-radius: 50%;
     height: 30px;
     width: 30px;

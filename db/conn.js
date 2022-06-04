@@ -1,24 +1,39 @@
-import { MongoClient } from "mongodb";
 import 'dotenv/config';
+import { MongoClient } from "mongodb";
+import mongoose from 'mongoose';
 
-const client = new MongoClient(process.env.MONGODB_URI);
+// Connection URL
+const connectionString = process.env.MONGODB_URI + process.env.DB;
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+// const client = new MongoClient(connectionString);
 
-export function connectToMongo (callback){
-    client.connect().then(( client ) => {
+
+
+export function connectToServer (callback){
+    mongoose.connect(connectionString, options, (err) => {
+        if(err){
+            return callback(err);
+        }
         return callback();
-    }).catch( err => {
-        callback(err);
     });
+
+    // OLD WAY
+    // client.connect().then(( client ) => {
+    //     return callback();
+    // }).catch( err => {
+    //     callback(err);
+    // });
 }
 
-//users is the database name by default
 export function getDb (dbName = process.env.defaultDB){
-    return client.db(dbName);
+    return mongoose.connection.useDb(dbName);
 };
 
 function signalHandler(){
     console.log("Closing MongoDB connection...");
-    client.close();
+    mongoose.connection.close();
+    // OLD WAY
+    // client.close();
     process.exit();
 }
 

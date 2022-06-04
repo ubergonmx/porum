@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com/e5cabd2361.js 'unsafe-inline' 'unsafe-eval';">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
+    
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
-    {{style}}
+    <link rel="stylesheet" href="css/base.css">
+    {{#each styles}}
+        <link rel="stylesheet" href="{{this}}">
+    {{/each}}
 
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
-    {{script}}
-    <title>{{title}}</title>
+    {{#each scripts}}
+        <script src="{{this}}"></script>
+    {{/each}}
+    <title>{{title}} - Porum</title>
 </head>
 <body>
-    {{header}}
-    {{body}}
+    {{{header}}}
+    {{{body}}}
 </body>
 </html>

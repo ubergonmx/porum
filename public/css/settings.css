@@ -20,12 +20,12 @@ main{
 }
 
 .header-container{
-    border:1px,solid,white;
+    border:1px solid var(--clr-white);
     padding: 1rem 2rem;
     display:flex;
     background-color:var(--clr-blue);
     justify-content: space-evenly;
-    color:white;
+    color:var(--clr-white);
     align-items: center;
     width:988px;
     height:25px;

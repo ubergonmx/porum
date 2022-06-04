@@ -13,7 +13,7 @@ main{
     display:flex;
     background-color:var(--clr-gray);
     justify-content: space-evenly;
-    color:white;
+    color:var(--clr-white);
     align-items: center;
     width: 100%;
     margin-top: 25px;
