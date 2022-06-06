@@ -100,7 +100,7 @@ userRoute.put("/:id/unfollow", async (req, res) => {
                 res.status(200).json("User unfollowed");
             }
             else{
-                res.status(403).json("User already unfollowed");
+                res.status(403).json("User not followed");
             }
         } catch (err) {
             res.status(500).json(err);

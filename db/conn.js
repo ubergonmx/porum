@@ -9,23 +9,16 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 
 
-export function connectToServer (callback){
+export const connectToServer = (callback) => {
     mongoose.connect(connectionString, options, (err) => {
         if(err){
             return callback(err);
         }
         return callback();
     });
-
-    // OLD WAY
-    // client.connect().then(( client ) => {
-    //     return callback();
-    // }).catch( err => {
-    //     callback(err);
-    // });
 }
 
-export function getDb (dbName = process.env.defaultDB){
+export function changeDb (dbName = process.env.defaultDB){
     return mongoose.connection.useDb(dbName);
 };
 
