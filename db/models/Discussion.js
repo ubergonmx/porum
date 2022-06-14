@@ -8,14 +8,14 @@ const DiscussionSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        min: 1,
-        max: 50,
+        minlength: 1,
+        maxlength: 50,
     },
     content: {
         type: String,
         required: true,
-        min: 1,
-        max: 5000,
+        minlength: 1,
+        maxlength: 5000,
     },
     followers: {
         type: [String],
