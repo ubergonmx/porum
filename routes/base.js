@@ -15,10 +15,11 @@ baseRoute.get('/newsfeed', (req, res) => {
     res.redirect('/home');
 });
 
-baseRoute.get('/', (req, res) => {
-    res.render('index', {
+baseRoute.get('/user', (req, res) => {
+    res.render('user', {
         title: 'Newsfeed',
-        styles: ['newsfeed.css', 'base.css']
+        styles: ['newsfeed.css', 'base.css'],
+        isCurrentUser: true
     });
 });
 
