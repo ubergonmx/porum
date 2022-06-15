@@ -2,6 +2,9 @@ import express from 'express';
 
 const baseRoute = express.Router();
 
+baseRoute.get('/', (req, res) => {
+    res.redirect('/home');
+});
 
 baseRoute.get('/newsfeed', (req, res) => {
     res.redirect('/home');
@@ -9,9 +12,9 @@ baseRoute.get('/newsfeed', (req, res) => {
 
 baseRoute.get('/home', (req, res) => {
     res.render('index', {
-        title: 'Newsfeed',
+        title: 'Home',
         styles: ['newsfeed.css'],
-        scripts: ['newsfeed.js'],
+        // scripts: ['newsfeed.js'],
     });
 });
 

@@ -12,7 +12,16 @@
                 </div>
             </div>
             <div id="discussion-container">
-                <!-- check newsfeed.js -->
+                {{#if discussions.length}}
+                    {{#each discussions}}
+                        {{> discussion}}
+                    {{/each}}
+                {{else}}
+                    <div id="scaffold">
+                        <img src="images/design/404.png">
+                        <h1 id="text-title">No discussions yet</h1>
+                    </div>
+                {{/if}}
             </div>
             <button id="load-more-discussion" class="button-secondary">
                 Load more...
