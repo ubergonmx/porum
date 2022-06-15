@@ -13,6 +13,9 @@
             </div>
             <div id="discussion-container">
                 <!-- check newsfeed.js -->
+                {{#each discussion}}
+                    {{>discussion}}
+                {{/each}}
             </div>
             <button id="load-more-discussion" class="button-secondary">
                 Load more...
