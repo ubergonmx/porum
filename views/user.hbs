@@ -1,0 +1,64 @@
+{{>header}}
+<div id="posts-box" class="def-container">            
+                <div id = "filter-box" class="def-container">
+                    
+                    <div id = "filter-icon">
+                    <i class="fa-solid fa-eye"></i>
+                    <p id = "filter-name" class="chosen">Overview</p>
+                    </div>
+
+                    <div id = "filter-icon">
+                    <i class="fa-solid fa-pen"></i>
+                    <p id = "filter-name">Posts</p>
+                    </div>
+
+                    <div id = "filter-icon">
+                    <i class="fa-solid fa-message"></i>
+                    <p id = "filter-name">Comments</p>
+                    </div>
+
+                    <div id = "filter-icon">
+                        <i class="fa-solid fa-star"></i>
+                        <p id = "filter-name">Following</p>
+                    </div>
+
+                </div>
+                       
+        </section>
+
+        {{#each discussion}}
+            {{>discussion-preview}}
+        {{/each}}
+
+        <aside>
+            <div id="profile-box" class="def-container">
+                <div id="profile-header">
+                    <img id="cover-photo" src="images/design/{{this.user}}.jpg">
+                    <img id="profile-pic" src="images/users/{{this.user}}.jpg">
+                    {{#if user.currUser}}
+                    <a href = "/settings">
+                        <i class="fa-solid fa-gear settings-button"></i>
+                    </a>
+                    {{/if}}
+                </div>
+
+                <div id="profile-content">
+                    <h1 id="full-name" class="header-format">{{this.fullName}}</h1>
+                    <h4 id="username" class="header-format">{{this.userName}}</h3>
+                        <h5 class="bio-format"><span id="bio">{{this.bio}}</span> </h5>
+                    <div class="other-info">
+                        <div><h4>Birthday: <br><span id="birthday">{{this.birthday}}</span> </h4></div>
+                        <div><h4>Phone Number: <br><span id="phone-number">{{this.phoneNo}}</span> </h4></div>
+                    </div>
+
+                    {{#if user.currUser}}
+                    <!-- New post button redirect to start discussion -->
+                    <a href = "/startdiscussion">
+                        <button id="settings" class="button-primary">New Post</button>
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>

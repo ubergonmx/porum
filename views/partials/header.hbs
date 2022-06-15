@@ -1,6 +1,6 @@
 <header>
         <!-- Logo -->
-        <a href="newsfeed.html" id="main-logo">
+        <a href="/index" id="main-logo">
             <img src="images/design/logo.png" id="icon-logo"/>
             <p id="main-title">Porum</p>
         </a>
@@ -20,27 +20,19 @@
             <div id="notification-container" class="has-notification">
                 <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
                 <div id="notification-dropdown" class="dropdown">
-                    <div class="notif-item">
-                        <img src="images/users/user7.jpg" class="notif-commenter">
-                        <div class="notif-body">
-                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
-                            <span class="notif-date">1 day ago</span>
-                        </div>
-                    </div>
-
-                    <div class="notif-item">
-                        <img src="images/users/user7.jpg" class="notif-commenter">
-                        <div class="notif-body">
-                            <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
-                            <span class="notif-date">1 day ago</span>
-                        </div>
-                    </div>
+                    {{#if notifications}}
+                    {{#each notifications}}
+                        {{>notification}}
+                    {{/each}}
+                    {{else}}
+                        <p>No notifications to show...</p>
+                    {{/if}}
                 </div>
             </div>
 
             <!-- Profile -->
             <div id="profile-container">
-                <img src="images/users/user1.jpg" id="icon-user">
+                <img src="images/users/{{this.currUser}}.jpg" id="icon-user">
 
                 <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
                 <div id="profile-dropdown" class="dropdown">
@@ -50,4 +42,4 @@
                 </div>
             </div>
         </div>
-    </header>
+</header>
