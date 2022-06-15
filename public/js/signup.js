@@ -35,7 +35,7 @@ window.addEventListener("load", function(e){
             return;
         }        
 
-        this.window.location.href = "newsfeed.html";
+        this.window.location.href = "profile";
     });
 
     changePic.addEventListener("change", ()=>{

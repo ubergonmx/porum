@@ -37,13 +37,13 @@ document.addEventListener("click", function(e){
         profileDropdown.classList.toggle("active");
     }
     else if(e.target.closest("#profile-btn") || e.target.id == "icon-user"){
-        window.location.href = "profile.html";
+        window.location.href = "profile";
     }
     else if(e.target.closest("#settings-btn")){
-        window.location.href = "settings.html";
+        window.location.href = "settings";
     }
     else if(e.target.closest("#logout-btn")){
-        window.location.href = "index.html";
+        window.location.href = "home";
     }
     else if(e.target.closest("#icon-notification")){
         notifDropdown.classList.toggle("active");

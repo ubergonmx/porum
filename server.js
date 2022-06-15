@@ -73,33 +73,7 @@ connectToServer( (err) => {
     app.listen(port, () => {
         console.log("Server now listening on port " + port);
     });
-
-    /* LONG WAY TO CREATE A COLLECTION
-    db.createCollection("users",
-    (error, collection) =>{
-        if (error) {
-            console.log("collection creation error");
-            return;
-        }
-        console.log("collection creation successful")
-    });*/
-
-    // SHORT WAY TO CREATE A COLLECTION
-    // const users = db.collection("users");
-    
-    // users.insertOne({
-    //     firstname: "Harry",
-    //     lastname: "Higgins"
-    // }).then( result => {
-    //     console.log("successful insertOne operation");
-    //     console.log(result);
-    // }).catch( err => {
-    //     console.log("error occured: " + err);
-    // });
 });
-
-// Stores the user that is currently logged in
-var currentUser;
 
 // Fake database (UPDATE!!!) - will now be removed
 // (UPDATE!!!) the user below will be converted to MongoDB operation
@@ -135,17 +109,4 @@ var currentUser;
 //         phoneNumber: phoneNumber,
 //     }
 // }
-
-app.get('/', (req, res) => {
-
-    if(currentUser == undefined || currentUser == 0){
-        res.redirect('/login');
-    }
-    else{
-        res.render("index", {
-            title: "homepage",
-            name: "Jimmy"
-        });
-    }
-});
 

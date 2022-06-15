@@ -20,6 +20,6 @@ window.addEventListener("load", function(e){
         //     showError(error, "Please enter a valid title.",[title]);
         //     return;
         // }
-        this.window.location.href = "newsfeed.html";
+        this.window.location.href = "home";
     });
 });

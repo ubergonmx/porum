@@ -12,7 +12,7 @@
 }
 
 :root{
-    --clr-white: var(--clr-white);
+    --clr-white: white;
     --clr-blue: hsl(205, 99%, 62%);
     --clr-blue-500: hsl(205, 62%, 52%);
     --clr-gray: hsl(210, 15%, 74%);

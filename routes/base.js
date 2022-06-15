@@ -3,22 +3,22 @@ import express from 'express';
 const baseRoute = express.Router();
 
 
+baseRoute.get('/newsfeed', (req, res) => {
+    res.redirect('/home');
+});
+
 baseRoute.get('/home', (req, res) => {
     res.render('index', {
         title: 'Newsfeed',
-        styles: ['newsfeed.css', 'base.css'],
-        scripts: ['base.js']
+        styles: ['newsfeed.css'],
+        scripts: ['newsfeed.js'],
     });
-});
-
-baseRoute.get('/newsfeed', (req, res) => {
-    res.redirect('/home');
 });
 
 baseRoute.get('/user', (req, res) => {
     res.render('user', {
         title: 'Newsfeed',
-        styles: ['newsfeed.css', 'base.css'],
+        styles: ['newsfeed.css'],
         isCurrentUser: true
     });
 });
