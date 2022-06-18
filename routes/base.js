@@ -14,6 +14,14 @@ baseRoute.get('/newsfeed', (req, res) => {
     res.redirect('/home');
 });
 
+baseRoute.get('/login', (req, res) => {
+    res.render('login', {
+        title: 'Login',
+        styles: ['login.css'],
+        scripts: ['login.js'],
+    });
+});
+
 baseRoute.get('/home', (req, res) => {
     res.render('index', {
         title: 'Home',
@@ -22,54 +30,46 @@ baseRoute.get('/home', (req, res) => {
     });
 });
 
-baseRoute.get('/user', (req, res) => {
+baseRoute.get('/profile', (req, res) => {
     res.render('user', {
-        title: 'Newsfeed',
-        styles: ['newsfeed.css'],
-        isCurrentUser: true
+        title: 'Profile - Porum',
+        styles: ['profile.css'],
+        scripts: ['profile.js', 'data.js'],
+        // isCurrentUser: true
     });
 });
 
 
-// baseRoute.get('/home', (req, res) => {
-//     res.render("index", {
-//         title: "homepage",
-//         name: "Jimmy"
-//     });
-// });
+baseRoute.get('/settings', (req, res) => {
+    res.render('settings', {
+        title: 'Settings',
+        styles: ['settings.css'],
+        scripts: ["data.js"]
+    });
+});
 
-// baseRoute.get("/list", (req, res) => {
-//     res.render("list", {
-//         title: "list",
-//         items: [
-//             { firstname: "John", lastname: "Smith" },
-//             { firstname: "Bob", lastname: "Morris" },
-//             { firstname: "Zark", lastname: "Muckerberg" }
-//         ]
-//     });
-// });
+baseRoute.get('/signup', (req, res) => {
+    res.render('signup', {
+        title: 'Create an Account - Porum',
+        styles: ['signup.css'],
+        scripts: ["signup.js"]
+    });
+});
 
-// baseRoute.get("/yell", (req, res) => {
-//     var platform = req.get('sec-ch-ua-platform');
-    
-//     res.render("yell", {
-//         title: "YELL",
-//         message: 'you are on '+ platform,
-//         helpers: {
-//             loud(text, options) { return text.toUpperCase(); }
-//         }
-//     });
-// });
+baseRoute.get('/discussion', (req, res) => {
+    res.render('discussion', {
+        title: 'Porum',
+        styles: ['discussion.css'],
+        scripts: ["data.js", "startdiscussion.js"]
+    });
+});
 
-// baseRoute.get("/if", (req, res) => {
-//     res.render("if", {
-//         title: "If sample",
-//         showWeather: false,
-//         showTime: true,
-//         helpers: {
-//             date() { return new Date().toDateString(); }
-//         }
-//     });
-// })
+baseRoute.get('/forgotpassword', (req, res) => {
+    res.render('forgotpassword', {
+        title: 'Forgot Password - Porum',
+        styles: ['login.css'],
+        scripts: ["forgotpassword.js"]
+    });
+});
 
 export default baseRoute;

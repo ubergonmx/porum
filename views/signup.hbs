@@ -1,4 +1,5 @@
-<div id="signup-header">
+<main>
+        <div id="signup-header">
             <div>
                 <h1 id="text-title">Welcome!<br>First things first...</h1>
                 <div id="goback-container">
@@ -12,10 +13,9 @@
 
         <!-- Signup Form -->
         <div id="signup-form" class="def-container">
-            <form id = "signup-form">
             <div>
                 <div id="user-pic-container">
-                    <img src="public/images/users/{{this}}" id="user-pic">
+                    <img src="images/users/{{this.user}}.jpg" id="user-pic">
                     <label for="change-pic" class="button-secondary">
                         Change
                         <input type="file" id="change-pic" accept="image/*" name="change-pic"/>
@@ -50,6 +50,5 @@
                 </div>
                 <button id="create-account" class="button-primary">Create Account</button>
             </div>
-            </form>
         </div>
-</div>
+</main>
