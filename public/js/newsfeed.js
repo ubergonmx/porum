@@ -29,7 +29,6 @@ window.addEventListener("load", function(e){
     tempSideFilter = document.querySelector("#all-discussion");
     loadMore = document.querySelector("#load-more-discussion");
     container = document.querySelector("#discussion-container");
-    container.innerHTML = "";
 
     toggle(loadMore);
     loadDiscussions(discussions);

@@ -4,6 +4,11 @@ import User from '../db/models/User.js';
 
 const userRoute = express.Router();
 
+//RETURN HOME PAGE
+userRoute.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 //UPDATE
 userRoute.put("/:id", async (req, res) => {
     if(req.params.id === req.body.userId || req.body.isAdmin){

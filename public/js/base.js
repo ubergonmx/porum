@@ -43,7 +43,7 @@ document.addEventListener("click", function(e){
         window.location.href = "settings";
     }
     else if(e.target.closest("#logout-btn")){
-        window.location.href = "home";
+        window.location.href = "login";
     }
     else if(e.target.closest("#icon-notification")){
         notifDropdown.classList.toggle("active");

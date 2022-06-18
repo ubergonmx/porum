@@ -4,6 +4,11 @@ import bcrypt from 'bcrypt';
 
 const authRoute = express.Router();
 
+//RETURN HOME PAGE
+authRoute.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 //SIGN UP
 authRoute.post('/signup', async (req,res)=>{
     try{

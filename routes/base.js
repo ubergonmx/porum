@@ -6,6 +6,10 @@ baseRoute.get('/', (req, res) => {
     res.redirect('/home');
 });
 
+baseRoute.get('/index', (req, res) => {
+    res.redirect('/home');
+});
+
 baseRoute.get('/newsfeed', (req, res) => {
     res.redirect('/home');
 });
@@ -14,7 +18,7 @@ baseRoute.get('/home', (req, res) => {
     res.render('index', {
         title: 'Home',
         styles: ['newsfeed.css'],
-        // scripts: ['newsfeed.js'],
+        scripts: ['newsfeed.js'],
     });
 });
 

@@ -44,9 +44,7 @@ app.use(morgan("dev"));
 app.use(expressCspHeader({
     policies: {
         'default-src': ["'self'"],
-        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://kit.fontawesome.com/e5cabd2361.js"],
-        'style-src': ["'self'", "'unsafe-inline'", "https://kit.fontawesome.com/e5cabd2361.js"],
-    }
+        'script-src': ["'self'", "https://kit.fontawesome.com/e5cabd2361.js"],    }
 }));
 
 // Assign routes

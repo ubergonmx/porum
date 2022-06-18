@@ -3,8 +3,9 @@ import Discussion from '../db/models/Discussion.js';
 
 const discussionRoute = express.Router();
 
-discussionRoute.get('/', async (req, res) => {
-    console.log("Discussion page");
+//RETURN HOME PAGE
+discussionRoute.get('/', (req, res) => {
+    res.redirect('/home');
 });
 
 //CREATE
