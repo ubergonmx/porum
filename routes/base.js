@@ -64,6 +64,14 @@ baseRoute.get('/discussion', (req, res) => {
     });
 });
 
+baseRoute.get('/startdiscussion', (req, res) => {
+    res.render('startdiscussion', {
+        title: 'Start a discussion - Porum',
+        styles: ['startdiscussion.css'],
+        scripts: ["data.js", "startdiscussion.js"]
+    });
+});
+
 baseRoute.get('/forgotpassword', (req, res) => {
     res.render('forgotpassword', {
         title: 'Forgot Password - Porum',

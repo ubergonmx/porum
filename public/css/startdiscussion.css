@@ -2,62 +2,120 @@ main{
     font-family: var(--font-type2);
 }
 
-#start-box{
-    width:65vw;
-    min-width: 500px;
-    flex-direction:column;
-    align-items: center;
+hr{
+    width: 420px;
 }
 
-#start-header{
+#start-box{
+    width:1000px;
+    padding:25px;
+    flex-direction:column;
+    gap:15px;
+    align-items: center;
+    text-align:center;
+}
+
+#createpost-box{
+    display:flex;
+    gap:50px;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+#rules-box{
+    height:400px;
+    width:400px;
+    display:flex;
+    flex-direction:column;
+    padding-left:20px;
+}
+
+#rules-header{
+    display:flex;
+    flex-direction:row;
+    text-align:center;
+    gap:20px;
+    padding-top:20px;
+}
+
+.rules{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    gap:20px;
+}
+
+#text-format{
+    font-size: 16px;
+    font-family: var(--font-type2);
+    color: var(--clr-txt-primary);
+}
+
+.pos{
+    margin-top:10px;
+}
+
+.line-separator{
+    margin-left:-20px;
+}
+
+.logo-pos{
+    width:50px;
+    height:50px;
+}
+
+
+.create-container{
+    border:1px,solid,white;
+    padding: 1rem 2rem;
     display:flex;
     background-color:var(--clr-gray);
     justify-content: space-evenly;
-    color:var(--clr-white);
+    color:white;
     align-items: center;
-    width: 100%;
-    margin-top: 25px;
+    width:988px;
+    height:25px;
 }
 
-.text-error {
-    top: 5px;
-    position: absolute;
-}
-
-#start-form, #start-form > div{
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    max-width: 700px;
-    align-items: center;
-}
-
-#start-form {
-    gap: 10px;
-    width: 50%;
-    position: relative;
-    padding: 25px;
-}
-
-#start-form > div{
-    min-width: 250px;
-}
-
-#title{
-    width:100%;
+#input-title{
+    width:500px;
+    padding:10px;
     font-size:14px;
 }
 
-#content{
-    width: 100%;
+#input-content{
+    width:500px;
     height:250px;
     padding:10px;
     font-size:14px;
-    resize: none;
 }
 
-#create{
-    max-width:250px;
-    width: 40vw;
-    align-self: center;
+#create-button{
+    margin-top:15px;
+    width:250px;
+}
+
+.div-format{
+    display:flex;
+    gap:50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#filter{
+    font-family: var(--font-type2);
+    font-weight: bold;
+    color: var(--clr-txt-secondary);
+    border: 1px solid var(--clr-gray);
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+
+#filter:focus{
+    border-color: var(--clr-blue);
+    -webkit-box-shadow: none;
+	box-shadow: none;
+    outline: none;
 }

@@ -1,35 +1,49 @@
 {{>header}}
-        <div id="start-box" class="def-container">
-            <div id="start-header">
-                <h2>Create a New Discussion</h2>
+    <main>
+        <div id="createpost-box">
+            <div id="start-box" class="def-container">
+                <div class="create-container">
+                    <h2>Create a New Discussion</h2>
+                </div>
+                    <div>
+                        <form>
+                        <label for="title">Title</label><br>
+                        <input type="text" id="input-title" name="title" required>
+                    </div>
+                    <div>
+                    <label for="discussion">Content</label><br>
+                    <textarea id="input-content" required></textarea>
+                    </div>
+                    <div>
+                        <select id="filter" name="filter">
+                            <option value="FAQs">FAQs</option>
+                            <option value="Off-Topic Chatter">Off-Topic Chatter</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Member Spotlight">Member Spotlight</option>
+                            <option value="Introductions">Introductions</option>
+                            <option value="Announcements">Announcements</option>
+                            <option value="Showcase">Showcase</option>
+                            <option value="Jobs">Jobs</option>
+                        </select>
+                    </div>
+                    <a href="newsfeed.html">
+                    <button id="create-button" class="button-primary">Create Discussion</button>
+                    </a>
+                </form>
             </div>
-            
-            <div id="start-form">
-            <form id ="start-form">
-                <p class="text-error"></p>
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title">
+            <div id="rules-box" class="def-container">
+                <div id="rules-header">
+                    <div><img src="images/design/poro-big.png" class="logo-pos"/></div>
+                    <div class="pos"><span id="text-title">Posting to Porum</span></div>
                 </div>
-                <div>
-                    <label for="content">Content</label>
-                    <textarea id="content" name="content"></textarea>
+                <hr class="line-separator">
+                <div id="text-format" class="rules">
+                    <div>1. Remember the human<hr class="line-separator"></div>
+                    <div>2. Behave like you would in real life<hr class="line-separator"></div>
+                    <div>3. Look for the original source of content<hr class="line-separator"></div>
+                    <div>4. Search for duplicates before posting<hr class="line-separator"></div>
+                    <div>5. Read the community’s rules<hr class="line-separator"></div>
                 </div>
-                <div>
-                    <label for="topic">Topic</label>
-                    <select id="topic" name="topic">
-                        <option value="FAQs">FAQs</option>
-                        <option value="Off-Topic Chatter">Off-Topic Chatter</option>
-                        <option value="Feedback">Feedback</option>
-                        <option value="Member Spotlight">Member Spotlight</option>
-                        <option value="Introductions">Introductions</option>
-                        <option value="Announcements">Announcements</option>
-                        <option value="Showcase">Showcase</option>
-                        <option value="Jobs">Jobs</option>
-                    </select>
-                </div>
-                <button id="create" class="button-primary">Create Discussion</button>
-            </form>
             </div>
-            
         </div>
+    </main>
