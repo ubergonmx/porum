@@ -1,51 +1,51 @@
 {{>header}}
-    <main>
-        <div id="createpost-box">
-            <div id="start-box" class="def-container">
-                <div class="create-container">
-                    <h2>Edit Discussion</h2>
+<main>
+    <div id="createpost-box">
+        <div id="start-box" class="def-container">
+            <div class="create-container">
+                <h2>Edit Discussion</h2>
+            </div>
+            <form id = "editDiscussionForm">
+                <div>
+                    <label for="title">Title</label><br>
+                    <input type="text" id="input-title" name="title" value="{{this.postTitle}}" >
                 </div>
-                    <form id = "editDiscussionForm">
-                    <div>
-                        <label for="title">Title</label><br>
-                        <input type="text" id="input-title" name="title" value="{{this.postTitle}}" >
-                    </div>
-                    <div>
+                <div>
                     <label for="discussion">Content</label><br>
                     <textarea id="input-content" >{{this.content}}</textarea>
-                    </div>
-                    <div>
-                        <select id="filter" name="filter">
-                            <option value="none">
-                                {{this.tag}}
-                            </option>
-                            <option value="FAQs">FAQs</option>
-                            <option value="Off-Topic Chatter">Off-Topic Chatter</option>
-                            <option value="Feedback">Feedback</option>
-                            <option value="Member Spotlight">Member Spotlight</option>
-                            <option value="Introductions">Introductions</option>
-                            <option value="Announcements">Announcements</option>
-                            <option value="Showcase">Showcase</option>
-                            <option value="Jobs">Jobs</option>
-                        </select>
-                    </div>
+                </div>
+                <div>
+                    <select id="filter" name="filter">
+                        <option value="none">
+                            {{this.tag}}
+                        </option>
+                        <option value="FAQs">FAQs</option>
+                        <option value="Off-Topic Chatter">Off-Topic Chatter</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Member Spotlight">Member Spotlight</option>
+                        <option value="Introductions">Introductions</option>
+                        <option value="Announcements">Announcements</option>
+                        <option value="Showcase">Showcase</option>
+                        <option value="Jobs">Jobs</option>
+                    </select>
+                </div>
                     <button id="create-button" class="button-primary">Create Discussion</button>
-                    </a>
-                </form>
+                </a>
+            </form>
+        </div>
+        <div id="rules-box" class="def-container">
+            <div id="rules-header">
+                <div><img src="images/design/poro-big.png" class="logo-pos"/></div>
+                <div class="pos"><span id="text-title">Posting to Porum</span></div>
             </div>
-            <div id="rules-box" class="def-container">
-                <div id="rules-header">
-                    <div><img src="images/design/poro-big.png" class="logo-pos"/></div>
-                    <div class="pos"><span id="text-title">Posting to Porum</span></div>
-                </div>
                 <hr class="line-separator">
-                <div id="text-format" class="rules">
-                    <div>1. Remember the human<hr class="line-separator"></div>
-                    <div>2. Behave like you would in real life<hr class="line-separator"></div>
-                    <div>3. Look for the original source of content<hr class="line-separator"></div>
-                    <div>4. Search for duplicates before posting<hr class="line-separator"></div>
-                    <div>5. Read the community’s rules<hr class="line-separator"></div>
-                </div>
+            <div id="text-format" class="rules">
+                <div>1. Remember the human<hr class="line-separator"></div>
+                <div>2. Behave like you would in real life<hr class="line-separator"></div>
+                <div>3. Look for the original source of content<hr class="line-separator"></div>
+                <div>4. Search for duplicates before posting<hr class="line-separator"></div>
+                <div>5. Read the community’s rules<hr class="line-separator"></div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
