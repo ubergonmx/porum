@@ -1,15 +1,7 @@
-const tags = [
-    {name: "FAQ's", color: "orange"},
-    {name: "Off-Topic Chatter", color: "green"},
-    {name: "Feedback", color: "purple"},
-    {name: "Member Spotlight", color: "red"},
-    {name: "Introductions", color: "blue"},
-    {name: "Announcements", color: "pink"},
-    {name: "Showcase", color: "gray"},
-    {name: "Jobs", color: "brown"},
-];
+
 window.addEventListener("load", function(e){
-    const userId = document.querySelector("#profile-container").getAttribute("data-id");
+    e.preventDefault();
+    const userId = this.document.querySelector("profile-container").getAttribute("data-id");
     const title = this.document.querySelector("#title");
     const content = this.document.querySelector("#content");
     const create = this.document.querySelector("#create");
@@ -28,24 +20,32 @@ window.addEventListener("load", function(e){
             showError(error, "Please fill out all fields.", emptyFields);
             return;
         }
-        if(!title.value.match(titleRegex)){
-            showError(error, "Please enter a valid title.",[title]);
-            return;
-        }
-        this.fetch("/discussion/", {
+        // if(!title.value.match(titleRegex)){
+        //     showError(error, "Please enter a valid title.",[title]);
+        //     return;
+        // }
+
+        // const formData = new FormData(this.document.querySelector("#startdiscussionForm"));
+
+        this.fetch("/discussions/",
+        {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                userId: userId,//pending,
+                userId: userId,
                 title: title.value,
                 content: content.value,
                 tag: tags[filter.selectedIndex]
             })
-        }).then(res => {
-            
-        }).catch(err => console.log(err));
-        this.window.location.href = "home";
+        }).then(res =>{
+            if(res.status >= 400){
+                showError(error, "Invalid title or content", fields);
+                return;
+            }
+            else if(res.status==200)
+                this.window.location.href = "home";
+        })
     });
 });
