@@ -8,6 +8,10 @@ hr{
     width: 50vw;
 }
 
+#startdiscussionForm{
+    position:relative;
+}
+
 #start-box{
     max-width:1000px;
     width: 35vw;
@@ -19,7 +23,7 @@ hr{
 }
 
 .text-error {
-    top: 5px;
+    top: 3px;
     position: absolute;
 }
 
