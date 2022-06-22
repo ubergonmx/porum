@@ -1,0 +1,33 @@
+<div class="discussion-box" data-link="discussions/{{_id}}"> 
+    <div class="tag-container">
+        <p class="tag" data-tag-clr="{{tag.color}}" data-tag-type="sub">{{tag.name}}</p>
+    </div>
+    <div class="discussion">
+        <div>
+            <a href="users/{{userId}}" class="discussion-author"> 
+                <img src="{{author.profileImg}}" class="img-author">
+            </a>
+
+            <div class="discussion-body">
+                <h1 class="title">{{title}}</h1>
+                <p class="author-and-date">
+                    Posted by <span>{{author.username}}</span> &#8226; {{calcDate createdAt}}
+                </p>
+                <p class="content">
+                    {{content}}
+                </p>
+            </div>
+        </div>
+        <div class="discussion-footer">
+            <div class="commenters">                  
+                {{!discussion.commenters.length > limit ? '<img src="images/icon/more.png"class="commenter commenter-more"/>' : ''}  
+                ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')--}}
+            </div>
+
+            <div class="comment">
+                <i class="fa-regular fa-comment icon-comment"></i>
+                <span>{{!${discussion.comments_num} Comment${discussion.comments_num > 1 ? 's' : '' }--}}</span>
+            </div>   
+        </div>
+    </div>
+</div>

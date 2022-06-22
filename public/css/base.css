@@ -377,6 +377,7 @@ main {
     height:35px;
     width:35px;
     cursor: pointer;
+    object-fit: cover;
 }
 
 #icon-arrowdown {

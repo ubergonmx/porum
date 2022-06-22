@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 window.addEventListener("load", function(e){
     clear(notifDropdown);
-    loadNotifications(notifications);
+    //loadNotifications(notifications);
 });
 
 document.addEventListener("click", function(e){
@@ -43,7 +43,12 @@ document.addEventListener("click", function(e){
         window.location.href = "settings";
     }
     else if(e.target.closest("#logout-btn")){
-        window.location.href = "login";
+        fetch("/auth/logout", {method:"DELETE"}).then(res => {
+            if(res.status == 200){
+                window.location.href = "login";
+            }
+        });
+        
     }
     else if(e.target.closest("#icon-notification")){
         notifDropdown.classList.toggle("active");
@@ -190,8 +195,7 @@ function toggle(element, show=undefined, display=undefined){
     if(minute != 0)
         return `${minute} minute${minute > 1 ? 's': ''} ago`;
     
-    return `${month} second${year > 1 ? 's': ''} ago`;
-    monthDiff(d)
+    return `${second} second${year > 1 ? 's': ''} ago`;
 }
 /**
  * Returns the month difference

@@ -7,14 +7,17 @@ import exphbs from 'express-handlebars';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { expressCspHeader } from 'express-csp-header';
+import flash from 'express-flash';
+import session from 'express-session';
 // Database modules
 import mongoose from 'mongoose';
-import { connectToServer, changeDb }  from './db/conn.js';
+import { connectToServer }  from './db/conn.js';
 // Routers
 import baseRoute from './routes/base.js';
 import userRoute from './routes/users.js';
 import authRoute from './routes/auth.js';
 import discussionRoute from './routes/discussions.js';
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -47,6 +50,14 @@ app.use(expressCspHeader({
         'script-src': ["'self'", "https://kit.fontawesome.com/e5cabd2361.js"],    }
 }));
 
+// Use flash and session
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+}));
+
 // Assign routes
 app.use(baseRoute);
 app.use("/users",userRoute);
@@ -61,6 +72,7 @@ app.use((req, res, err) => {
     });
 });
 
+// Connect to MongoDB
 connectToServer( (err) => {
     if (err){
         console.error(err);
@@ -72,39 +84,4 @@ connectToServer( (err) => {
         console.log("Server now listening on port " + port);
     });
 });
-
-// Fake database (UPDATE!!!) - will now be removed
-// (UPDATE!!!) the user below will be converted to MongoDB operation
-// var db = [
-//     new user(
-//         "harry31",
-//         "harry.higgins@test.com",
-//         "asd123",
-//         "images/user/user1.jpg",
-//         new info(
-//             "Harry",
-//             "Higgins",
-//             new Date(2001, 2, 27),
-//         )
-//     )
-// ];
-
-// function user(username, email, password, imgSrc, info){
-//     return {
-//         username: username,
-//         email: email,
-//         password: password,
-//         imgSrc: imgSrc,
-//         info: info,
-//     }
-// }
-
-// function info(firstname, lastname, birthday=0, phoneNumber=0){
-//     return {
-//         firstname: firstname,
-//         lastname: lastname,
-//         birthday: birthday,
-//         phoneNumber: phoneNumber,
-//     }
-// }
 

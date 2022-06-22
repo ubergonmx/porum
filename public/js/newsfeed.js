@@ -31,7 +31,7 @@ window.addEventListener("load", function(e){
     container = document.querySelector("#discussion-container");
 
     toggle(loadMore);
-    loadDiscussions(discussions);
+    // loadDiscussions(discussions);
 
     const filter = document.querySelector("#filter");
     filter.addEventListener("change", (e)=>{
@@ -52,7 +52,8 @@ window.addEventListener("load", function(e){
 
     const newDiscussion = document.querySelector("#new-discussion");
     newDiscussion.addEventListener("click", () => {
-        window.location.href = "startdiscussion.html";
+        console.log("CLICKED NEW DISCUSSION");
+        window.location.href = "startdiscussion";
     });
 });
 

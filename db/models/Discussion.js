@@ -16,6 +16,20 @@ const DiscussionSchema = new mongoose.Schema({
         required: true,
         minlength: 1,
         maxlength: 5000,
+    },    
+    tag: {
+        name :{ 
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 50,
+        },
+        color: {
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 50
+        }
     },
     followers: {
         type: [String],
@@ -24,7 +38,7 @@ const DiscussionSchema = new mongoose.Schema({
     comments: {
         type: [String],
         default: [],
-    },
+    }
 },
 {timestamps: true}
 );

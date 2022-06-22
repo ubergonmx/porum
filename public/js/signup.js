@@ -1,6 +1,6 @@
 window.addEventListener("load", function(e){
     const userPic = this.document.querySelector("#user-pic");
-    const changePic = this.document.querySelector("#change-pic");
+    const profileImg = this.document.querySelector("#profile-img");
     const firstname = this.document.querySelector("#firstname");
     const lastname = this.document.querySelector("#lastname");
     const username = this.document.querySelector("#username");
@@ -12,6 +12,8 @@ window.addEventListener("load", function(e){
     let fields = [firstname,lastname,username,email,password,confirmPassword];
 
     createAcc.addEventListener("click", (e)=> {
+        e.preventDefault();
+        
         let emptyFields = [];
         for(const input of fields){
             if(isEmptyOrSpaces(input.value)){
@@ -27,18 +29,37 @@ window.addEventListener("load", function(e){
             return;
         }
         if(password.value.length < 5){
-            showError(error, "Password must be atleast 6 characters long.",[password]);
+            showError(error, "Password must be at least 6 characters long.",[password]);
             return;
         }
         if(password.value != confirmPassword.value){
             showError(error, "Password did not match.",[password, confirmPassword]);
             return;
-        }        
+        }
 
-        this.window.location.href = "profile";
+        const formData = new FormData(this.document.querySelector("#signup-form"));
+
+        this.fetch("/auth/signup", {
+            method: "POST",
+            body: formData
+        }).then(res => {
+            if(res.status == 200)
+                this.window.location.href = "login";
+            else
+                return res.json()
+        }).then(data => {
+            if(data.error){
+                let errorFields = [];
+                data.fields.forEach(field => {
+                    errorFields.push(document.querySelector(`#${field}`));
+                });
+                showError(error, data.error, errorFields);
+                return;
+            }
+        }).catch(err => console.log(err));
     });
 
-    changePic.addEventListener("change", ()=>{
-        userPic.src = URL.createObjectURL(changePic.files[0]);
+    profileImg.addEventListener("change", ()=>{
+        userPic.src = URL.createObjectURL(profileImg.files[0]);
     });
 });
