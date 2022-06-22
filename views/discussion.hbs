@@ -20,7 +20,11 @@
                 <div id="options">
                     <div id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{this.commentNo}} Comments</span></div>
                     <div id="share" class="text-clickable"><i class="fa-solid fa-share"></i><span id="share"> Share</span></div>
-                    <div id="follow" class="text-clickable"><i class="fa-solid fa-star"></i><span id="follow"> Follow</span></div>
+                    {{#if isCurrentUser}}
+                        <div id = "edit" class="text-clickable"><i class="fa-solid fa-pen-to-square"></i><span id="edit"> Edit</span></div>
+                    {{else}}
+                        <div id="follow" class="text-clickable"><i class="fa-solid fa-star"></i><span id="follow"> Follow</span></div>
+                    {{/if}}
                 </div>
             </div>
 
