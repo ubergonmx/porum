@@ -18,7 +18,10 @@ hr{
     text-align:center;
 }
 
-
+.text-error {
+    top: 5px;
+    position: absolute;
+}
 
 #createpost-box{
     display:flex;
@@ -101,7 +104,6 @@ hr{
     font-size:14px;
     margin-bottom:1vw;
     border-radius: 5px;
-    border: 1px solid var(--clr-gray);
 }
 
 #create-button{

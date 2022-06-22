@@ -1,15 +1,14 @@
-
 window.addEventListener("load", function(e){
-    e.preventDefault();
-    const userId = this.document.querySelector("profile-container").getAttribute("data-id");
-    const title = this.document.querySelector("#title");
-    const content = this.document.querySelector("#content");
-    const create = this.document.querySelector("#create");
+    const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
+    const title = this.document.querySelector("#input-title");
+    const content = this.document.querySelector("#input-content");
+    const create = this.document.querySelector("#create-button");
     const filter = this.document.querySelector("#filter");
     const error = this.document.querySelector(".text-error");
     let fields = [title, content];
 
     create.addEventListener("click", (e)=> {
+        e.preventDefault();
         let emptyFields = [];
         for(const input of fields){
             if(isEmptyOrSpaces(input.value)){
@@ -24,8 +23,6 @@ window.addEventListener("load", function(e){
         //     showError(error, "Please enter a valid title.",[title]);
         //     return;
         // }
-
-        // const formData = new FormData(this.document.querySelector("#startdiscussionForm"));
 
         this.fetch("/discussions/",
         {
