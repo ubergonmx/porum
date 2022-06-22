@@ -371,13 +371,20 @@ main {
     right: 5px;
 }
 
+#profile-pic,
+#user-pic,
+#icon-user,
+.img-author,
+.notif-commenter{
+    object-fit: cover;
+}
+
 #icon-user,
 .notif-commenter{
     border-radius: 100%;
     height:35px;
     width:35px;
     cursor: pointer;
-    object-fit: cover;
 }
 
 #icon-arrowdown {

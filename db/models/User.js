@@ -30,6 +30,10 @@ const UserSchema = new mongoose.Schema({
         min: 1,
         max: 50,
     },
+    bio: {
+        type: String,
+        default: "",
+    },
     birthday: {
         type: Date,
     },

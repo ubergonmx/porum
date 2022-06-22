@@ -55,6 +55,10 @@ const tags = [
     new tag("Jobs", "brown"),
 ];
 
+//tags as a list of objects
+
+
+
 //discussion is used as string for now
 var comments = [
     // Disc 1

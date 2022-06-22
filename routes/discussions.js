@@ -1,6 +1,7 @@
 import express from 'express';
 import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
+import { checkAuth } from './auth.js';
 
 const discussionRoute = express.Router();
 
@@ -67,15 +68,23 @@ discussionRoute.delete('/:id', async (req, res) => {
 });
 
 //GET
-discussionRoute.get('/:id', async (req, res) => {
-    try {
-        const discussion = await Discussion.findById(req.params.id);
-        res.status(200).json(discussion);
-    } catch (err) {
-        res.status(500).json(err);
-        return;
-    }
+discussionRoute.get('/:id', checkAuth, async (req, res) => {
+    // try {
+        const discussion = await Discussion.findById(req.params.id).lean();
+        res.render('discussion', {
+            title: discussion.title,
+            styles: ['discussion.css'],
+            scripts: ["data.js", "startdiscussion.js"],
+            discussion: discussion
+        });
+
+    // } catch (err) {
+    //     res.status(500).json(err);
+    //     return;
+    // }
 });
+
+
 
 //FOLLOW
 discussionRoute.put('/:id/follow', async (req, res) => {

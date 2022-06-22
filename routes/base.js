@@ -20,8 +20,14 @@ baseRoute.get('/newsfeed', (req, res) => {
 baseRoute.get('/home', checkAuth, async (req, res) => {
     const discussions = await Discussion.find({}).lean();
     for(var discussion of discussions){
-        discussion.author = await User.findOne({ _id: discussion.userId }).lean();
+        discussion.author = await User.findOne({ _id: discussion.userId }).select("username profileImg").lean();
+        var commenters = {};
+        for(var comment of discussion.comments){
+            comment.author = await User.findOne({ _id: comment.userId }).select("username profileImg").lean();
+        }
+        console.log(discussion);
     }
+    
     res.render('index', {
         title: 'Home',
         styles: ['newsfeed.css'],
@@ -40,12 +46,19 @@ baseRoute.get('/login', checkNoAuth, (req, res) => {
     });
 });
 
-baseRoute.get('/profile', checkAuth, (req, res) => {
+baseRoute.get('/profile', checkAuth, async(req, res) => {
+    const discussions = await Discussion.find({ userId: req.session.user._id }).lean();
+
     res.render('user', {
-        title: 'Profile - Porum',
+        title: 'Profile',
         styles: ['profile.css'],
         scripts: ['profile.js', 'data.js'],
-        user: req.session.user
+        user: req.session.user,
+        discussions: discussions,
+        isCurrentUser: true,
+        helpers: {
+            calcDate,
+        }
     });
 });
 
@@ -60,23 +73,15 @@ baseRoute.get('/settings', checkAuth, (req, res) => {
 
 baseRoute.get('/signup', checkNoAuth, (req, res) => {
     res.render('signup', {
-        title: 'Create an Account - Porum',
+        title: 'Create an Account',
         styles: ['signup.css'],
         scripts: ["signup.js"]
     });
 });
 
-baseRoute.get('/discussion', checkAuth, (req, res) => {
-    res.render('discussion', {
-        title: 'Porum',
-        styles: ['discussion.css'],
-        scripts: ["data.js", "startdiscussion.js"]
-    });
-});
-
 baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
     res.render('startdiscussion', {
-        title: 'Start a discussion - Porum',
+        title: 'Start a discussion',
         styles: ['startdiscussion.css'],
         scripts: ["data.js", "startdiscussion.js"]
     });
@@ -84,7 +89,7 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
 
 baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
     res.render('editdiscussion', {
-        title: 'Edit Discussion - Porum',
+        title: 'Edit Discussion',
         styles: ['startdiscussion.css'],
         scripts: ["data.js", "startdiscussion.js"]
     });
@@ -92,7 +97,7 @@ baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
 
 baseRoute.get('/forgotpassword', checkNoAuth, (req, res) => {
     res.render('forgotpassword', {
-        title: 'Forgot Password - Porum',
+        title: 'Forgot Password',
         styles: ['login.css'],
         scripts: ["forgotpassword.js"]
     });
