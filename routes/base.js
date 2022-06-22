@@ -104,6 +104,14 @@ baseRoute.get('/forgotpassword', checkNoAuth, (req, res) => {
         scripts: ["forgotpassword.js"]
     });
 });
+
+baseRoute.get('/discussion', checkAuth, (req, res) => {
+    res.render('discussion', {
+        title: 'Porum',
+        styles: ['startdiscussion.css'],
+        scripts: ["startdiscussion.js"]
+    });
+});
 /**
  * This calculates the time difference between the actual date posted and today
  * @param  {Date} datePosted
