@@ -2,6 +2,7 @@
     <div class="tag-container">
         <p class="tag" data-tag-clr="{{tag.color}}" data-tag-type="sub">{{tag.name}}</p>
     </div>
+
     <div class="discussion">
         <div>
             <a href="users/{{userId}}" class="discussion-author"> 
@@ -11,11 +12,9 @@
             <div class="discussion-body">
                 <h1 class="title">{{title}}</h1>
                 <p class="author-and-date">
-                    Posted by <span>{{author.username}}</span> &#8226; {{calcDate createdAt}}
-                </p>
+                    Posted by <span>{{author.username}}</span> &#8226; {{calcDate createdAt}}</p>
                 <p class="content">
-                    {{content}}
-                </p>
+                    {{content}}</p>
             </div>
         </div>
         <div class="discussion-footer">
