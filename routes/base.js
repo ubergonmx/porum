@@ -83,7 +83,8 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
     res.render('startdiscussion', {
         title: 'Start a discussion',
         styles: ['startdiscussion.css'],
-        scripts: ["data.js", "startdiscussion.js"]
+        scripts: ["data.js", "startdiscussion.js"],
+        user: req.session.user,
     });
 });
 
@@ -91,7 +92,8 @@ baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
     res.render('editdiscussion', {
         title: 'Edit Discussion',
         styles: ['startdiscussion.css'],
-        scripts: ["data.js", "startdiscussion.js"]
+        scripts: ["data.js", "startdiscussion.js"],
+        user: req.session.user,
     });
 });
 
