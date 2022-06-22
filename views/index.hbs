@@ -1,51 +1,51 @@
 {{>header}}
 <main>
-        <section>
-            <div id="discussion-header">
-                <select id="filter" name="filter">
-                    <option value="Latest first">Latest first</option>
-                    <option value="Oldest first">Oldest first</option>
-                </select>
-                <div id="mark-read"> 
-                    <i class="fa-solid fa-list-check icon-mark-read"></i>
-                    Mark all as read
+    <section>
+        <div id="discussion-header">
+            <select id="filter" name="filter">
+                <option value="Latest first">Latest first</option>
+                <option value="Oldest first">Oldest first</option>
+            </select>
+            <div id="mark-read"> 
+                <i class="fa-solid fa-list-check icon-mark-read"></i>
+                Mark all as read
+            </div>
+        </div>
+        <div id="discussion-container">
+            {{#if discussions.length}}
+                {{#each discussions}}
+                    {{> discussion}}
+                {{/each}}
+            {{else}}
+                <div id="scaffold">
+                    <img src="images/design/404.png">
+                    <h1 id="text-title">No discussions yet</h1>
                 </div>
-            </div>
-            <div id="discussion-container">
-                {{#if discussions.length}}
-                    {{#each discussions}}
-                        {{> discussion}}
-                    {{/each}}
-                {{else}}
-                    <div id="scaffold">
-                        <img src="images/design/404.png">
-                        <h1 id="text-title">No discussions yet</h1>
-                    </div>
-                {{/if}}
-            </div>
-            <button id="load-more-discussion" class="button-secondary">
-                Load more...
-            </button>
-        </section>
-        
-        <aside>
-            <button id="new-discussion" class="button-primary">Start New Discussion</button>
-            <div id="all-discussion" class="text-active">
-                <span> <i class="fa-regular fa-message icon-discussion fa-lg"></i>All Discussion</span>
-            </div>
-            <div id="following">
-                <span> <i class="fa-regular fa-star icon-following fa-lg"></i>Following</span>
-            </div>
-            <div id="line"></div>
-            <div id="category-container">
-                <p class="tag" data-tag-clr="orange" data-tag-type="main">FAQ's</p>
-                <p class="tag" data-tag-clr="green" data-tag-type="main">Off-Topic Chatter</p>
-                <p class="tag" data-tag-clr="purple" data-tag-type="main">Feedback</p>
-                <p class="tag" data-tag-clr="red" data-tag-type="main">Member Spotlight</p>
-                <p class="tag" data-tag-clr="blue" data-tag-type="main">Introductions</p>
-                <p class="tag" data-tag-clr="pink" data-tag-type="main">Announcements</p>
-                <p class="tag" data-tag-clr="gray" data-tag-type="main">Showcase</p>
-                <p class="tag" data-tag-clr="brown" data-tag-type="main">Jobs</p>
-            </div>
-        </aside>
-    </main>
+            {{/if}}
+        </div>
+        <button id="load-more-discussion" class="button-secondary">
+            Load more...
+        </button>
+    </section>
+    
+    <aside>
+        <button id="new-discussion" class="button-primary">Start New Discussion</button>
+        <div id="all-discussion" class="text-active">
+            <span> <i class="fa-regular fa-message icon-discussion fa-lg"></i>All Discussion</span>
+        </div>
+        <div id="following">
+            <span> <i class="fa-regular fa-star icon-following fa-lg"></i>Following</span>
+        </div>
+        <div id="line"></div>
+        <div id="category-container">
+            <p class="tag" data-tag-clr="orange" data-tag-type="main">FAQ's</p>
+            <p class="tag" data-tag-clr="green" data-tag-type="main">Off-Topic Chatter</p>
+            <p class="tag" data-tag-clr="purple" data-tag-type="main">Feedback</p>
+            <p class="tag" data-tag-clr="red" data-tag-type="main">Member Spotlight</p>
+            <p class="tag" data-tag-clr="blue" data-tag-type="main">Introductions</p>
+            <p class="tag" data-tag-clr="pink" data-tag-type="main">Announcements</p>
+            <p class="tag" data-tag-clr="gray" data-tag-type="main">Showcase</p>
+            <p class="tag" data-tag-clr="brown" data-tag-type="main">Jobs</p>
+        </div>
+    </aside>
+</main>

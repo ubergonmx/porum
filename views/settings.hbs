@@ -1,54 +1,52 @@
 {{>header}}
 <main>
-        <div id="settings-box" class="def-container">
-            <div class="header-container">
+    <div id="settings-box" class="def-container">
+        <div class="header-container">
             <h2>Change / Add Information</h2>
+        </div>
+        <div class="div-format">
+            <div>
+                <label for="picture">Change Profile Photo</label><br>
+                <img id="profile-pic" src="images/users/{{this.user}}.jpg"><br>
+                <button id="change-button" class="button-primary">Add New Profile Picture</button>
             </div>
-            <div class="div-format">
-                <div>
-                    <label for="picture">Change Profile Photo</label><br>
-                    <img id="profile-pic" src="images/users/{{this.user}}.jpg"><br>
-                    <button id="change-button" class="button-primary">Add New Profile Picture</button>
-                </div>
-                <div>
-                    <label for="picture">Change Cover Photo</label><br>
-                    <img id="cover-photo" src="images/design/{{this.user}}.jpg"><br>
-                    <button id="change-button" class="button-primary">Add New Cover Photo</button>
-                </div>
+            <div>
+                <label for="picture">Change Cover Photo</label><br>
+                <img id="cover-photo" src="images/design/{{this.user}}.jpg"><br>
+                <button id="change-button" class="button-primary">Add New Cover Photo</button>
             </div>
+        </div>
             <label for="username">Change Username</label>
             <input type="name" id="username" name="username" class="input1">
             <label for="birthday">Add Birthday</label>
             <input type="date" id="birthday" name="birthday" class="input1">
             <label for="telephone-no">Add Phone Number</label>
             <input type="tel" id="telephone-no" name="telephone-no" class="input1">
-            <div class="div-format">
-                <div>
-                    <label for="password">Change Password</label><br>
-                    <input type="password" id="password" name="password">
-                </div>
-                <div>
-                    <label for="confirmpassword">Confirm Password</label><br>
-                    <input type="password" id="confirmpassword" name="confirmpassword">
-                </div>
+        <div class="div-format">
+            <div>
+                <label for="password">Change Password</label><br>
+                <input type="password" id="password" name="password">
             </div>
-                <div class="header-container">
+            <div>
+                <label for="confirmpassword">Confirm Password</label><br>
+                <input type="password" id="confirmpassword" name="confirmpassword">
+            </div>
+        </div>
+            <div class="header-container">
                 <h2>Privacy Settings</h2>
-                </div>
-             
-            <div class="div-format">
-                <form = "settingsForm">
-                    <div>
+            </div>
+        <div class="div-format">
+            <form = "settingsForm">
+                <div>
                     <input type="checkbox" id="enable-birthday" name="enable-birthday" value="enable-birthday">
                     <label for="enable-birthday"> Display Birthday</label>
-                    </div>
-
-                    <div>
+                </div>
+                <div>
                     <input type="checkbox" id="enable-number" name="enable-number" value="enable-number">
                     <label for="enable-number"> Display Phone Number</label>
-                    </div>
-                </form>
-            </div>
-            <button id="save-button" class="button-primary">Save Changes</button>
+                </div>
+            </form>
         </div>
-    </main>
+            <button id="save-button" class="button-primary">Save Changes</button>
+    </div>
+</main>
