@@ -1,45 +1,44 @@
 <header>
-        <!-- Logo -->
-        <a href="/" id="main-logo">
-            <img src="images/design/logo.png" id="icon-logo"/>
-            <p id="main-title">Porum</p>
-        </a>
+    <!-- Logo -->
+    <a href="/" id="main-logo">
+        <img src="images/design/logo.png" id="icon-logo"/>
+        <p id="main-title">Porum</p>
+    </a>
 
-        <!-- Search bar -->
-        <div id="search-container">
-            <form id="search-form" action="#" method="GET">
-                <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
-                <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
-                <input type="submit" hidden />
-            </form>
-        </div>
+    <!-- Search bar -->
+    <div id="search-container">
+        <form id="search-form" action="#" method="GET">
+            <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+            <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+            <input type="submit" hidden />
+        </form>
+    </div>
 
-        <!-- Notification and Profile -->
-        <div>
-            <!-- Notif icon -->
-            <div id="notification-container" class="has-notification">
-                <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
-                <div id="notification-dropdown" class="dropdown">
-                    {{#if notifications}}
-                    {{#each notifications}}
-                        {{>notification}}
-                    {{/each}}
-                    {{else}}
-                        <p>No notifications to show...</p>
-                    {{/if}}
-                </div>
-            </div>
-
-            <!-- Profile -->
-            <div id="profile-container" data-id="{{user._id}}">
-                <img src="{{user.profileImg}}" id="icon-user">
-
-                <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
-                <div id="profile-dropdown" class="dropdown">
-                    <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
-                    <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
-                    <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
-                </div>
+    <!-- Notification and Profile -->
+    <div>
+        <!-- Notif icon -->
+        <div id="notification-container" class="has-notification">
+            <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+            <div id="notification-dropdown" class="dropdown">
+                {{#if notifications}}
+                {{#each notifications}}
+                    {{>notification}}
+                {{/each}}
+                {{else}}
+                    <p>No notifications to show...</p>
+                {{/if}}
             </div>
         </div>
+
+        <!-- Profile -->
+        <div id="profile-container" data-id="{{user._id}}">
+            <img src="{{user.profileImg}}" id="icon-user">
+            <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+            <div id="profile-dropdown" class="dropdown">
+                <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
+                <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
+                <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+            </div>
+        </div>
+    </div>
 </header>

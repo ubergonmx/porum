@@ -17,6 +17,8 @@ import baseRoute from './routes/base.js';
 import userRoute from './routes/users.js';
 import authRoute from './routes/auth.js';
 import discussionRoute from './routes/discussions.js';
+// Generate sample data
+import { generateData } from './db/sample.js';
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -85,3 +87,7 @@ connectToServer( (err) => {
     });
 });
 
+// Populate database with sample data
+// if (process.env.NODE_ENV === "development") {
+//     generateData();
+// }

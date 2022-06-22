@@ -44,7 +44,7 @@ function notification (type, commenter){
     };
 }
 
-const tags = [
+export const tags = [
     new tag("FAQ's", "orange"), 
     new tag("Off-Topic Chatter", "green"), 
     new tag("Feedback", "purple"), 
@@ -54,8 +54,6 @@ const tags = [
     new tag("Showcase", "gray"), 
     new tag("Jobs", "brown"),
 ];
-
-//tags as a list of objects
 
 
 
