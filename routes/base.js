@@ -22,9 +22,9 @@ baseRoute.get('/home', checkAuth, async (req, res) => {
     const discussions = await Discussion.find({}).lean();
     for(var discussion of discussions){
         discussion.author = await User.findOne({ _id: discussion.userId }).select("username profileImg").lean();
-        for(var comment of discussion.comments){
-            comment.author = await User.findOne({ _id: comment.userId }).select("username profileImg").lean();
-        }
+        // for(var comment of discussion.comments){
+        //     comment.author = await User.findOne({ _id: comment.userId }).select("username profileImg").lean();
+        // }
         //console.log(discussion);
     }
     

@@ -1,9 +1,10 @@
 <div id="comments-box" class="def-container">
-    <div><a href="/user/{{this.id}}"><img src={{this.profileImg}} class="commenter-pic"></a></div>
+    <div><a href="/user/{{author._id}}"><img src="../{{author.profileImg}}" class="commenter-pic"></a></div>
     <div>
         <p class="comments">
-            <span class="commenter-user">{{this.username}}</span> 
-            <span class="commenter-date">{{this.date}} </span><br>
-            {{this.comment}} </p>
+            <span class="commenter-user">{{author.username}}</span> 
+            <span class="commenter-date">{{formatDate updatedAt}}{{#if edited}}(Edited){{/if}}</span><br>
+            {{{content}}} 
+        </p>
     </div>
 </div>

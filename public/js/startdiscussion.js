@@ -1,3 +1,14 @@
+const tags = [
+    {name: "FAQ's", color: "orange"},
+    {name: "Off-Topic Chatter", color: "green"},
+    {name: "Feedback", color: "purple"},
+    {name: "Member Spotlight", color: "red"},
+    {name: "Introductions", color: "blue"},
+    {name: "Announcements", color: "pink"},
+    {name: "Showcase", color: "gray"},
+    {name: "Jobs", color: "brown"},
+]
+
 window.addEventListener("load", function(e){
     const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
     const title = this.document.querySelector("#input-title");
