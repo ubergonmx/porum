@@ -4,7 +4,7 @@ import User from './models/User.js';
 import Comment from "./models/Comment.js";
 import { tags } from './data.js';
 
-export function generateData(){
+export async function generateData(){
     const initialUsers = [
         new User({
             username: "harry31",
@@ -234,26 +234,41 @@ export function generateData(){
 
     var initialComments = [ initialComments1, initialComments2, initialComments3, initialComments4, initialComments5 ];
     
-    var sampleUsers= [];
-    for(var user of initialUsers){
-        new User(user).save();
-    }
-    console.log(sampleUsers);
-    var counter = 0;
-    for(var user of sampleUsers){
-        initialDiscussions[counter].userId = user.id;
-        new Discussion(initialDiscussions[counter++]).save();
-    }
-
-    var sampleDiscussions = Discussion.find({}).lean();
-    counter = 0;
-    for(var discussion of sampleDiscussions){
-        console.log(discussion);
-        for(var comment of initialComments[counter++]){
-            comment.userId = sampleUsers[comment.user]._id;
-            comment.discussionId = discussion._id;
-            delete comment.user;
-            new Comment(comment).save();
+    
+    try{
+        var sampleUsers = await User.find({}).lean();
+        if(sampleUsers.length === 0){
+            for(var user of initialUsers){
+                await new User(user).save();
+            }
         }
+        sampleUsers = await User.find({}).lean();
+        var sampleDiscussions = await Discussion.find({}).lean();
+        var counter = 0;
+        if(sampleDiscussions.length === 0){
+            for(var user of sampleUsers){
+                initialDiscussions[counter].userId = user._id;
+                await new Discussion(initialDiscussions[counter++]).save();
+            }
+        }
+
+        sampleDiscussions = await Discussion.find({}).lean();
+        counter = 0;
+        var sampleComments = await Comment.find({}).lean();
+        if(sampleComments.length === 0){
+            for(var discussion of sampleDiscussions){
+                console.log(discussion);
+                for(var comment of initialComments[counter++]){
+                    comment.userId = sampleUsers[comment.user]._id;
+                    comment.discussionId = discussion._id;
+                    delete comment.user;
+                    await new Comment(comment).save();
+                    let commentMongo = await Comment.findOne({userId: `${comment.userId}`, discussionId: `${comment.discussionId}`}).lean();
+                    await Discussion.findById(discussion._id).updateOne({ $push: { comments: commentMongo._id } })
+                }
+            }
+        }
+    }catch(error){
+        console.log(error);
     }
 }

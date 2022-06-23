@@ -40,6 +40,7 @@ discussionRoute.put('/:id', async (req, res) => {
     try{
         const discussion = await Discussion.findById(req.params.id);
         if(discussion.userId === req.body.userId || req.body.isAdmin){
+            req.body.editedAt = new Date();
             await discussion.updateOne(req.body);
             res.status(200).json("Discussion updated");
         }
@@ -74,12 +75,13 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
     try {
         const discussion = await Discussion.findById(req.params.id).lean();
         discussion.author = await User.findById(discussion.userId).select("username profileImg").lean();
-        discussion.edited = (discussion.createdAt === discussion.updatedAt) ? false : true;
+        discussion.edited = (discussion.editedAt == null) ? false : true;
         
         const comments = await Comment.find({ discussionId: req.params.id }).lean();
         for(var comment of comments){
             comment.author = await User.findById(comment.userId).select("username profileImg").lean();
             comment.isCurrentUser = req.session.user._id.toString() === comment.userId.toString();
+            comment.edited = (comment.editedAt == null) ? false : true;
         }
         
         let numOfComments = discussion.comments.length;
@@ -181,6 +183,7 @@ discussionRoute.put("/:id/comment/:commentId", async (req, res) => {
     try {
         const comment = await Comment.findById(req.params.commentId);
         if(comment.userId === req.body.userId || req.body.isAdmin){
+            req.body.editedAt = new Date();
             await comment.updateOne(req.body);
             res.status(200).json("Comment updated");
         }            

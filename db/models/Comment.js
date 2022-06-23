@@ -15,6 +15,10 @@ const CommentSchema = new mongoose.Schema({
         minlength: 1,
         maxlength: 5000,
     },
+    editedAt: {
+        type: Date,
+        default: null,
+    }
 },
 {timestamps: true}
 );

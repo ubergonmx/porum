@@ -13,7 +13,7 @@
                     <div>
                         <h1 id="title-text">{{title}}</h1>
                         <span id="username-text">{{discussion.author.username}}</span>
-                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.updatedAt}}{{/if}}</span>
+                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.editedAt}}{{/if}}</span>
                     </div>
                 </div>
             </div>

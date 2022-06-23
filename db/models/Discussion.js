@@ -9,7 +9,7 @@ const DiscussionSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 1,
-        maxlength: 50,
+        maxlength: 150,
     },
     content: {
         type: String,
@@ -38,6 +38,10 @@ const DiscussionSchema = new mongoose.Schema({
     comments: {
         type: [String],
         default: [],
+    },
+    editedAt: {
+        type: Date,
+        default: null,
     }
 },
 {timestamps: true}
