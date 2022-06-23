@@ -4,7 +4,7 @@
         <div id="discussion-content" class="def-container content-box" data-id="{{discussion._id}}">
             <div class = "content">
                 <div id="post-header">
-                    <a href="users/{{discussion.author._id}}">
+                    <a href="../users/{{discussion.author._id}}">
                         <img src="../{{discussion.author.profileImg}}" id="profile-pic">
                     </a>
                 </div>
@@ -40,12 +40,14 @@
             </div>
         </form>
 
-        {{#if comments}}
-        {{#each comments}}
-            {{>comment}}
-        {{/each}}
-        {{else}}
-            <p>No comments...</p>
-        {{/if}}
+        <div id="comment-content">
+            {{#if comments}}
+            {{#each comments}}
+                {{>comment}}
+            {{/each}}
+            {{else}}
+                <p>No comments...</p>
+            {{/if}}
+        </div>
     </div>
 </main>
