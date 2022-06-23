@@ -227,18 +227,28 @@ export function generateData(){
         },
     ];
 
-    var sampleUsers = [];
+    var initialComments = [ initialComments1, initialComments2, initialComments3, initialComments4, initialComments5 ];
     
+    var sampleUsers= [];
     for(var user of initialUsers){
-        sampleUsers.push(user.save());
+        new User(user).save();
     }
-    
-    var sampleDiscussions = [];
+    console.log(sampleUsers);
     var counter = 0;
     for(var user of sampleUsers){
-        initialDiscussions[counter].userId = user._id;
-        sampleDiscussions.push(new Discussion(initialDiscussions[counter++]).save());
+        initialDiscussions[counter].userId = user.id;
+        new Discussion(initialDiscussions[counter++]).save();
     }
 
-    
+    var sampleDiscussions = Discussion.find({}).lean();
+    counter = 0;
+    for(var discussion of sampleDiscussions){
+        console.log(discussion);
+        for(var comment of initialComments[counter++]){
+            comment.userId = sampleUsers[comment.user]._id;
+            comment.discussionId = discussion._id;
+            delete comment.user;
+            new Comment(comment).save();
+        }
+    }
 }

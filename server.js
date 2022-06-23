@@ -88,6 +88,6 @@ connectToServer( (err) => {
 });
 
 // Populate database with sample data
-// if (process.env.NODE_ENV === "development") {
-//     generateData();
-// }
+if (process.env.NODE_ENV === "development") {
+    generateData();
+}
