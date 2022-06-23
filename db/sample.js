@@ -16,7 +16,7 @@ export function generateData(){
             birthday: new Date(2001, 2, 27),
             phoneNumber: "09618294256",
             profileImg: "images/users/user1.jpg",
-            coverImg: "images/users/coverDefault.jpg",
+            coverImg: "images/users/cover1.jpg",
         }),
         new User({
             username: "sebby",
@@ -28,7 +28,7 @@ export function generateData(){
             birthday: new Date(2001, 4, 3),
             phoneNumber: "09663398043",
             profileImg: "images/users/userDefault.jpg",
-            coverImg: "images/users/coverDefault.jpg",
+            coverImg: "images/users/cover2.jpg",
         }),
         new User({
             username: "ackerman",
@@ -40,7 +40,7 @@ export function generateData(){
             birthday: new Date(2001, 8, 12),
             phoneNumber: "09564328971",
             profileImg: "images/users/user10.jpg",
-            coverImg: "images/users/coverDefault.jpg",
+            coverImg: "images/users/cover3.jpg",
         }),
         new User({
             username: "rena",
@@ -52,7 +52,7 @@ export function generateData(){
             birthday: new Date(2000, 0, 23),
             phoneNumber: "09562135684",
             profileImg: "images/users/user6.jpg",
-            coverImg: "images/users/coverDefault.jpg",
+            coverImg: "images/users/cover4.jpg",
         }),
         new User({
             username: "ferrari_von",
@@ -64,7 +64,7 @@ export function generateData(){
             birthday: new Date(1998, 7, 25),
             phoneNumber: "09355688953",
             profileImg: "images/users/user8.jpg",
-            coverImg: "images/users/coverDefault.jpg",
+            coverImg: "images/users/cover5.jpg",
         }),
     ];
 
