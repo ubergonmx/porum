@@ -2,7 +2,7 @@
     <div><a href="../users/{{author._id}}"><img src="../{{author.profileImg}}" class="commenter-pic"></a></div>
     <div>
         <p class="comments">
-            <span class="commenter-user">{{author.username}}</span> 
+            <a href="../users/{{author._id}}" class="commenter-user">{{author.username}}</a> 
             <span class="commenter-date">{{formatDate createdAt}} {{#if edited}}&bull; Edited on {{formatDate editedAt}}{{/if}}</span>
             {{#if isCurrentUser}}
                 <span class="commenter-edit text-clickable" style="margin-left: 5px"><i class="fa-solid fa-pen-to-square"></i></span>

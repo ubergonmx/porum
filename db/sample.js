@@ -36,10 +36,10 @@ export async function generateData(){
             firstname: "Rory",
             lastname: "Lorelai",
             email: "lorelairory@yahoo.com",
-            bio: "Hi! I am Rory Lorelai. I was born and raised in Thailand. I enjoy my neighborhood and I am a housewife with 2 loving children.",
+            bio: "Hi! I am Rory Lorelai. I was born and raised in Japan. I enjoy my neighborhood and I am a student currently finding a good university.",
             birthday: new Date(2001, 8, 12),
             phoneNumber: "09564328971",
-            profileImg: "images/users/user10.jpg",
+            profileImg: "images/users/user4.jpg",
             coverImg: "images/users/cover3.jpg",
         }),
         new User({
