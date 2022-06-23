@@ -1,6 +1,6 @@
 window.addEventListener("load", function(e){
     const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
-    const discussionId = this.document.querySelector("#discussion-content").getAttribute("data-id");
+    const discussionId = this.window.location.pathname.split("/")[2];
     const edit = this.document.querySelector("#edit");
     const comment = this.document.querySelector("#comment-input");
     const create = this.document.querySelector("#create-button");
@@ -34,11 +34,17 @@ window.addEventListener("load", function(e){
             })
         }).then(res =>{
             if(res.status >= 400){
-                showError(error, "Invalid title or content", fields);
+                showError(error, "Invalid content", fields);
                 return;
             }
             else if(res.status==200)
                 this.window.location.reload();
         })
     });
+
+    if(edit){
+        edit.addEventListener("click", (e)=> {
+            this.window.location.href = this.window.location.origin + "/editdiscussion/" + discussionId;
+        });
+    }
 });

@@ -1,4 +1,25 @@
 var container, scaffold, loadMore, tempSideFilter;
+var discussions = [];
+
+fetch("/discussions/all").then(res => res.json()).then(discussionArr => { 
+    for(const item of discussionArr){
+        const userObj = {};
+        fetch("/users/" + item.userId).then(res => res.json()).then(author => {
+            userObj.profile = author._id;
+            userObj.username = author.username;
+            userObj.imgSrc = author.profileImg;
+        });
+        discussions.push(new discussion(
+            item._id,
+            item.title,
+            userObj,
+            item.tag,
+            new Date(item.createdAt),
+            item.content,
+            item.comments.length,
+        ));
+    }
+});
 
 /**
  * @param  {string} id
@@ -10,7 +31,7 @@ var container, scaffold, loadMore, tempSideFilter;
  * @param  {int} comments_num
  * @param  {user[]} commenters
  */
-function discussion(id, title, author, tag, date, content, comments_num, commenters){
+function discussion(id, title, author, tag, date, content, comments_num){
     return {
         id: id,
         title: title,
@@ -19,7 +40,6 @@ function discussion(id, title, author, tag, date, content, comments_num, comment
         date: date,
         content: content,
         comments_num: comments_num,
-        commenters: commenters
     }
 }
 
@@ -119,14 +139,14 @@ function setSideFilter(element){
 function loadDiscussions(discussionArr){
     for(const discussion of discussionArr){
         let discussionHtml = 
-        `<div class="discussion-box" data-link="${discussion.id}"> 
+        `<div class="discussion-box" data-link="discussions/${discussion.id}"> 
             <div class="tag-container">
                 <p class="tag" data-tag-clr="${discussion.tag.color}" data-tag-type="sub">${discussion.tag.name}</p>
             </div>
             <div class="discussion">
                 <div>
-                    <a href="${discussion.author.profile}" class="discussion-author"> 
-                        <img src="${discussion.author.imgSrc}" class="img-author">
+                    <a href="users/${discussion.author.profile}" class="discussion-author"> 
+                        <img src="../${discussion.author.imgSrc}" class="img-author">
                     </a>
 
                     <div class="discussion-body">
@@ -141,8 +161,7 @@ function loadDiscussions(discussionArr){
                 </div>
                 <div class="discussion-footer">
                     <div class="commenters">                  
-                        ${discussion.commenters.length > limit ? '<img src="../images/icon/more.png"class="commenter commenter-more"/>' : ''}            
-                        ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')}
+                        
                     </div>
 
                     <div class="comment">
@@ -154,4 +173,6 @@ function loadDiscussions(discussionArr){
         </div>`;
         container.insertAdjacentHTML('beforeend', discussionHtml);
     }
+    // ${discussion.commenters.length > limit ? '<img src="../images/icon/more.png"class="commenter commenter-more"/>' : ''}
+    // ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')}
 }

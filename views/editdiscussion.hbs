@@ -6,30 +6,33 @@
                     <div class="create-container">
                         <h2>Edit Discussion</h2>
                     </div>
-                        <form id="edit-discussion-form">    
-                            <p class="text-error"></p>
+                    <form id="edit-discussion-form">    
+                        <p class="text-error"></p>
                         <div>
                             <label for="title">Title</label><br>
-                            <input type="text" id="edit-title" name="title" value="{{this.postTitle}}" >
+                            <input type="text" id="edit-title" name="title" value="{{discussion.title}}" >
                         </div>
                         <div>
                             <label for="discussion">Content</label><br>
-                            <textarea id="edit-content" >{{this.content}}</textarea>
+                            <textarea id="edit-content" >{{discussion.content}}</textarea>
                         </div>
-                            <div>
-                                <select id="edit-filter" name="filter">
-                                    <option value="FAQs">FAQs</option>
-                                    <option value="Off-Topic Chatter">Off-Topic Chatter</option>
-                                    <option value="Feedback">Feedback</option>
-                                    <option value="Member Spotlight">Member Spotlight</option>
-                                    <option value="Introductions">Introductions</option>
-                                    <option value="Announcements">Announcements</option>
-                                    <option value="Showcase">Showcase</option>
-                                    <option value="Jobs">Jobs</option>
-                                </select>
-                            </div>
+                        <div>
+                            <select id="filter" name="filter">
+                                <option value="FAQs">FAQs</option>
+                                <option value="Off-Topic Chatter">Off-Topic Chatter</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Member Spotlight">Member Spotlight</option>
+                                <option value="Introductions">Introductions</option>
+                                <option value="Announcements">Announcements</option>
+                                <option value="Showcase">Showcase</option>
+                                <option value="Jobs">Jobs</option>
+                            </select>
+                        </div>
+                        <div id="edit-discussion-buttons">
+                            <button id="delete-button" class="button-primary">Delete Discussion</button>
                             <button id="edit-button" class="button-primary">Save Changes</button>
-                        </form>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
