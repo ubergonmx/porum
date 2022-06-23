@@ -69,7 +69,8 @@ baseRoute.get('/settings', checkAuth, (req, res) => {
     res.render('settings', {
         title: 'Settings',
         styles: ['settings.css'],
-        scripts: ['settings.js']
+        scripts: ['settings.js'],
+        user: req.session.user
     });
 });
 

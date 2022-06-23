@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 window.addEventListener("load", function(e){
     const urls = [ '/login', '/signup', '/forgotpassword' ];
     if(!urls.includes(window.location.pathname)){
-        clear(notifDropdown);
+        //clear(notifDropdown);
         //loadNotifications(notifications);
     }
 });
