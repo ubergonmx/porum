@@ -30,7 +30,7 @@
                     {{/each}}
                 {{else}}
                     <div id="scaffold">
-                        <img src="images/design/404.png">
+                        <img src="../images/design/404.png">
                         <h1 id="text-title">No discussions yet</h1>
                     </div>
                 {{/if}}
@@ -41,8 +41,8 @@
     <aside>
         <div id="profile-box" class="def-container">
             <div id="profile-header">
-                <img id="cover-photo" src="{{user.coverImg}}">
-                <img id="profile-pic" src="{{user.profileImg}}">
+                <img id="cover-photo" src="../{{user.coverImg}}">
+                <img id="profile-pic" src="../{{user.profileImg}}">
                 {{#if isCurrentUser}}
                 <a href = "/settings">
                     <i class="fa-solid fa-gear settings-button"></i>

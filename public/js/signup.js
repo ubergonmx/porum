@@ -44,7 +44,7 @@ window.addEventListener("load", function(e){
             body: formData
         }).then(res => {
             if(res.status == 200)
-                this.window.location.href = "login";
+                this.window.location.href = window.location.origin + "/login";
             else
                 return res.json()
         }).then(data => {

@@ -42,7 +42,7 @@ window.addEventListener("load", function(e){
                 return;
             }
             else if(res.status==200)
-                this.window.location.href = "home";
+                this.window.location.href = window.location.origin + "/home";
         })
     });
 });

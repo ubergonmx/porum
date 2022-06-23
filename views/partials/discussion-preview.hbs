@@ -4,8 +4,8 @@
         <div class="discussion">
             <div class="discussion-body">
                 <h1 class="title">{{title}}</h1>
-                <p class="date">{{calcDate createdAt}}</p>
-                <p class="content">{{content}}</p>  
+                <p class="date">{{formatDate createdAt}}</p>
+                <p class="content">{{{truncate content 300 1}}}</p>  
             </div>
         </div>
     </div>

@@ -374,9 +374,15 @@ main {
 #profile-pic,
 #user-pic,
 #icon-user,
+#cover-photo,
 .img-author,
 .notif-commenter{
     object-fit: cover;
+}
+
+
+#cover-photo{
+    object-position: 50% 0%;
 }
 
 #icon-user,

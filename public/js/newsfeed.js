@@ -1,5 +1,4 @@
 var container, scaffold, loadMore, tempSideFilter;
-const limit = 4, contentLimit = 170;
 
 /**
  * @param  {string} id
@@ -53,7 +52,7 @@ window.addEventListener("load", function(e){
     const newDiscussion = document.querySelector("#new-discussion");
     newDiscussion.addEventListener("click", () => {
         console.log("CLICKED NEW DISCUSSION");
-        window.location.href = "startdiscussion";
+        window.location.href = window.location.origin + "/startdiscussion";
     });
 });
 
@@ -74,7 +73,7 @@ document.addEventListener("click", (e)=>{
         if(selected === undefined || selected.length == 0){
             container.innerHTML = 
             `<div id="scaffold">
-                <img src="images/design/404.png">
+                <img src="../images/design/404.png">
                 <h1 id="text-title">No discussions yet</h1>
             </div>`;
             // toggle(loadMore, 0);
@@ -142,7 +141,7 @@ function loadDiscussions(discussionArr){
                 </div>
                 <div class="discussion-footer">
                     <div class="commenters">                  
-                        ${discussion.commenters.length > limit ? '<img src="images/icon/more.png"class="commenter commenter-more"/>' : ''}            
+                        ${discussion.commenters.length > limit ? '<img src="../images/icon/more.png"class="commenter commenter-more"/>' : ''}            
                         ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')}
                     </div>
 

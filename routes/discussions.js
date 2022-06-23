@@ -1,7 +1,9 @@
 import express from 'express';
 import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
+import User from '../db/models/User.js';
 import { checkAuth } from './auth.js';
+import { formatDate } from './utils.js';
 
 const discussionRoute = express.Router();
 
@@ -69,19 +71,25 @@ discussionRoute.delete('/:id', async (req, res) => {
 
 //GET
 discussionRoute.get('/:id', checkAuth, async (req, res) => {
-    // try {
+    try {
         const discussion = await Discussion.findById(req.params.id).lean();
+        discussion.author = await User.findById(discussion.userId).select("username profileImg").lean();
+        const comments = await Comment.find({ discussionId: req.params.id }).lean();
+        console.log(discussion);
         res.render('discussion', {
             title: discussion.title,
             styles: ['discussion.css'],
-            scripts: ["data.js", "startdiscussion.js"],
-            discussion: discussion
+            scripts: ['discussion.js'],
+            user: req.session.user,
+            discussion: discussion,
+            comments: comments,
+            helpers: { formatDate }
         });
 
-    // } catch (err) {
-    //     res.status(500).json(err);
-    //     return;
-    // }
+    } catch (err) {
+        res.status(500).json(err);
+        return;
+    }
 });
 
 

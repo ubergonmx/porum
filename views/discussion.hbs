@@ -4,19 +4,20 @@
         <div id="content-box" class="def-container">
             <div class = "content">
             <div id="post-header">
-                <a href="/profile">
-                <img src="images/users/{{this.user}}.jpg" id="profile-pic"></a>
+                <a href="users/{{discussion.author._id}}">
+                    <img src="../{{discussion.author.profileImg}}" id="profile-pic">
+                </a>
             </div>
                 
             <div>
                 <div>
-                    <h1 id="title-text">{{this.title}}</h1></div>
-                    <span id="username-text">{{this.username}}</span>
-                    <span id="date-text"> &bull; {{this.date}}</span>
+                    <h1 id="title-text">{{title}}</h1></div>
+                    <span id="username-text">{{discussion.author.username}}</span>
+                    <span id="date-text"> &bull; {{formatDate discussion.createdAt}}</span>
                 </div>
             </div>
                 
-            <div><h3 id="content-text">{{this.content}}</h3></div>          
+            <div><h3 id="content-text">{{content}}</h3></div>          
             <div id="options">
                 <div id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{this.commentNo}} Comments</span></div>
                 <div id="share" class="text-clickable"><i class="fa-solid fa-share"></i><span id="share"> Share</span></div>

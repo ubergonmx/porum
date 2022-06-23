@@ -31,7 +31,7 @@ window.addEventListener("load", function(e){
                 return;
             }
             if(res.status == 200)
-                this.window.location.href = "home";
+                this.window.location.href = window.location.origin + "/home";
         }).catch(err => console.log(err))
     });
 });
