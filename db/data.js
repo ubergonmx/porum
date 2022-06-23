@@ -55,8 +55,6 @@ export const tags = [
     new tag("Jobs", "brown"),
 ];
 
-
-
 //discussion is used as string for now
 var comments = [
     // Disc 1

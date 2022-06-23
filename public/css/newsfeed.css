@@ -186,6 +186,11 @@ aside > * {
     background-color: var(--clr-tag-brown);
 }
 
+.discussion-body{
+    width: 41vw;
+    max-width: 525px;
+}
+
 .discussion-author{
     height: 50%;
     margin: 7px 10px 10px;

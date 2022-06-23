@@ -75,6 +75,11 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
         const discussion = await Discussion.findById(req.params.id).lean();
         discussion.author = await User.findById(discussion.userId).select("username profileImg").lean();
         const comments = await Comment.find({ discussionId: req.params.id }).lean();
+        for(var comment of comments){
+            comment.author = await User.findById(comment.userId).select("username profileImg").lean();
+            comment.edited = comment.createdAt === comment.updatedAt;
+
+        }
         console.log(discussion);
         res.render('discussion', {
             title: discussion.title,
