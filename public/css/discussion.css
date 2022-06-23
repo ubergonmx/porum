@@ -47,7 +47,7 @@ main{
     overflow: hidden;
 }
 
-#content-box{
+.content-box{
     display:flex;
     flex-direction:column;
     margin-right:10px;
@@ -111,13 +111,13 @@ main{
 }
 
 #create-button{
-    margin-top:25px;
     width:250px;
 }
 
 .comment-button{
-    display:flex;
+    display: flex;
     flex-direction: row-reverse;
-    margin-right: 21px;
-    margin-top: 0px;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
 }

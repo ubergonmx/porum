@@ -1,19 +1,20 @@
 {{>header}}
 <main>
     <div id="main-post" class="def-container">
-        <div id="content-box" class="def-container">
+        <div id="discussion-content" class="def-container content-box" data-id="{{discussion._id}}">
             <div class = "content">
-            <div id="post-header">
-                <a href="users/{{discussion.author._id}}">
-                    <img src="../{{discussion.author.profileImg}}" id="profile-pic">
-                </a>
-            </div>
+                <div id="post-header">
+                    <a href="users/{{discussion.author._id}}">
+                        <img src="../{{discussion.author.profileImg}}" id="profile-pic">
+                    </a>
+                </div>
                 
-            <div>
                 <div>
-                    <h1 id="title-text">{{title}}</h1></div>
-                    <span id="username-text">{{discussion.author.username}}</span>
-                    <span id="date-text"> &bull; {{formatDate discussion.createdAt}}</span>
+                    <div>
+                        <h1 id="title-text">{{title}}</h1>
+                        <span id="username-text">{{discussion.author.username}}</span>
+                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}}</span>
+                    </div>
                 </div>
             </div>
                 
@@ -31,12 +32,13 @@
 
 
         <!-- Text Box -->
-        <div id="content-box" class="def-container">
+        <form class="def-container content-box">
             <textarea type="text" id="comment-input" name="comment-input" class="comment-input"></textarea>
             <div class = "comment-button">
                 <button id="create-button" class="button-primary">Comment</button>
+                <p class="text-error"></p>
             </div>
-        </div>
+        </form>
 
         {{#if comments}}
         {{#each comments}}

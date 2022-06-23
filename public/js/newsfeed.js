@@ -29,7 +29,7 @@ window.addEventListener("load", function(e){
     loadMore = document.querySelector("#load-more-discussion");
     container = document.querySelector("#discussion-container");
 
-    toggle(loadMore);
+    // toggle(loadMore);
     // loadDiscussions(discussions);
 
     const filter = document.querySelector("#filter");

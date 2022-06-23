@@ -1,11 +1,11 @@
 window.addEventListener("load", function(e){
     const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
-    const discussionId = this.document.querySelector("#discussion-content").getAttribute("data-id");
-    const edit = this.document.querySelector("#edit");
-    const comment = this.document.querySelector("#comment-input");
+    const title = this.document.querySelector("#input-title");
+    const content = this.document.querySelector("#input-content");
     const create = this.document.querySelector("#create-button");
+    const filter = this.document.querySelector("#filter");
     const error = this.document.querySelector(".text-error");
-    let fields = [comment];
+    let fields = [title, content];
 
     create.addEventListener("click", (e)=> {
         e.preventDefault();
@@ -16,12 +16,15 @@ window.addEventListener("load", function(e){
             }
         }
         if(emptyFields.length > 0){
-            showError(error, "Please fill up the field", emptyFields);
+            showError(error, "Please fill out all fields.", emptyFields);
             return;
         }
-        //add minimum and maximum to comment
+        // if(!title.value.match(titleRegex)){
+        //     showError(error, "Please enter a valid title.",[title]);
+        //     return;
+        // }
 
-        this.fetch(`/discussions/${discussionId}/comment`,
+        this.fetch("/discussions/",
         {
             method: "POST",
             headers: {
@@ -29,8 +32,9 @@ window.addEventListener("load", function(e){
             },
             body: JSON.stringify({
                 userId: userId,
-                discussionId: discussionId,
-                content: comment.value
+                title: title.value,
+                content: content.value,
+                tag: tags[filter.selectedIndex]
             })
         }).then(res =>{
             if(res.status >= 400){
@@ -38,7 +42,7 @@ window.addEventListener("load", function(e){
                 return;
             }
             else if(res.status==200)
-                this.window.location.reload
+                this.window.location.href = window.location.origin + "/home";
         })
     });
 });

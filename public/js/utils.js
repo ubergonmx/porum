@@ -36,13 +36,16 @@ function showError(error, message, elements){
     }
     tempFields = elements.slice();
 
-    error.innerHTML = message;
-    error.classList.add("active");
+    if(error){
+        error.innerHTML = message;
+        error.classList.add("active");
+    }
     for(const input of elements){
         input.classList.add("error");
     }
     errorTimeout = setTimeout(() => { 
-        error.classList.remove("active");
+        if(error)
+            error.classList.remove("active");
         for(const input of elements){
             input.classList.remove("error");
         }
