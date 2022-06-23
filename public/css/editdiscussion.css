@@ -12,7 +12,7 @@ hr{
     position:relative;
 }
 
-#start-box{
+#edit-box{
     max-width:1000px;
     width: 35vw;
     padding:25px;
@@ -34,7 +34,7 @@ hr{
     justify-content: space-evenly;
 }
 
-#rules-box{
+#rulesedit-box{
     max-width:500px;
     width:30vw;
     display:flex;
@@ -44,7 +44,7 @@ hr{
     padding-bottom:10px;
 }
 
-#rules-header{
+#rulesedit-header{
     display:flex;
     flex-direction:row;
     text-align:center;
@@ -93,14 +93,14 @@ hr{
     height:25px;
 }
 
-#input-title{
+#edit-title{
     width:25vw;
     padding:10px;
     font-size:14px;
     margin-bottom:1vw;
 }
 
-#input-content{
+#edit-content{
     width: 25vw;
     height:250px;
     padding:10px;
@@ -109,7 +109,7 @@ hr{
     border-radius: 5px;
 }
 
-#create-button{
+#edit-button{
     margin-top:15px;
     max-width:250px;
     width:15vw;
@@ -123,7 +123,7 @@ hr{
     align-items: center;
 }
 
-#filter{
+#edit-filter{
     font-family: var(--font-type2);
     font-weight: bold;
     color: var(--clr-txt-secondary);
