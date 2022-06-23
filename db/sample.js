@@ -70,7 +70,6 @@ export function generateData(){
 
     const initialDiscussions = [
         {
-            user: 3,
             title: "Hi All, new to Porum here, and have a question",
             content: "Hi Guys, first of all I hope you all are ok. I have a question on how to use reddit, is it just like an Q&A platform as that seems from outside, or is info sharing also allowed and appreciated without someone asking? I am an experienced software dev, also I know a few tricks on garden agriculture, also I'm into automated systems from auto watering solutions to drones... (also that's a shame but I have an interest in international politics.) I hope I can share and also find quality information over here. Kind regards.",
             tag: {
@@ -79,7 +78,6 @@ export function generateData(){
             }
         },
         {
-            user: 0,
             title: "May 12th, 2022 COVID-19 update: 6,523 new cases, 18 new deaths, 728 hospitalized, 230 for COVID.",
             content: "6,523 confirmed and probable cases, with 5,576 positives from 70,283 tests. Of the 728 hospitalized, 230 are for COVID, 66 in the ICU, 27 Intubated, and 484 vaccinated Cases, test positivity rate, and wasterwater viral loads at winter 2020-2, and winter 2021-22 levels. Incidental COVID hospitalizations set to soon surpass Alpha/Delta levels later this week. Primary COVID hospitalizations, ICU, and intubations slightly above summer 2020 and summer 2021 levels, but below Alpha/Delta levels. No new wastewater report today, yet. Data note: With an increase in antigen at home testing, statewide probable and confirmed cases are added up and aggregated together.",
             tag: {
@@ -88,7 +86,6 @@ export function generateData(){
             }
         },
         {
-            user: 1,
             title: "Is it possible to apply for a Swiss student visa from a country outside of your home country?",
             content: "I am Japanese, currently living in France under a student visa. I will be studying in Geneva from September and need to apply for a Swiss student visa, and am wondering if I can do so from Paris, or if it is mandatory that I apply from my home country of Japan ? I sent an email to the Swiss embassy in Paris but as I expected it’s taking a while to get a response.",
             tag: {
@@ -97,7 +94,6 @@ export function generateData(){
             }
         },
         {
-            user: 4,
             title: "Sales Person - $20/hr",
             content: "We are urgently looking for a part-time Sales Person for B2B Inside Sales. This will be a work-from-home opportunity. You would need to get on video calls or phone calls with our clients and guide them regarding the services we are offering, trying your best to crack a deal with them. We are looking for someone who is expressive and holds excellent communication skills. Also, we are looking for a US-based salesperson since you will be required to deal with our US-based clients. Pay: $20/hr For this profile, you would need a Laptop/computer, cellphone, and stable internet.",
             tag: {
@@ -106,7 +102,6 @@ export function generateData(){
             }
         },
         {
-            user: 3,
             title: "Review of the Aristocrat Restaurant",
             content: "The food is sumptuous, good servings and it’s been Aristocrat since I was a child. The Java rice was a bit dry and no flavour at all... that was a let down. Other than that, everything was a delightful gastronomical experience. As with other restaurants in the Phils, it was noisy and you have to line up for a number to get seats!",
             tag: {
@@ -132,7 +127,7 @@ export function generateData(){
         },
         {
             user: 0,
-            content: "Thanks for all the helpful comments guys!",
+            content: "Hey welcomeeee! So nice to have you here.",
         },
         {
             user: 2,
@@ -143,7 +138,7 @@ export function generateData(){
     const initialComments2 = [
         {
             user: 1,
-            content: "I work for the Infectious Disease Bureau at the Boston Public Health Commissions in case any of you are wondering :)",
+            content: "I work for the Infectious Disease Bureau at the Boston Public Health Commissions and I really commend this post!",
         },
         {
             user: 2,
@@ -182,7 +177,7 @@ export function generateData(){
         },
         {
             user: 4,
-            content: "Thanks for all your helpful comments! Really appreciate it.",
+            content: "Yes you can, I've tried it before :)",
         },
     ];
 
@@ -193,7 +188,7 @@ export function generateData(){
         },
         {
             user: 3,
-            content: "Update: Preferably looking for someone who knows how to use Excel also. Thanks.",
+            content: "Hello there sent you my resume! Thanks.",
         },
         {
             user: 4,
