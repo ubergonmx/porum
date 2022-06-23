@@ -91,7 +91,7 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
 baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
     res.render('editdiscussion', {
         title: 'Edit Discussion',
-        styles: ['startdiscussion.css'],
+        styles: ['editdiscussion.css'],
         scripts: ['startdiscussion.js'],
         user: req.session.user,
     });
