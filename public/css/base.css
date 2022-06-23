@@ -381,7 +381,8 @@ main {
 #icon-user,
 #cover-photo,
 .img-author,
-.notif-commenter{
+.notif-commenter,
+.commenter-pic{
     object-fit: cover;
 }
 

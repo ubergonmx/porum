@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import User from '../db/models/User.js';
 import Discussion from '../db/models/Discussion.js';
+import Comment from '../db/models/Comment.js';
 import { checkAuth } from './auth.js';
 import { calcDate, formatDate, birthday, truncate } from './utils.js';
 
@@ -67,7 +68,10 @@ userRoute.get("/:id", checkAuth, async (req, res) => {
         else{
             const user = await User.findById(req.params.id).lean();
             const discussions = await Discussion.find({ userId: user._id }).lean();
-            console.log(user);
+            const comments = await Comment.find({ userId: user._id }).lean();
+            for(var comment of comments){
+                comment.discussion = await Discussion.findOne({ _id: comment.discussionId }).select('title').lean();
+            }
             res.render('user', {
                 title: user.username,
                 styles: ['profile.css'],
@@ -75,6 +79,8 @@ userRoute.get("/:id", checkAuth, async (req, res) => {
                 user: req.session.user,
                 profile: user,
                 discussions: discussions,
+                comments: comments,
+                hasPosts: discussions.length > 0 || comments.length > 0,
                 isCurrentUser: false,
                 helpers: {
                     calcDate, formatDate, birthday, truncate

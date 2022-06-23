@@ -5,7 +5,7 @@
             <div id = "filter-box" class="def-container">
                 <div class = "filter-icon">
                     <i class="fa-solid fa-eye"></i>
-                    <p class = "filter-name" class="chosen">Overview</p>
+                    <p class="filter-name chosen">Overview</p>
                 </div>
 
                 <div class = "filter-icon">
@@ -24,9 +24,12 @@
                 </div>
             </div>    
             <div id = "posts-container">    
-                {{#if discussions.length}}
+                {{#if hasPosts}}
                     {{#each discussions}}
                         {{>discussion-preview}}
+                    {{/each}}
+                    {{#each comments}}
+                        {{>comment-preview}}
                     {{/each}}
                 {{else}}
                     <div id="scaffold">

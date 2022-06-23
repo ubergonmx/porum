@@ -1,6 +1,7 @@
 import express from 'express';
 import Discussion from '../db/models/Discussion.js';
 import User from '../db/models/User.js';
+import Comment from '../db/models/Comment.js';
 import { checkAuth, checkNoAuth } from './auth.js';
 import { calcDate, formatDate, birthday, truncate } from './utils.js';
 
@@ -50,7 +51,11 @@ baseRoute.get('/login', checkNoAuth, (req, res) => {
 
 baseRoute.get('/profile', checkAuth, async(req, res) => {
     const discussions = await Discussion.find({ userId: req.session.user._id }).lean();
-
+    const comments = await Comment.find({ userId: req.session.user._id }).lean();
+    for(var comment of comments){
+        comment.discussion = await Discussion.findOne({ _id: comment.discussionId }).select('title').lean();
+    }
+    console.log(comments);
     res.render('user', {
         title: 'Profile',
         styles: ['profile.css'],
@@ -58,6 +63,8 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
         user: req.session.user,
         profile: req.session.user,
         discussions: discussions,
+        comments: comments,
+        hasPosts: discussions.length > 0 || comments.length > 0,
         isCurrentUser: true,
         helpers: {
             calcDate, formatDate, birthday, truncate

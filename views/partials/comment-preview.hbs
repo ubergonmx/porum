@@ -1,10 +1,10 @@
-<a href="../discussions/{{_id}}">
+<a href="../discussions/{{discussion._id}}#{{_id}}">
     <div class="discussion-box" > 
         <div class="discussion">
             <div class="discussion-body">
-                <h1 class="title">{{title}}</h1>
+                <h1 class="title"><i class="fa-solid fa-reply"></i> Replied to: {{discussion.title}}</h1>
                 <p class="date">{{formatDate createdAt}}</p>
-                <p class="content">{{{truncate content 300 1}}}</p>  
+                <p class="content">{{content}}</p>  
             </div>
         </div>
     </div>
