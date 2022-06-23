@@ -111,36 +111,138 @@ export function generateData(){
         },
     ];
 
-    const initialComments = [
+    const initialComments5 = [
         {
+            user: 0,
             content: "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
         },
         {
+            user: 1,
             content: "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
         },
         {
+            user: 2,
             content: "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
         },
         {
+            user: 3,
             content: "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
         },
         {
+            user: 4,
             content: "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
         },
     ];
-
-    var sampleUsers = [];
+    const initialComments1 = [
+        {
+            user: 0,
+            content: "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
+        },
+        {
+            user: 1,
+            content: "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
+        },
+        {
+            user: 2,
+            content: "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
+        },
+        {
+            user: 3,
+            content: "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
+        },
+        {
+            user: 4,
+            content: "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
+        },
+    ];
+    const initialComments2 = [
+        {
+            user: 0,
+            content: "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
+        },
+        {
+            user: 1,
+            content: "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
+        },
+        {
+            user: 2,
+            content: "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
+        },
+        {
+            user: 3,
+            content: "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
+        },
+        {
+            user: 4,
+            content: "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
+        },
+    ];
+    const initialComments3 = [
+        {
+            user: 0,
+            content: "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
+        },
+        {
+            user: 1,
+            content: "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
+        },
+        {
+            user: 2,
+            content: "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
+        },
+        {
+            user: 3,
+            content: "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
+        },
+        {
+            user: 4,
+            content: "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
+        },
+    ];
+    const initialComments4 = [
+        {
+            user: 0,
+            content: "This is a good stop for breakfast, lunch, or dinner at this long-time Manila restaurant established in 1936. We went on a Saturday morning, and I think because it is well-known, large seating, and popular, it's difficult for service staff to keep up. Be prepared for a little arm-waving, but I think it's still well worth your while to come to this comfortable spot. For me, it was nice to see all the lola and lolo out to enjoy foods with their family. I like to come here again next time I am in Manila.",
+        },
+        {
+            user: 1,
+            content: "Food is great but service is very slow, been eating here for decades. the chicken barbecue is the best so is the halo-halo but it takes a long time for them to serve your order or bus your table. they're very busy but the inefficient staff is not helping at all.",
+        },
+        {
+            user: 2,
+            content: "Food is delicious and the prices are reasonable. Many varieties of food you can find there, and the best thing is it is open for 24 hours.",
+        },
+        {
+            user: 3,
+            content: "Good food if you are on a budget but want to try some authentic Filipino food. They also deliver, which is nice.",
+        },
+        {
+            user: 4,
+            content: "I'm always craving for Aristocrat boneless chicken barbeque and everytime I get the chance to dine at Aristocrat, it never fails to please my palate. And for a change, I tried their Kare Kare, it was cooked like what we have at home on special occasions",
+        },
+    ];
+    var initialComments = [ initialComments1, initialComments2, initialComments3, initialComments4, initialComments5 ];
     
+    var sampleUsers= [];
     for(var user of initialUsers){
-        sampleUsers.push(user.save());
+        new User(user).save();
     }
-    
-    var sampleDiscussions = [];
+    console.log(sampleUsers);
     var counter = 0;
     for(var user of sampleUsers){
-        initialDiscussions[counter].userId = user._id;
-        sampleDiscussions.push(new Discussion(initialDiscussions[counter++]).save());
+        initialDiscussions[counter].userId = user.id;
+        new Discussion(initialDiscussions[counter++]).save();
     }
 
-    
+    var sampleDiscussions = Discussion.find({}).lean();
+    counter = 0;
+    for(var discussion of sampleDiscussions){
+        console.log(discussion);
+        for(var comment of initialComments[counter++]){
+            comment.userId = sampleUsers[comment.user]._id;
+            comment.discussionId = discussion._id;
+            delete comment.user;
+            new Comment(comment).save();
+        }
+    }
 }
