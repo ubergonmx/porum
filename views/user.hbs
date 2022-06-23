@@ -3,24 +3,24 @@
     <section>
         <div id="posts-box" class="def-container">            
             <div id = "filter-box" class="def-container">
-                <div id = "filter-icon">
+                <div class = "filter-icon">
                     <i class="fa-solid fa-eye"></i>
-                    <p id = "filter-name" class="chosen">Overview</p>
+                    <p class = "filter-name" class="chosen">Overview</p>
                 </div>
 
-                <div id = "filter-icon">
+                <div class = "filter-icon">
                     <i class="fa-solid fa-pen"></i>
-                    <p id = "filter-name">Posts</p>
+                    <p class = "filter-name">Posts</p>
                 </div>
 
-                <div id = "filter-icon">
+                <div class = "filter-icon">
                     <i class="fa-solid fa-message"></i>
-                    <p id = "filter-name">Comments</p>
+                    <p class = "filter-name">Comments</p>
                 </div>
 
-                <div id = "filter-icon">
+                <div class = "filter-icon">
                     <i class="fa-solid fa-star"></i>
-                    <p id = "filter-name">Following</p>
+                    <p class = "filter-name">Following</p>
                 </div>
             </div>    
             <div id = "posts-container">    
@@ -41,8 +41,8 @@
     <aside>
         <div id="profile-box" class="def-container">
             <div id="profile-header">
-                <img id="cover-photo" src="../{{user.coverImg}}">
-                <img id="profile-pic" src="../{{user.profileImg}}">
+                <img id="cover-photo" src="../{{profile.coverImg}}">
+                <img id="profile-pic" src="../{{profile.profileImg}}">
                 {{#if isCurrentUser}}
                 <a href = "/settings">
                     <i class="fa-solid fa-gear settings-button"></i>
@@ -51,12 +51,12 @@
             </div>
 
             <div id="profile-content">
-                <h1 id="full-name" class="header-format">{{user.firstname}} {{user.lastname}}</h1>
-                <h4 id="username" class="header-format">{{user.username}}</h3>
-                    <h5 class="bio-format"><span id="bio">{{user.bio}}</span> </h5>
+                <h1 id="full-name" class="header-format">{{profile.firstname}} {{profile.lastname}}</h1>
+                <h4 id="username" class="header-format">{{profile.username}}</h3>
+                    <h5 class="bio-format"><span id="bio">{{profile.bio}}</span> </h5>
                 <div class="other-info">
-                    <div><h4>Birthday: <br><span id="birthday">{{this.birthday}}</span> </h4></div>
-                    <div><h4>Phone Number: <br><span id="phone-number">{{this.phoneNo}}</span> </h4></div>
+                    <div><h4>Birthday: <br><span id="birthday">{{#if profile.birthday}}{{birthday profile.birthday}}{{else}}-{{/if}}</span> </h4></div>
+                    <div><h4>Phone Number: <br><span id="phone-number">{{#if profile.phoneNumber}}{{profile.phoneNumber}}{{else}}-{{/if}}</span> </h4></div>
                 </div>
 
                 {{#if isCurrentUser}}

@@ -4,7 +4,7 @@ var discussions = [];
 fetch("/discussions/all").then(res => res.json()).then(discussionArr => { 
     for(const item of discussionArr){
         const userObj = {};
-        fetch("/users/" + item.userId).then(res => res.json()).then(author => {
+        fetch("/users/get/" + item.userId).then(res => res.json()).then(author => {
             userObj.profile = author._id;
             userObj.username = author.username;
             userObj.imgSrc = author.profileImg;

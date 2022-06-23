@@ -1,11 +1,14 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import User from '../db/models/User.js';
+import Discussion from '../db/models/Discussion.js';
+import { checkAuth } from './auth.js';
+import { calcDate, formatDate, birthday, truncate } from './utils.js';
 
 const userRoute = express.Router();
 
 //RETURN HOME PAGE
-userRoute.get('/', (req, res) => {
+userRoute.get('/', checkAuth, (req, res) => {
     res.redirect('/home');
 });
 
@@ -56,7 +59,36 @@ userRoute.delete("/:id", async (req, res) => {
 });
 
 //GET
-userRoute.get("/:id", async (req, res) => {
+userRoute.get("/:id", checkAuth, async (req, res) => {
+    try {
+        if(req.params.id === req.session.user._id){
+            res.redirect('/profile');
+        }
+        else{
+            const user = await User.findById(req.params.id).lean();
+            const discussions = await Discussion.find({ userId: user._id }).lean();
+            console.log(user);
+            res.render('user', {
+                title: user.username,
+                styles: ['profile.css'],
+                scripts: ['profile.js'],
+                user: req.session.user,
+                profile: user,
+                discussions: discussions,
+                isCurrentUser: false,
+                helpers: {
+                    calcDate, formatDate, birthday, truncate
+                }
+            });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+        return;
+    }
+});
+//GET
+userRoute.get("/get/:id", async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         console.log(user._doc);

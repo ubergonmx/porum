@@ -130,3 +130,12 @@ function formatAMPM(date) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }
+
+/**
+ * Returns formatted date 'Month dd, yyyy''
+ * @param  {Date} d - the date to be formatted
+ */
+ export function birthday(d){
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+}

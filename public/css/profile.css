@@ -21,24 +21,24 @@ main{
     justify-content: space-evenly;
 }
 
-#filter-icon{
+.filter-icon{
     display: flex;
     align-items: center;
     color: var(--clr-white);
 }
 
-#filter-name {
+.filter-name {
     color: var(--clr-white);
     font-family: var(--font-type2);
     font-weight: bold;
     margin-left: 7px;
 }
 
-#filter-name:hover{
+.filter-name:hover{
     border-bottom: 2px solid var(--clr-white);
 }
 
-#filter-name:active{
+.filter-name:active{
     color: var(--clr-bg);
 }
 

@@ -2,7 +2,7 @@ import express from 'express';
 import Discussion from '../db/models/Discussion.js';
 import User from '../db/models/User.js';
 import { checkAuth, checkNoAuth } from './auth.js';
-import { calcDate, formatDate, truncate } from './utils.js';
+import { calcDate, formatDate, birthday, truncate } from './utils.js';
 
 const baseRoute = express.Router();
 
@@ -56,10 +56,11 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
         styles: ['profile.css'],
         scripts: ['profile.js'],
         user: req.session.user,
+        profile: req.session.user,
         discussions: discussions,
         isCurrentUser: true,
         helpers: {
-            calcDate, formatDate, truncate
+            calcDate, formatDate, birthday, truncate
         }
     });
 });
