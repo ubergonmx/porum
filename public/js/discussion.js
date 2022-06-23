@@ -38,7 +38,7 @@ window.addEventListener("load", function(e){
                 return;
             }
             else if(res.status==200)
-                this.window.location.reload
+                this.window.location.reload();
         })
     });
 });
