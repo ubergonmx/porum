@@ -19,13 +19,15 @@ baseRoute.get('/newsfeed', (req, res) => {
 });
 
 baseRoute.get('/home', checkAuth, async (req, res) => {
-    const discussions = await Discussion.find({}).lean();
+    const discussions = await Discussion.find({}).sort('-createdAt').lean();
     for(var discussion of discussions){
         discussion.author = await User.findOne({ _id: discussion.userId }).select("username profileImg").lean();
         // for(var comment of discussion.comments){
         //     comment.author = await User.findOne({ _id: comment.userId }).select("username profileImg").lean();
         // }
         //console.log(discussion);
+        let numOfComments = discussion.comments.length;
+        discussion.commentsNo = `${numOfComments} Comment${numOfComments > 1 ? 's' : ''}`;
     }
     
     res.render('index', {
@@ -88,12 +90,14 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
     });
 });
 
-baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
+baseRoute.get('/editdiscussion/:id', checkAuth,async(req, res) => {
+    const discussion = await Discussion.findById(req.params.id).lean();
     res.render('editdiscussion', {
         title: 'Edit Discussion',
         styles: ['editdiscussion.css'],
-        scripts: ['startdiscussion.js'],
+        scripts: ['editdiscussion.js'],
         user: req.session.user,
+        discussion: discussion
     });
 });
 
@@ -102,14 +106,6 @@ baseRoute.get('/forgotpassword', checkNoAuth, (req, res) => {
         title: 'Forgot Password',
         styles: ['login.css'],
         scripts: ["forgotpassword.js"]
-    });
-});
-
-baseRoute.get('/discussion', checkAuth, (req, res) => {
-    res.render('discussion', {
-        title: 'Porum',
-        styles: ['startdiscussion.css'],
-        scripts: ["startdiscussion.js"]
     });
 });
 

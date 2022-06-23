@@ -61,7 +61,7 @@ discussionRoute.delete('/:id', async (req, res) => {
             res.status(200).json("Discussion deleted");
         }
         else{
-            res.status(403).json("You can delete only your own discussions");
+            res.status(403).json({error:"You can delete only your own discussions."});
         }
     } catch (err) {
         res.status(500).json(err);
@@ -74,13 +74,17 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
     try {
         const discussion = await Discussion.findById(req.params.id).lean();
         discussion.author = await User.findById(discussion.userId).select("username profileImg").lean();
+        discussion.edited = (discussion.createdAt === discussion.updatedAt) ? false : true;
+        
         const comments = await Comment.find({ discussionId: req.params.id }).lean();
         for(var comment of comments){
             comment.author = await User.findById(comment.userId).select("username profileImg").lean();
-            comment.edited = comment.createdAt === comment.updatedAt;
-
+            comment.isCurrentUser = req.session.user._id.toString() === comment.userId.toString();
         }
-        console.log(discussion);
+        
+        let numOfComments = discussion.comments.length;
+        discussion.commentsNo = `${numOfComments} Comment${numOfComments > 1 ? 's' : ''}`;
+
         res.render('discussion', {
             title: discussion.title,
             styles: ['discussion.css'],

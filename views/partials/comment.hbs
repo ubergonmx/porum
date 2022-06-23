@@ -3,9 +3,9 @@
     <div>
         <p class="comments">
             <span class="commenter-user">{{author.username}}</span> 
-            <span class="commenter-date">{{formatDate updatedAt}}{{#if edited}}(Edited){{/if}}</span>
+            <span class="commenter-date">{{formatDate updatedAt}}</span>
             {{#if isCurrentUser}}
-                <span class = "commenter-edit", "text-clickable"><i class="fa-solid fa-pen-to-square"></i></span>
+                <span class="commenter-edit text-clickable" style="margin-left: 5px"><i class="fa-solid fa-pen-to-square"></i></span>
             {{/if}}
             <br>
             {{{content}}} 

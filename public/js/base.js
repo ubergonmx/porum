@@ -2,6 +2,16 @@ const limit = 4, contentLimit = 170;
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
+const tags = [
+    {name: "FAQ's", color: "orange"},
+    {name: "Off-Topic Chatter", color: "green"},
+    {name: "Feedback", color: "purple"},
+    {name: "Member Spotlight", color: "red"},
+    {name: "Introductions", color: "blue"},
+    {name: "Announcements", color: "pink"},
+    {name: "Showcase", color: "gray"},
+    {name: "Jobs", color: "brown"},
+]
 
 var errorTimeout, tempFields = [];
 var arrowDown, profileActive = 0, profileDropdown;

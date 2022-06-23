@@ -86,7 +86,9 @@ main{
 .commenter-date{
     color:var(--clr-gray-500);
 }
-
+#comment{
+    color:var(--clr-txt-primary);
+}
 #comment-content{
     display:flex;
     flex-direction: column;

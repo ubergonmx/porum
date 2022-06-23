@@ -1,7 +1,7 @@
 {{>header}}
 <main>
     <div id="main-post" class="def-container">
-        <div id="discussion-content" class="def-container content-box" data-id="{{discussion._id}}">
+        <div id="discussion-content" class="def-container content-box">
             <div class = "content">
                 <div id="post-header">
                     <a href="../users/{{discussion.author._id}}">
@@ -13,15 +13,15 @@
                     <div>
                         <h1 id="title-text">{{title}}</h1>
                         <span id="username-text">{{discussion.author.username}}</span>
-                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}}</span>
+                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.updatedAt}}{{/if}}</span>
                     </div>
                 </div>
             </div>
                 
             <div><h3 id="content-text">{{{discussion.content}}}</h3></div>          
             <div id="options">
-                <div id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{this.commentNo}} Comments</span></div>
-                <div id="share" class="text-clickable"><i class="fa-solid fa-share"></i><span id="share"> Share</span></div>
+                <a href="#comment-content" id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{discussion.commentsNo}}</span></a>
+                {{!-- <div id="share" class="text-clickable"><i class="fa-solid fa-share"></i><span id="share"> Share</span></div> --}}
                 {{#if isCurrentUser}}
                     <div id = "edit" class="text-clickable"><i class="fa-solid fa-pen-to-square"></i><span id="edit"> Edit</span></div>
                 {{else}}
