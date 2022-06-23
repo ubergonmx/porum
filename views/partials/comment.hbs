@@ -3,7 +3,9 @@
     <div>
         <p class="comments">
             <span class="commenter-user">{{author.username}}</span> 
-            <span class="commenter-date">{{formatDate updatedAt}}{{#if edited}}(Edited){{/if}}</span><br>
+            <span class="commenter-date">{{formatDate updatedAt}}{{#if edited}}(Edited){{/if}}</span>
+            <!-- ADD HERE SPAN-->
+            <br>
             {{{content}}} 
         </p>
     </div>
