@@ -83,6 +83,7 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
             user: req.session.user,
             discussion: discussion,
             comments: comments,
+            isCurrentUser: req.session.user._id.toString() === discussion.userId.toString(),
             helpers: { formatDate }
         });
 

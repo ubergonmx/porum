@@ -52,7 +52,7 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
     res.render('user', {
         title: 'Profile',
         styles: ['profile.css'],
-        scripts: ['profile.js', 'data.js'],
+        scripts: ['profile.js'],
         user: req.session.user,
         discussions: discussions,
         isCurrentUser: true,
@@ -67,7 +67,7 @@ baseRoute.get('/settings', checkAuth, (req, res) => {
     res.render('settings', {
         title: 'Settings',
         styles: ['settings.css'],
-        scripts: ["data.js"]
+        scripts: ['settings.js']
     });
 });
 
@@ -83,7 +83,7 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
     res.render('startdiscussion', {
         title: 'Start a discussion',
         styles: ['startdiscussion.css'],
-        scripts: ["data.js", "startdiscussion.js"],
+        scripts: ['startdiscussion.js'],
         user: req.session.user,
     });
 });
@@ -92,7 +92,7 @@ baseRoute.get('/editdiscussion', checkAuth, (req, res) => {
     res.render('editdiscussion', {
         title: 'Edit Discussion',
         styles: ['startdiscussion.css'],
-        scripts: ["data.js", "startdiscussion.js"],
+        scripts: ['startdiscussion.js'],
         user: req.session.user,
     });
 });
