@@ -1,30 +1,9 @@
 import express from 'express';
 import User from '../db/models/User.js';
 import bcrypt from 'bcrypt';
-import multer from 'multer';
+import { upload } from './utils.js';
 
 const authRoute = express.Router();
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/users/')
-    },
-    filename: (req, file, cb) => {
-        cb(null, `${file.fieldname}-${Date.now()}-${file.originalname}`)
-    }
-});
-const fileFilter = (req, file, cb) => {
-    //reject a file
-    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png')
-        cb(null, true);
-    else
-        cb(null, false);
-};
-
-const upload = multer({ 
-    storage: storage, 
-    limits: { fileSize: 1024*1024*5 },
-    fileFilter: fileFilter
-});
 
 //RETURN HOME PAGE
 authRoute.get('/', (req, res) => {
@@ -53,7 +32,7 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
 
             //If there is a profile image, add profileImg property
             if(req.file){
-                userData.profileImg = req.file.path.replaceAll("public\\", "")
+                userData.profileImg = req.file.destination.replaceAll('./public/', '') + req.file.filename;
             }
 
             //Create a new user

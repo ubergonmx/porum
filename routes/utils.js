@@ -1,3 +1,48 @@
+import multer from 'multer';
+
+/**
+ * Setup for image upload
+ */
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/images/users/')
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${file.fieldname}-${Date.now()}-${file.originalname}`)
+    }
+});
+const fileFilter = (req, file, cb) => {
+    //reject a file
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png')
+        cb(null, true);
+    else
+        cb(null, false);
+};
+export const upload = multer({ 
+    storage: storage, 
+    limits: { fileSize: 1024*1024*5 },
+    fileFilter: fileFilter
+});
+
+/**
+ * Returns true if both objects's keys have the same values
+ * @param  {Object} obj1
+ * @param  {Object} obj2
+ */
+export function isEqual(obj1, obj2) {
+    try{
+        for (var key in obj1) {
+            if (obj1[key] !== obj2[key]) {
+                return false;
+            }
+        }
+        return true;
+    } catch(err) {
+        console.log(err);
+        return false;
+    }
+}
+
 /**
  * Returns true if str is empty or has spaces
  * @param  {string} str
@@ -109,9 +154,7 @@ function secondDiff(date1, date2) {
  * @param  {Date} d - the date to be formatted
  */
 export function formatDate(d){
-    var minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+', '+formatAMPM(d);
 }
@@ -135,7 +178,19 @@ function formatAMPM(date) {
  * Returns formatted date 'Month dd, yyyy''
  * @param  {Date} d - the date to be formatted
  */
- export function birthday(d){
+export function birthday(d){
+    d = new Date(d);
     var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     return months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+}
+
+/**
+ * Returns formatted date 'yyyy-MM-dd'
+ * @param  {Date} d - the date to be formatted
+ */
+export function birthdayInput(d){
+    d = new Date(d);
+    let MM = d.getMonth() + 1;
+    MM = (MM < 10) ? '0' + MM : MM;
+    return `${d.getFullYear()}-${MM}-${d.getDate()}`;
 }

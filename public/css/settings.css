@@ -8,6 +8,7 @@ main{
     flex-direction:column;
     gap:15px;
     align-items: center;
+    position: relative;
 }
 
 .div-format{
@@ -35,9 +36,25 @@ main{
     width:350px;
 }
 
+#bio{
+    width:350px;
+    height: 150px;
+}
+
+.text-error {
+    position: absolute;
+    bottom: 70px;
+}
+
 #save-button{
-    margin-top:25px;
+    margin-top: 25px;
     width:250px;
+}
+
+.change-photo-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 }
 
 #change-button{
@@ -47,14 +64,12 @@ main{
 }
 
 #cover-photo{
-    margin-top:10px;
     width:200px;
     max-height:100px;
     border-radius: 5px;
 }
 
 #profile-pic{
-    margin-top:10px;
     width:100px;
     height:100px;
     max-height:100px;

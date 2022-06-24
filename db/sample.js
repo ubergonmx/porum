@@ -17,6 +17,8 @@ export async function generateData(){
             phoneNumber: "09618294256",
             profileImg: "images/users/user1.jpg",
             coverImg: "images/users/cover1.jpg",
+            showBirthday: true,
+            showPhoneNumber: true,
         }),
         new User({
             username: "sebby",
@@ -29,6 +31,8 @@ export async function generateData(){
             phoneNumber: "09663398043",
             profileImg: "images/users/userDefault.jpg",
             coverImg: "images/users/cover2.jpg",
+            showBirthday: true,
+            showPhoneNumber: true,
         }),
         new User({
             username: "ackerman",
@@ -41,6 +45,8 @@ export async function generateData(){
             phoneNumber: "09564328971",
             profileImg: "images/users/user4.jpg",
             coverImg: "images/users/cover3.jpg",
+            showBirthday: true,
+            showPhoneNumber: true,
         }),
         new User({
             username: "rena",
@@ -53,6 +59,8 @@ export async function generateData(){
             phoneNumber: "09562135684",
             profileImg: "images/users/user6.jpg",
             coverImg: "images/users/cover4.jpg",
+            showBirthday: true,
+            showPhoneNumber: true,
         }),
         new User({
             username: "ferrari_von",
@@ -65,6 +73,8 @@ export async function generateData(){
             phoneNumber: "09355688953",
             profileImg: "images/users/user8.jpg",
             coverImg: "images/users/cover5.jpg",
+            showBirthday: true,
+            showPhoneNumber: true,
         }),
     ];
 

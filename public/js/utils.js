@@ -173,14 +173,37 @@ function secondDiff(date1, date2) {
 
 
 /**
- * Returns formatted date 'MM/DD/YYYY'
+ * Returns formatted date 'Day Mon dd yyyy, hh:mm {am|pm}'
  * @param  {Date} d - the date to be formatted
  */
-function formatDate(d){
-    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-    ampm = d.getHours() >= 12 ? 'pm' : 'am',
-    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+ function formatDate(d){
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+', '+formatAMPM(d);
+}
+
+/**
+ * Returns formatted 12 hour time 'hh:mm {am|pm}'
+ * @param  {Date} date - the date to be formatted
+ */
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
+/**
+ * Returns formatted date 'yyyy-MM-dd'
+ * @param  {Date} d - the date to be formatted
+ */
+function birthdayInput(d){
+    d = new Date(d);
+    let MM = d.getMonth() + 1;
+    MM = (MM < 10) ? '0' + MM : MM;
+    return `${d.getFullYear()}-${MM}-${d.getDate()}`;
 }

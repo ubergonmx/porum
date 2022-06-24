@@ -3,7 +3,7 @@ import Discussion from '../db/models/Discussion.js';
 import User from '../db/models/User.js';
 import Comment from '../db/models/Comment.js';
 import { checkAuth, checkNoAuth } from './auth.js';
-import { calcDate, formatDate, birthday, truncate } from './utils.js';
+import { calcDate, formatDate, birthday, birthdayInput, truncate, isEqual } from './utils.js';
 
 const baseRoute = express.Router();
 
@@ -55,7 +55,6 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
     for(var comment of comments){
         comment.discussion = await Discussion.findOne({ _id: comment.discussionId }).select('title').lean();
     }
-    console.log(comments);
     res.render('user', {
         title: 'Profile',
         styles: ['profile.css'],
@@ -73,12 +72,19 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
 });
 
 
-baseRoute.get('/settings', checkAuth, (req, res) => {
+baseRoute.get('/settings', checkAuth, async(req, res) => {
+    const user = await User.findById(req.session.user._id).lean();
+    if(!isEqual(user, req.session.user))
+        req.session.user = user;
+
     res.render('settings', {
         title: 'Settings',
         styles: ['settings.css'],
         scripts: ['settings.js'],
-        user: req.session.user
+        user: req.session.user,
+        helpers: {
+            birthdayInput
+        }
     });
 });
 

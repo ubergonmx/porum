@@ -1,52 +1,71 @@
 {{>header}}
 <main>
-    <div id="settings-box" class="def-container">
+    <form id="settings-box" class="def-container">
         <div class="header-container">
             <h2>Change / Add Information</h2>
         </div>
         <div class="div-format">
-            <div>
+            <div class="change-photo-container">
                 <label for="picture">Change Profile Photo</label><br>
                 <img id="profile-pic" src="../{{user.profileImg}}" /><br>
-                <button id="change-button" class="button-primary">Add New Profile Picture</button>
+                <label for="profile-img" class="button-secondary">
+                    Change
+                    <input type="file" id="profile-img" accept=".png, .jpg, .jpeg" name="profile-img"/>
+                </label>
+                {{!-- <button id="change-button" class="button-primary">Add New Profile Picture</button> --}}
             </div>
-            <div>
+            <div class="change-photo-container">
                 <label for="picture">Change Cover Photo</label><br>
                 <img id="cover-photo" src="../{{user.coverImg}}" /><br>
-                <button id="change-button" class="button-primary">Add New Cover Photo</button>
+                <label for="cover-img" class="button-secondary">
+                    Change
+                    <input type="file" id="cover-img" accept=".png, .jpg, .jpeg" name="cover-img"/>
+                </label>
+                {{!-- <button id="change-button" class="button-primary">Add New Cover Photo</button> --}}
             </div>
         </div>
-            <label for="username">Change Username</label>
-            <input type="text" id="username" name="username" class="input1">
-            <label for="birthday">Add Birthday</label>
-            <input type="date" id="birthday" name="birthday" class="input1">
-            <label for="telephone-no">Add Phone Number</label>
-            <input type="tel" id="telephone-no" name="telephone-no" class="input1">
+        <div class="div-format">
+            <div>
+                <label for="firstname">Change First Name</label><br>
+                <input type="text" id="firstname" name="firstname" value="{{user.firstname}}">
+            </div>
+            <div>
+                <label for="lastname">Change Last Name</label><br>
+                <input type="text" id="lastname" name="lastname" value="{{user.lastname}}">
+            </div>
+        </div>
+        <label for="username">Change Username</label>
+        <input type="text" value="{{user.username}}" id="username" name="username" class="input1" autocomplete="username">
+        <label for="bio">Add Bio</label>
+        <textarea id="bio">{{user.bio}}</textarea>
+        <label for="birthday">Add Birthday</label>
+        <input type="date" value="{{birthdayInput user.birthday}}" id="birthday" name="birthday" class="input1" autocomplete="bday">
+        <label for="telephone-no">Add Phone Number</label>
+        <input type="tel" value="{{user.phoneNumber}}" id="telephone-no" name="telephone-no" class="input1" autocomplete="tel">
         <div class="div-format">
             <div>
                 <label for="password">Change Password</label><br>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" autocomplete="new-password">
             </div>
             <div>
                 <label for="confirmpassword">Confirm Password</label><br>
-                <input type="password" id="confirmpassword" name="confirmpassword">
+                <input type="password" id="confirm-password" name="confirmpassword" autocomplete="new-password">
             </div>
         </div>
             <div class="header-container">
                 <h2>Privacy Settings</h2>
             </div>
         <div class="div-format">
-            <form = "settingsForm">
-                <div>
-                    <input type="checkbox" id="enable-birthday" name="enable-birthday" value="enable-birthday">
-                    <label for="enable-birthday"> Display Birthday</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="enable-number" name="enable-number" value="enable-number">
-                    <label for="enable-number"> Display Phone Number</label>
-                </div>
-            </form>
+            <div>
+                <input type="checkbox" id="enable-birthday" name="enable-birthday" {{#if user.showBirthday}}checked{{/if}}>
+                <label for="enable-birthday"> Display Birthday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="enable-number" name="enable-number" {{#if user.showPhoneNumber}}checked{{/if}}>
+                <label for="enable-number"> Display Phone Number</label>
+            </div>
         </div>
-            <button id="save-button" class="button-primary">Save Changes</button>
-    </div>
+        <p class="text-error"></p>
+        <button id="save-button" class="button-primary">Save Changes</button>
+    </form>
 </main>

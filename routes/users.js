@@ -4,7 +4,7 @@ import User from '../db/models/User.js';
 import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
 import { checkAuth } from './auth.js';
-import { calcDate, formatDate, birthday, truncate } from './utils.js';
+import { calcDate, formatDate, birthday, truncate, upload } from './utils.js';
 
 const userRoute = express.Router();
 
@@ -14,7 +14,13 @@ userRoute.get('/', checkAuth, (req, res) => {
 });
 
 //UPDATE
-userRoute.put("/:id", async (req, res) => {
+userRoute.put("/:id", upload.fields([
+    { name: 'profileImg', maxCount: 1 },
+    { name: 'coverImg', maxCount: 1 }
+]), async (req, res) => {
+    console.log(req.file);
+    console.log(">>FILES<<");
+    console.log(req.files);
     if(req.params.id === req.body.userId || req.body.isAdmin){
         if(req.body.password){
             try {
@@ -27,11 +33,24 @@ userRoute.put("/:id", async (req, res) => {
             }
         }
         try {
+            //If there is a profile image, add profileImg property
+            if(req.files.profileImg){
+                const profileImg = req.files.profileImg[0];
+                req.body.profileImg =  profileImg.destination.replaceAll('./public/', '') + profileImg.filename;
+            }
+
+            //If there is a cover image, add coverImg property
+            if(req.files.coverImg){
+                const coverImg = req.files.coverImg[0];
+                req.body.coverImg = coverImg.destination.replaceAll('./public/', '') + coverImg.filename;
+            }
+            console.log(req.body);
             const user = await User.findByIdAndUpdate(req.params.id, {
                 $set: req.body 
             });
             res.status(200).json("User updated");
         } catch (err) {
+            console.log(err);
             res.status(500).json(err);
             return;
         }

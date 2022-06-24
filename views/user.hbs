@@ -47,8 +47,8 @@
                 <img id="cover-photo" src="../{{profile.coverImg}}">
                 <img id="profile-pic" src="../{{profile.profileImg}}">
                 {{#if isCurrentUser}}
-                <a href = "/settings">
-                    <i class="fa-solid fa-gear settings-button"></i>
+                <a href="/settings">
+                    <i class="fa-solid fa-gear settings-wheel"></i>
                 </a>
                 {{/if}}
             </div>
@@ -58,8 +58,8 @@
                 <h4 id="username" class="header-format">{{profile.username}}</h3>
                     <h5 class="bio-format"><span id="bio">{{profile.bio}}</span> </h5>
                 <div class="other-info">
-                    <div><h4>Birthday: <br><span id="birthday">{{#if profile.birthday}}{{birthday profile.birthday}}{{else}}-{{/if}}</span> </h4></div>
-                    <div><h4>Phone Number: <br><span id="phone-number">{{#if profile.phoneNumber}}{{profile.phoneNumber}}{{else}}-{{/if}}</span> </h4></div>
+                    {{#if profile.showBirthday}}<div><h4>Birthday: <br><span id="birthday">{{#if profile.birthday}}{{birthday profile.birthday}}{{else}}-{{/if}}</span> </h4></div>{{/if}}
+                    {{#if profile.showPhoneNumber}}<div><h4>Phone Number: <br><span id="phone-number">{{#if profile.phoneNumber}}{{profile.phoneNumber}}{{else}}-{{/if}}</span> </h4></div>{{/if}}
                 </div>
 
                 {{#if isCurrentUser}}
