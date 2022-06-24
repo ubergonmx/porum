@@ -1,7 +1,7 @@
 import express from 'express';
 import User from '../db/models/User.js';
 import bcrypt from 'bcrypt';
-import { upload } from './utils.js';
+import { upload, isEqual } from './utils.js';
 
 const authRoute = express.Router();
 
@@ -108,8 +108,11 @@ authRoute.delete('/logout', (req,res)=>{
     }
 });
 
-export function checkAuth(req, res, next){
+export async function checkAuth(req, res, next){
     if(req.session.user){
+        const user = await User.findById(req.session.user._id).lean();
+        if(!isEqual(user, req.session.user))
+            req.session.user = user;
         return next();
     }
     res.redirect('/login');

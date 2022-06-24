@@ -73,10 +73,6 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
 
 
 baseRoute.get('/settings', checkAuth, async(req, res) => {
-    const user = await User.findById(req.session.user._id).lean();
-    if(!isEqual(user, req.session.user))
-        req.session.user = user;
-
     res.render('settings', {
         title: 'Settings',
         styles: ['settings.css'],
