@@ -62,7 +62,7 @@ window.addEventListener("load", function(e){
             body: formData
         }).then(res =>{
             if(res.status==200)
-                this.window.location.reload();
+                this.window.location.href = window.location.origin + "/settings#settings-box";
         }).catch(err => console.log(err));
     });
 

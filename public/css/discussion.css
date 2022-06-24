@@ -19,6 +19,7 @@ main{
 #profile-pic{
     border-radius:100%;
     width:75px;
+    height:75px;
 }
 
 #username-text{
