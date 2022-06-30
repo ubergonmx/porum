@@ -103,10 +103,6 @@ header > * {
     user-select: none;
 }
 
-#search-container{
-    width: 100%
-}
-
 header > div:last-child{
     gap: 2vw;
     margin-left: -50px;
@@ -527,8 +523,10 @@ input.error, textarea.error{
     box-shadow: 0 2px 10px rgb(230, 230, 230, 0.5);
 }
 
-
 .button-secondary:active{
     background-color: var(--clr-bg);
 }
 
+.hide {
+    display: none !important;
+}
