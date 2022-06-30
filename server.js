@@ -53,7 +53,6 @@ app.use(expressCspHeader({
 }));
 
 // Use flash and session
-app.use(flash());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
