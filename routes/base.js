@@ -3,7 +3,7 @@ import Discussion from '../db/models/Discussion.js';
 import User from '../db/models/User.js';
 import Comment from '../db/models/Comment.js';
 import { checkAuth, checkNoAuth } from './auth.js';
-import { calcDate, formatDate, birthday, birthdayInput, truncate, isEqual } from './utils.js';
+import { calcDate, formatDate, birthday, birthdayInput, truncate, isEqual } from '../utils/helper.js';
 
 const baseRoute = express.Router();
 

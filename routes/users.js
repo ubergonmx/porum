@@ -4,7 +4,7 @@ import User from '../db/models/User.js';
 import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
 import { checkAuth } from './auth.js';
-import { calcDate, formatDate, birthday, truncate, upload } from './utils.js';
+import { calcDate, formatDate, birthday, truncate, upload } from '../utils/helper.js';
 
 const userRoute = express.Router();
 

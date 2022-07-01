@@ -3,7 +3,7 @@ import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
 import User from '../db/models/User.js';
 import { checkAuth } from './auth.js';
-import { formatDate } from './utils.js';
+import { formatDate } from '../utils/helper.js';
 
 const discussionRoute = express.Router();
 

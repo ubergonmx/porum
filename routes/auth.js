@@ -1,7 +1,7 @@
 import express from 'express';
 import User from '../db/models/User.js';
 import bcrypt from 'bcrypt';
-import { upload, isEqual } from './utils.js';
+import { upload, isEqual } from '../utils/helper.js';
 
 const authRoute = express.Router();
 
