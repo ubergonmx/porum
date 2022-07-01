@@ -1,31 +1,28 @@
 # Porum
-Major Course Output for CCAPDEV2122T2
+Major Course Output of Group 12 (S15) for CCAPDEV2122T2
 
 ## Introduction
 Since we are social beings, the global pandemic has had a significant impact on our social lives as it continues to limit our face-to-face interactions and isolate us from the rest of the world. 
 
 As a result, many of us want to share our experiences with the internet, which has served as the primary mode of communication during the pandemic. There are many social media platforms that people can use as a result of this, but only a few community-based platforms where people can post various information or contents.
 
-Herewith, the proposed web application is an online forum similar to reddit and stackoverflow, that will allow registered users to create posts from queries, news, thoughts or to simply share something of their interest. With this, other users can comment and react to these posts which will promote interaction and communication between the users of the web application making it more user-friendly.
+Herewith, the proposed web application is an online forum similar to Reddit and StackOverflow, that will allow registered users to create posts from queries, news, thoughts or to simply share something of their interest. With this, other users can comment and react to these posts which will promote interaction and communication between the users of the web application making it more user-friendly.
 
 ## Local Set Up
 - Make sure MongoDB is installed and running.
-- Run `npm install` after [downloading the contents of the repository](https://github.com/nromblon/ccapdev-mc03/archive/refs/heads/master.zip).
-- To run the application, execute `node index.js` or `npm start`
-
-## Submission Details
-- Place all necessary files in a zip file.
-- **Do not include the `node_modules` folder**
-- Submit the zip file via AnimoSpace.
+- Run `npm install`
+- Rename the `.env.default` file to `.env`
+    - Set up `MONGODB_URI` if connection problems occur
+- To run the application, execute `node server.js` or `npm start`
 
 ## Content
-- [`controllers`](controllers) - This folder contains files which defines callback functions for client requests.
-- [`misc`](misc) - This folder contains images used in the [`README.md`](README.md) file.
+- [`db`](db) - This folder contains files which defines database models, connection, and sample data.
+- [`utils`](utils) - This folder contains js files used for utilities
 - [`models`](models) - This folder contains files for database modeling and access.
 - [`public`](public) - This folder contains static assets such as css, js, and image files.
 - [`routes`](routes) - This folder contains files which describes the response of the server for each HTTP method request to a specific path in the server.
 - [`views`](views) - This folder contains all hbs files to be rendered when requested from the server.
-- [`index.js`](index.js) - The main entry point of the web application.
+- [`server.js`](server.js) - The main entry point of the web application.
 
 ## Challenge Description
 You are to create a web application which simulates an online payment transaction tracker.
@@ -78,9 +75,6 @@ You are already provided with the skeleton code organized in the MVC architectur
 If you wish to proceed with a different implementation, make sure that the specification requirements are exactly met and that the intended UI is unchanged.
 Goodluck and stay safe! :sunglasses:
 
-## Rubric
-Kindly check this [file](misc/rubric.pdf) for the rubric for grading.
-
 ## References
 Maximize the materials uploaded for class and the resources readily available on the internet.
 
@@ -90,23 +84,5 @@ Maximize the materials uploaded for class and the resources readily available on
 
 
 ## Languages and Tools
-<p align="left"> 
-
-<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
-
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> 
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
-
-<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>
-
-<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> 
-
-
-<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a>
-
-
-<a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a>
-
-
+<p align="left"> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://handlebarsjs.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/handlebars/handlebars-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a>
 </p>
