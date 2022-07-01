@@ -42,5 +42,5 @@ Herewith, the proposed web application is an online forum similar to Reddit and 
 - [mongodb](https://www.npmjs.com/package/mongodb) - This package is the MongoDB driver for Node.js.
 - [mongoose](https://www.npmjs.com/package/mongoose) - This package is an object modelling tool for MongoDB.
 - [morgan](https://www.npmjs.com/package/morgan) - This package is a HTTP middleware for Node.js that logs HTTP requests and errors.
-- [multer](https://www.npmjs.com/package/multer) - This package is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. 
+- [multer](https://www.npmjs.com/package/multer) - This package is a node.js middleware for handling `multipart/form-data`, which is primarily used for uploading files. 
 - [nodemon](https://www.npmjs.com/package/nodemon) - This package helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
