@@ -7,7 +7,6 @@ import exphbs from 'express-handlebars';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { expressCspHeader } from 'express-csp-header';
-import flash from 'express-flash';
 import session from 'express-session';
 // Database modules
 import mongoose from 'mongoose';
