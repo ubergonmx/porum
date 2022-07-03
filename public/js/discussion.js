@@ -1,7 +1,6 @@
-var userId, discussionId;
+var discussionId;
 window.addEventListener("load", function(e){
     discussionId = this.window.location.pathname.split("/")[2];
-    userId = this.document.querySelector("#profile-container").getAttribute("data-id");
     const edit = this.document.querySelector("#edit");
     const follow = this.document.querySelector("#follow");
     const unfollow = this.document.querySelector("#unfollow");
@@ -45,53 +44,54 @@ window.addEventListener("load", function(e){
         })
     });
 
-    follow.addEventListener("click", (e)=> {
-        e.preventDefault();
-        this.fetch(`/discussions/${discussionId}/follow`,
-        {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                userId: userId
+    if(follow && unfollow){
+        follow.addEventListener("click", (e)=> {
+            e.preventDefault();
+            this.fetch(`/discussions/${discussionId}/follow`,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userId: userId
+                })
+            }).then(res =>{
+                if(res.status >= 400){
+                    console.log("Failed to follow.")
+                    return;
+                }
+                else if(res.status==200){
+                    follow.classList.add("hide");
+                    unfollow.classList.remove("hide");
+                }
             })
-        }).then(res =>{
-            if(res.status >= 400){
-                console.log("Failed to follow.")
-                return;
-            }
-            else if(res.status==200){
-                follow.classList.add("hide");
-                unfollow.classList.remove("hide");
-            }
-        })
-    });
-
-    unfollow.addEventListener("click", (e)=> {
-        e.preventDefault();
-        this.fetch(`/discussions/${discussionId}/unfollow`,
-        {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                userId: userId
-            })
-        }).then(res =>{
-            if(res.status >= 400){
-                return res.json();
-            }
-            else if(res.status==200){
-                unfollow.classList.add("hide");
-                follow.classList.remove("hide");
-            }
-        }).then(data => {
-            if(data) console.log(data);
         });
-    });
 
+        unfollow.addEventListener("click", (e)=> {
+            e.preventDefault();
+            this.fetch(`/discussions/${discussionId}/unfollow`,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userId: userId
+                })
+            }).then(res =>{
+                if(res.status >= 400){
+                    return res.json();
+                }
+                else if(res.status==200){
+                    unfollow.classList.add("hide");
+                    follow.classList.remove("hide");
+                }
+            }).then(data => {
+                if(data) console.log(data);
+            });
+        });
+    }
 
     if(edit){
         edit.addEventListener("click", (e)=> {

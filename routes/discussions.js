@@ -22,6 +22,20 @@ discussionRoute.get('/all', async (req, res) => {
         return;
     }
 });
+//GET ALL DISCUSSIONS
+discussionRoute.get('/search=:title', async (req, res) => {
+    try{
+        const discussions = await Discussion.find({
+            title: {
+                $regex: req.params.title, 
+                $options: 'i'
+            }});
+        res.status(200).json(discussions);
+    }catch(err){
+        res.status(500).json(err);
+        return;
+    }
+});
 
 //CREATE
 discussionRoute.post('/', async (req, res) => {

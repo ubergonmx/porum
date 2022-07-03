@@ -126,6 +126,4 @@ userRoute.get("/get/:id", async (req, res) => {
 });
 
 
-
-
 export default userRoute;

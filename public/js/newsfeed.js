@@ -1,5 +1,5 @@
 var container, scaffold, loadMore, tempSideFilter;
-var discussions = [];
+var discussions = [], displayDiscussions = [], followingDiscussions = [], displayLimit = 5;
 
 fetch("/discussions/all").then(res => res.json()).then(discussionArr => { 
     for(const item of discussionArr){
@@ -19,7 +19,38 @@ fetch("/discussions/all").then(res => res.json()).then(discussionArr => {
             item.comments.length,
         ));
     }
+    
+    displayDiscussions = [...discussions];
 });
+
+URLpath = window.location.pathname.split('/');
+searchIndex = URLpath.findIndex(e => e.includes("search"));
+if(searchIndex !== -1){
+    fetch("/discussions/" + URLpath[searchIndex]).then(res => res.json()).then(discussionArr => { 
+        let foundDiscussions = [];
+        for(const item of discussionArr){
+            const userObj = {};
+            fetch("/users/get/" + item.userId).then(res => res.json()).then(author => {
+                userObj.profile = author._id;
+                userObj.username = author.username;
+                userObj.imgSrc = author.profileImg;
+            });
+            foundDiscussions.push(new discussion(
+                item._id,
+                item.title,
+                userObj,
+                item.tag,
+                new Date(item.createdAt),
+                item.content,
+                item.comments.length,
+            ));
+        }
+        
+        displayDiscussions = [...foundDiscussions];
+    });
+    
+}
+
 
 /**
  * @param  {string} id
@@ -52,22 +83,30 @@ window.addEventListener("load", function(e){
     // toggle(loadMore);
     // loadDiscussions(discussions);
 
+    // populate following discussions
+    fetch("/users/get/"+userId).then(res => res.json()).then(user => {
+        for(const id of user.followings){
+            let i = discussions.findIndex(discussion => discussion.id == id);
+            followingDiscussions.push(discussions[i]);
+        }
+    });
+
     const filter = document.querySelector("#filter");
-    filter.addEventListener("change", (e)=>{
+    filter.onchange = (e)=>{
         clear(container);
         switch(filter.value){
             case "Latest first":
-                let latest = discussions.sort((a,b) => b.date - a.date);
+                let latest = displayDiscussions.sort((a,b) => b.date - a.date);
                 loadDiscussions(latest);
                 break;
             case "Oldest first":
-                let oldest = discussions.sort((a,b) => a.date - b.date)
+                let oldest = displayDiscussions.sort((a,b) => a.date - b.date)
                 loadDiscussions(oldest);
                 break;
         }
         
         // toggle(loadMore, 1);
-    });
+    };
 
     const newDiscussion = document.querySelector("#new-discussion");
     newDiscussion.addEventListener("click", () => {
@@ -87,28 +126,19 @@ document.addEventListener("click", (e)=>{
     let tag = e.target.closest(".tag");
     if(tag && tag.hasAttribute("data-tag-type") && !tag.classList.contains("text-active")){
         setSideFilter(tag);
-        
         clear(container);
         let selected = discussions.filter((a) => a.tag.name == tag.innerHTML);
-        if(selected === undefined || selected.length == 0){
-            container.innerHTML = 
-            `<div id="scaffold">
-                <img src="../images/design/404.png">
-                <h1 id="text-title">No discussions yet</h1>
-            </div>`;
-            // toggle(loadMore, 0);
-        }
-        else {
-            // toggle(loadMore, 1);
-            loadDiscussions(selected);
-        }
+        displayDiscussions = selected;
+        filter.onchange();
+        // toggle(loadMore, 1);
     }
 
     let allDiscussion = e.target.closest("#all-discussion");
     if(allDiscussion && !allDiscussion.classList.contains("text-active")){
         setSideFilter(allDiscussion);
         clear(container);
-        loadDiscussions(discussions);
+        displayDiscussions = discussions;
+        filter.onchange();
         // toggle(loadMore, 1);
     }
 
@@ -116,7 +146,8 @@ document.addEventListener("click", (e)=>{
     if(following && !following.classList.contains("text-active")){
         setSideFilter(following);
         clear(container);
-        loadDiscussions(discussions);
+        displayDiscussions = followingDiscussions;
+        filter.onchange();
         // toggle(loadMore, 1);
     }
 });
@@ -137,6 +168,15 @@ function setSideFilter(element){
  * @param  {discussion[]} discussionArr
  */
 function loadDiscussions(discussionArr){
+    if(discussionArr === undefined || discussionArr.length == 0){
+        container.innerHTML = 
+        `<div id="scaffold">
+            <img src="../images/design/404.png">
+            <h1 id="text-title">No discussions yet</h1>
+        </div>`;
+        return;
+        // toggle(loadMore, 0);
+    }
     for(const discussion of discussionArr){
         let discussionHtml = 
         `<div class="discussion-box" data-link="discussions/${discussion.id}"> 

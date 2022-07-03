@@ -19,6 +19,33 @@ baseRoute.get('/newsfeed', (req, res) => {
     res.redirect('/home');
 });
 
+baseRoute.get('/search=:title', checkAuth, async (req, res) => {
+    const discussions = await Discussion.find({
+        title: {
+            $regex: req.params.title, 
+            $options: 'i'
+        }}).sort('-createdAt').lean();
+    for(var discussion of discussions){
+        discussion.author = await User.findOne({ _id: discussion.userId }).select("username profileImg").lean();
+        // for(var comment of discussion.comments){
+        //     comment.author = await User.findOne({ _id: comment.userId }).select("username profileImg").lean();
+        // }
+        //console.log(discussion);
+        let numOfComments = discussion.comments.length;
+        discussion.commentsNo = `${numOfComments} Comment${numOfComments > 1 ? 's' : ''}`;
+    }
+    
+    res.render('index', {
+        title: 'Home',
+        styles: ['newsfeed.css'],
+        scripts: ['newsfeed.js'],
+        user: req.session.user,
+        discussions: discussions,
+        previousSearch: req.params.title,
+        helpers: {calcDate, truncate}
+    });
+});
+
 baseRoute.get('/home', checkAuth, async (req, res) => {
     const discussions = await Discussion.find({}).sort('-createdAt').lean();
     for(var discussion of discussions){

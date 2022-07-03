@@ -7,10 +7,10 @@
 
     <!-- Search bar -->
     <div id="search-container">
-        <form id="search-form" action="#" method="GET">
-            <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+        <form id="search-form">
+            <input id="search-bar" type="text" name="search" placeholder="Search the forum" value="{{previousSearch}}" maxlength="240"/>
             <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
-            <input type="submit" hidden />
+            <input id="search-submit" type="submit" hidden />
         </form>
     </div>
 

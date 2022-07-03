@@ -1,5 +1,4 @@
 window.addEventListener("load", function(e){
-    const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
     const profilePic = this.document.querySelector("#profile-pic");
     const profileImg = this.document.querySelector("#profile-img");
     const coverPic = this.document.querySelector("#cover-photo");

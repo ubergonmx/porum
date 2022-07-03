@@ -1,5 +1,4 @@
 window.addEventListener("load", function(e){
-    const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
     const discussionId = this.window.location.pathname.split("/")[2];
     const title = this.document.querySelector("#edit-title");
     const content = this.document.querySelector("#edit-content");

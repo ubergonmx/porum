@@ -16,22 +16,33 @@ const tags = [
 var successTimeout, errorTimeout, tempFields = [];
 var arrowDown, profileActive = 0, profileDropdown;
 var hasNotif = 1, notifContainer, notifDropdown;
+var userId;
 
 
 document.addEventListener("DOMContentLoaded", function(e){
+    if(document.querySelector("#profile-container"))
+        userId = document.querySelector("#profile-container").getAttribute("data-id");
+
     const searchForm = document.querySelector("#search-form");
-    const searchBar1 = document.querySelector("#search-bar");
+    const searchBar = document.querySelector("#search-bar");
+    const searchSubmit = document.querySelector("#search-submit");
     
     notifContainer = document.querySelector("#notification-container");
     notifDropdown = document.querySelector("#notification-dropdown");
     profileDropdown = document.querySelector("#profile-dropdown");
 
-    if(searchForm && searchBar1){
-        searchBar1.addEventListener("focus", function(){
+    if(searchForm && searchBar && searchSubmit){
+        searchBar.addEventListener("focus", function(){
             searchForm.classList.add("input-focus");
         });
-        searchBar1.addEventListener("blur", function(){
+        searchBar.addEventListener("blur", function(){
             searchForm.classList.remove("input-focus");
+        });
+        searchSubmit.addEventListener("click", function(e){
+            e.preventDefault();
+            if(searchBar.value.length > 0){
+                window.location.href = window.location.origin + "/search=" + searchBar.value;
+            }
         });
     }
 });

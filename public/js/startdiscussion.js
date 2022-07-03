@@ -1,5 +1,4 @@
 window.addEventListener("load", function(e){
-    const userId = this.document.querySelector("#profile-container").getAttribute("data-id");
     const title = this.document.querySelector("#input-title");
     const content = this.document.querySelector("#input-content");
     const create = this.document.querySelector("#create-button");
