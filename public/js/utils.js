@@ -53,6 +53,25 @@ function showError(error, message, elements){
 }
 
 /**
+ * Shows the success message for 5 seconds.
+ * @param {element} success 
+ * @param {string} message 
+ */
+
+function showSuccess(success, message){
+    clearTimeout(successTimeout);
+    if(success){
+        success.innerHTML = message;
+        success.classList.add("active");
+    }
+    successTimeout = setTimeout(() => {
+        if(success)
+            success.classList.remove("active");
+    }
+    , 5000);
+}
+
+/**
  * Clears content/innerHTML of the given element
  * @param  {element} element
  */
@@ -206,4 +225,12 @@ function birthdayInput(d){
     let MM = d.getMonth() + 1;
     MM = (MM < 10) ? '0' + MM : MM;
     return `${d.getFullYear()}-${MM}-${d.getDate()}`;
+}
+
+/**
+ * Returns a clean string replacing newlines with spaces
+ * @returns {string} - the string with newlines replaced with spaces
+ */
+String.prototype.removeNewLine = function(){
+    return this.replace(/(\r\n|\n|\r)/gm, "");
 }

@@ -13,7 +13,7 @@ const tags = [
     {name: "Jobs", color: "brown"},
 ]
 
-var errorTimeout, tempFields = [];
+var successTimeout, errorTimeout, tempFields = [];
 var arrowDown, profileActive = 0, profileDropdown;
 var hasNotif = 1, notifContainer, notifDropdown;
 

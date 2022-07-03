@@ -95,6 +95,7 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
             discussion: discussion,
             comments: comments,
             isCurrentUser: req.session.user._id.toString() === discussion.userId.toString(),
+            isFollowed: req.session.user.followings.includes(discussion._id.toString()),
             helpers: { formatDate }
         });
 

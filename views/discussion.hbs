@@ -20,12 +20,18 @@
                 
             <div><h3 id="content-text">{{{discussion.content}}}</h3></div>          
             <div id="options">
-                <a href="#comment-content" id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{discussion.commentsNo}}</span></a>
+                <a href="#comment-container" id="comment" class="text-clickable"><i class="fa-solid fa-message"></i><span id="commenters"> {{discussion.commentsNo}}</span></a>
                 {{!-- <div id="share" class="text-clickable"><i class="fa-solid fa-share"></i><span id="share"> Share</span></div> --}}
                 {{#if isCurrentUser}}
                     <div id = "edit" class="text-clickable"><i class="fa-solid fa-pen-to-square"></i><span id="edit"> Edit</span></div>
                 {{else}}
-                    <div id="follow" class="text-clickable"><i class="fa-solid fa-star"></i><span id="follow"> Follow</span></div>
+                    {{#if isFollowed}}
+                        <div id = "unfollow" class="text-clickable text-active"><i class="fa-solid fa-star"></i><span id="follow"> Followed</span></div>
+                        <div id = "follow" class="text-clickable hide"><i class="fa-solid fa-star"></i><span id="follow"> Follow</span></div>
+                    {{else}}
+                        <div id = "follow" class="text-clickable"><i class="fa-solid fa-star"></i><span id="follow"> Follow</span></div>
+                        <div id = "unfollow" class="text-clickable text-active hide"><i class="fa-solid fa-star"></i><span id="follow"> Followed</span></div>
+                    {{/if}}
                 {{/if}}
             </div>
         </div>
@@ -34,13 +40,13 @@
         <!-- Text Box -->
         <form class="def-container content-box">
             <textarea type="text" id="comment-input" name="comment-input" class="comment-input"></textarea>
-            <div class = "comment-button">
+            <div class = "comment-create">
                 <button id="create-button" class="button-primary">Comment</button>
                 <p class="text-error"></p>
             </div>
         </form>
 
-        <div id="comment-content">
+        <div id="comment-container">
             {{#if comments}}
             {{#each comments}}
                 {{>comment}}

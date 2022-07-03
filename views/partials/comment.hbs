@@ -1,14 +1,24 @@
 <div id="{{_id}}" class="comment-box def-container">
-    <div><a href="../users/{{author._id}}"><img src="../{{author.profileImg}}" class="commenter-pic"></a></div>
-    <div>
-        <p class="comments">
+    <a href="../users/{{author._id}}"><img src="../{{author.profileImg}}" class="commenter-pic"></a>
+    <div class="comment-body">
+        <div class="comment-content">
             <a href="../users/{{author._id}}" class="commenter-user">{{author.username}}</a> 
             <span class="commenter-date">{{formatDate createdAt}} {{#if edited}}&bull; Edited on {{formatDate editedAt}}{{/if}}</span>
             {{#if isCurrentUser}}
-                <span class="commenter-edit text-clickable" style="margin-left: 5px"><i class="fa-solid fa-pen-to-square"></i></span>
+                <span class="comment-edit text-clickable" style="margin-left: 5px"><i class="fa-solid fa-pen-to-square"></i></span>
+                <span class="text-success"></span>
             {{/if}}
-            <br>
-            {{{content}}} 
-        </p>
+            <p>{{{content}}}</p>
+        </div>
+        {{#if isCurrentUser}}
+            <div class="comment-edit-form hide">
+                <textarea class="comment-edit-textarea" placeholder="Edit your comment...">{{content}}</textarea>
+                <div class="comment-edit-buttons">
+                    <button class="comment-edit-cancel button-secondary"><i class="fa-solid fa-times"></i> Cancel</span>
+                    <button class="comment-edit-save button-primary" disabled><i class="fa-solid fa-check"></i> Save</span>
+                </div>
+            </div>
+        {{/if}}
     </div>
+
 </div>
