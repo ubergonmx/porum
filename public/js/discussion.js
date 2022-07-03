@@ -116,9 +116,9 @@ document.addEventListener("click", (e)=>{
         let save =  commentEditForm.querySelector(".comment-edit-save");
         let content = input.value.removeNewLine();
 
-        console.log(commentId);
-        console.log(content);
-
+        if(content === input.value.removeNewLine()){
+            save.disabled = true;
+        }
         commentContent.classList.add("hide");
         commentEdit.classList.add("hide");
         commentEditForm.classList.remove("hide");
@@ -169,8 +169,9 @@ document.addEventListener("click", (e)=>{
                 else if(res.status==200){
                     let date = commentDate.innerHTML;
                     if(date.includes("•")) date = date.split("•")[0];
-
+                    
                     showSuccess(success, "Successfully edited");
+                    input.value = content;
                     commentEditForm.classList.add("hide");
                     commentContent.classList.remove("hide");
                     commentEdit.classList.remove("hide");

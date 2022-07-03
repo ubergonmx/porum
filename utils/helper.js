@@ -194,3 +194,11 @@ export function birthdayInput(d){
     MM = (MM < 10) ? '0' + MM : MM;
     return `${d.getFullYear()}-${MM}-${d.getDate()}`;
 }
+
+/**
+ * Returns a clean string replacing newlines with spaces
+ * @returns {string} s - the string with newlines replaced with spaces
+ */
+export function removeNewLine(s){
+    return s.replace(/(\r\n|\n|\r)/gm, "");
+}

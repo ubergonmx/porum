@@ -1,4 +1,5 @@
 window.addEventListener("load", function(e){
+    const iconUser = document.querySelector("#icon-user");
     const profilePic = this.document.querySelector("#profile-pic");
     const profileImg = this.document.querySelector("#profile-img");
     const coverPic = this.document.querySelector("#cover-photo");
@@ -15,6 +16,7 @@ window.addEventListener("load", function(e){
     const enableNumber = this.document.querySelector("#enable-number");
     const save = this.document.querySelector("#save-button");
     const error = this.document.querySelector(".text-error");
+    const success = this.document.querySelector(".text-success");
 
     var userData = {};
     fetch("/users/get/"+userId).then(res => res.json()).then(data => userData = data);
@@ -60,8 +62,12 @@ window.addEventListener("load", function(e){
             method: "PUT",
             body: formData
         }).then(res =>{
-            if(res.status==200)
+            if(res.status==200){
                 this.window.location.href = window.location.origin + "/settings#settings-box";
+                if(profileImg.files[0])
+                    iconUser.src = URL.createObjectURL(profileImg.files[0]);
+                showSuccess(success, "Settings updated successfully.");
+            }
         }).catch(err => console.log(err));
     });
 
