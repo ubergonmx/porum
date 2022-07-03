@@ -240,6 +240,7 @@ export async function generateData(){
     var initialComments = [ initialComments1, initialComments2, initialComments3, initialComments4, initialComments5 ];
     
     
+    console.log(">>>POPULATING DB");
     try{
         var sampleUsers = await User.find({}).lean();
         if(sampleUsers.length === 0){

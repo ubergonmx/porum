@@ -72,6 +72,9 @@ discussionRoute.delete('/:id', async (req, res) => {
     try {
         const discussion = await Discussion.findById(req.params.id);
         if(discussion.userId === req.body.userId || req.body.isAdmin){
+            for(var comment of discussion.comments){
+                await Comment.findByIdAndDelete(comment);
+            }
             await discussion.deleteOne();
             res.status(200).json("Discussion deleted");
         }
