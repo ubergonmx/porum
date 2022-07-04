@@ -32,7 +32,7 @@ window.addEventListener("load", function(e){
             body: JSON.stringify({
                 userId: userId,
                 discussionId: discussionId,
-                content: comment.value
+                content: comment.value.removeNewlinesAndTags()
             })
         }).then(res =>{
             if(res.status >= 400){
@@ -115,18 +115,19 @@ document.addEventListener("click", (e)=>{
         let commentEditForm = commentContent.nextElementSibling;
         let success = commentEdit.nextElementSibling;
         let input =  commentEditForm.querySelector(".comment-edit-textarea");
-        let cancel = commentEditForm.querySelector(".comment-edit-cancel");
-        let save =  commentEditForm.querySelector(".comment-edit-save");
+        let cancelBtn = commentEditForm.querySelector(".comment-edit-cancel");
+        let saveBtn =  commentEditForm.querySelector(".comment-edit-save");
+        let deleteBtn = commentEditForm.querySelector(".comment-edit-delete");
         let content = input.value.removeNewlinesAndTags();
 
         if(content === input.value.removeNewlinesAndTags()){
-            save.disabled = true;
+            saveBtn.disabled = true;
         }
         commentContent.classList.add("hide");
         commentEdit.classList.add("hide");
         commentEditForm.classList.remove("hide");
 
-        cancel.addEventListener("click", (e)=> {
+        cancelBtn.addEventListener("click", (e)=> {
             e.preventDefault();
             commentEditForm.classList.add("hide");
             commentContent.classList.remove("hide");
@@ -135,23 +136,23 @@ document.addEventListener("click", (e)=>{
 
         input.addEventListener("keyup", (e)=> {
             if(content === input.value.removeNewlinesAndTags()){
-                save.disabled = true;
+                saveBtn.disabled = true;
             }
             else{
-                save.disabled = false;
+                saveBtn.disabled = false;
             }
 
             if(isEmptyOrSpaces(input.value)){
-                save.disabled = true;
+                saveBtn.disabled = true;
             }
             else{
-                save.disabled = false;
+                saveBtn.disabled = false;
             }
 
             content = input.value.removeNewlinesAndTags();
         });
 
-        save.addEventListener("click", (e)=> {
+        saveBtn.addEventListener("click", (e)=> {
             e.preventDefault();
 
             this.fetch(`/discussions/${discussionId}/comment/${commentId}`,
@@ -162,7 +163,7 @@ document.addEventListener("click", (e)=>{
                 },
                 body: JSON.stringify({
                     userId: userId,
-                    content: input.value
+                    content: input.value.removeNewlinesAndTags()
                 })
             }).then(res =>{
                 if(res.status >= 400){
@@ -182,6 +183,30 @@ document.addEventListener("click", (e)=>{
                     commentContent.querySelector("p").innerHTML = input.value;
                 }
             })
+        });
+
+        deleteBtn.addEventListener("click", (e)=> {
+            e.preventDefault();
+            this.fetch(`/discussions/${discussionId}/comment/${commentId}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userId: userId
+                })
+            }).then(res =>{
+                if(res.status >= 400){
+                    console.log("Failed to delete.")
+                    return res.json();
+                }
+                else if(res.status==200){
+                    commentContent.parentElement.parentElement.remove();
+                }
+            }).then(data =>{
+                if (data) console.log(data);
+            });
         });
     }
 });
