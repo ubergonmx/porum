@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="../../public/css/base.css">
+    <link rel="stylesheet" href="../../public/css/about.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
@@ -17,7 +17,7 @@
     <header>
         <!-- Logo -->
         <a href="newsfeed.html" id="main-logo">
-            <img src="images/design/logo.png" id="icon-logo"/>
+            <img src="../../public/images/design/logo.png" id="icon-logo"/>
             <p id="main-title">Porum</p>
         </a>
      <!-- Search bar -->
@@ -36,7 +36,7 @@
             <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
             <div id="notification-dropdown" class="dropdown">
                 <div class="notif-item">
-                    <img src="images/users/user7.jpg" class="notif-commenter">
+                    <img src="../../public/images/users/user7.jpg" class="notif-commenter">
                     <div class="notif-body">
                         <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
                         <span class="notif-date">1 day ago</span>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="notif-item">
-                    <img src="images/users/user7.jpg" class="notif-commenter">
+                    <img src="../../public/images/users/user7.jpg" class="notif-commenter">
                     <div class="notif-body">
                         <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
                         <span class="notif-date">1 day ago</span>
@@ -55,7 +55,7 @@
 
         <!-- Profile -->
         <div id="profile-container">
-            <img src="images/users/user1.jpg" id="icon-user">
+            <img src="../../public/images/users/user1.jpg" id="icon-user">
 
             <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
             <div id="profile-dropdown" class="dropdown">
@@ -72,7 +72,7 @@
     <!-- About -->
     <section>
     <div class ="section-box def-container">
-      <div id="content-box">
+      <div class="content-box">
         <br>
         <h1 id="text-title">Dive into Anything.</h1><br>
         <h2 id="intro-subtitle">Since we are social beings, the global pandemic has had a significant impact on
@@ -92,7 +92,7 @@
         </div>
 
         <div>
-        <img src="images/about/mockup.png" id = "mockup"/>
+        <img src="../../public/images/about/mockup.png" id = "mockup"/>
         </div>
     </div>
     </section>
@@ -100,27 +100,46 @@
     <!--Developers-->
     <section>
         <div class ="section-box def-container">
-            <div id="content-box">
-                <h1 id="text-title">Developers</h1><br>
+            <div class="content-box">
+                <h1 id="text-title">Developers</h1>
 
                 <div id = "developer-box">
                     <div>
-                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                        <img src="../../public/images/about/developer1.jpg" class="dev-photo"/>
+                        <h1>Aaron Gabriel Songcuan Palpallatoc</h1>
+                        <h4>Student at De La Salle Univesity</h4>
+                    </div>
                     <div>
-                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                        <img src="../../public/images/about/developer2.jpg" class="dev-photo"/>
+                        <h1>Kathleen Tio Tan</h1>
+                        <h4>Student at De La Salle Univesity</h4>
+                    </div>
                     <div>
-                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                        <img src="../../public/images/about/developer3.jpg" class="dev-photo"/>
+                        <h1>Nicole Gene Prado Dans</h1>
+                        <h4>Student at De La Salle Univesity</h4>
+                    </div>
                     <div>
-                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
-
+                        <img src="../../public/images/about/developer4.jpg" class="dev-photo"/>
+                        <h1>Diego Vitug Pallasigue</h1>
+                        <h4>Student at De La Salle Univesity</h4>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-        
-
-    </main>
+    <!-- Github Repo Link -->
+    <section>
+        <div class="section-box def-container">
+            <div class="content-box2">
+                <h1 id="text-title">Github Repo Link</h1>
+                <div id="link-box">
+                    <div><button id="repo-link" class="button-primary">Take me there</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+ </main>
 </body>
 </html>
