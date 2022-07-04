@@ -6,6 +6,7 @@ window.addEventListener("load", function(e){
     let fields = [email, username];
 
     sendResetLink.addEventListener("click", (e)=> {
+        e.preventDefault();
         if(isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value)){
             showError(error, "Please fill out all fields.", fields);
             return;

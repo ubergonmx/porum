@@ -6,6 +6,7 @@ window.addEventListener("load", function(e){
     let fields = [password, confirmPassword];
 
     resetPassword.addEventListener("click", (e)=> {
+        e.preventDefault();
         if(password.value.length < 6){
             showError(error, "Password must be at least 6 characters long.",[password]);
             return;
