@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/base.css">
-    <link rel="stylesheet" href="public/css/about.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="shortcut icon" href="images/icon/porum.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e5cabd2361.js" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
@@ -20,19 +20,62 @@
             <img src="images/design/logo.png" id="icon-logo"/>
             <p id="main-title">Porum</p>
         </a>
+     <!-- Search bar -->
+     <div id="search-container">
+        <form id="search-form" action="#" method="GET">
+            <input id="search-bar" type="text" placeholder="Search the forum" maxlength="240"/>
+            <i id="icon-search" class="fa-solid fa-magnifying-glass icon-base"></i>
+            <input type="submit" hidden />
+        </form>
+    </div>
+
+    <!-- Notification and Profile -->
+    <div>
+        <!-- Notif icon -->
+        <div id="notification-container" class="has-notification">
+            <i id="icon-notification" class="fa-solid fa-bell fa-lg icon-base"></i>
+            <div id="notification-dropdown" class="dropdown">
+                <div class="notif-item">
+                    <img src="images/users/user7.jpg" class="notif-commenter">
+                    <div class="notif-body">
+                        <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                        <span class="notif-date">1 day ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <img src="images/users/user7.jpg" class="notif-commenter">
+                    <div class="notif-body">
+                        <p class="notif-content"><span>shirley.mood</span> commented on your <span>discussion</span></p>
+                        <span class="notif-date">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div id="profile-container">
+            <img src="images/users/user1.jpg" id="icon-user">
+
+            <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
+            <div id="profile-dropdown" class="dropdown">
+                <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>
+                <div id="settings-btn"><i class="fa-solid fa-gear"></i> <span>Settings</span></div>
+                <div id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span></div>
+            </div>
+        </div>
+    </div>
     </header>
 
     <main>
 
     <!-- About -->
-      <div id="content-box" class="def-container">
-        <div id="main-logo">
-            <img src="images/design/logo.png" id="icon-logo"/>
-            <p id="main-title">Porum</p>
-        </div>
+    <section>
+    <div class ="section-box def-container">
+      <div id="content-box">
         <br>
-        <h1 id="text-title">Dive into Anything.</h1>
-        <h2 id="text-subtitle">Since we are social beings, the global pandemic has had a significant impact on
+        <h1 id="text-title">Dive into Anything.</h1><br>
+        <h2 id="intro-subtitle">Since we are social beings, the global pandemic has had a significant impact on
             our social lives as it continues to limit our face-to-face interactions and isolate us from
             the rest of the world. <br><br>
             
@@ -48,12 +91,35 @@
             between the users of the web application making it more user-friendly.</h1>
         </div>
 
-        <img src="images/about/mockup.png">
-        
+        <div>
+        <img src="images/about/mockup.png" id = "mockup"/>
+        </div>
+    </div>
+    </section>
 
-    <!-- Creators
-    <div id="content-box" class="def-container">
-    </div> -->
+    <!--Developers-->
+    <section>
+        <div class ="section-box def-container">
+            <div id="content-box">
+                <h1 id="text-title">Developers</h1><br>
+
+                <div id = "developer-box">
+                    <div>
+                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                    <div>
+                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                    <div>
+                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+                    <div>
+                        <img src="images/users/user1.jpg" id = "dev-photo"/></div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        
 
     </main>
 </body>
