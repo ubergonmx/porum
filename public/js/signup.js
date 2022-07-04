@@ -28,7 +28,7 @@ window.addEventListener("load", function(e){
             showError(error, "Please enter a valid email.",[email]);
             return;
         }
-        if(password.value.length < 5){
+        if(password.value.length < 6){
             showError(error, "Password must be at least 6 characters long.",[password]);
             return;
         }

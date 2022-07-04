@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 // Server modules
-import express from 'express';
+import express, { application } from 'express';
 import exphbs from 'express-handlebars';
 import morgan from 'morgan';
 import helmet from 'helmet';

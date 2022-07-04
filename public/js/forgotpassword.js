@@ -14,6 +14,24 @@ window.addEventListener("load", function(e){
             showError(error, "Please enter a valid email.",[email]);
             return;
         }
-        this.window.location.href = window.location.origin + "/index.html";
+
+        this.fetch("/auth/reset", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username.value,
+                email: email.value
+            })
+        }).then(res => {
+            if(res.status >= 400){
+                showError(error, "Invalid username or email.", fields);
+                return;
+            }
+            if(res.status == 200){
+                this.window.location.href = window.location.origin + "/home";
+            }
+        }).catch(err => console.log(err))
     });
 });

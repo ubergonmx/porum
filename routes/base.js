@@ -150,4 +150,12 @@ baseRoute.get('/forgotpassword', checkNoAuth, (req, res) => {
     });
 });
 
+baseRoute.get('/resetpassword/:userId.:token', checkNoAuth, (req, res) => {
+    res.render('resetpassword', {
+        title: 'Reset Password',
+        styles: ['login.css'],
+        scripts: ["resetpassword.js"]
+    });
+});
+
 export default baseRoute;
