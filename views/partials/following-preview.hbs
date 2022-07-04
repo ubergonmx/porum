@@ -1,0 +1,11 @@
+<a href="../discussions/{{_id}}">
+    <div class="discussion-box" > 
+        <div class="discussion">
+            <div class="discussion-body">
+                <h1 class="title"><i class="fa-solid fa-star"></i> {{title}}</h1>
+                <p class="date">{{formatDate createdAt}}</p>
+                <p class="content">{{{truncate content 300 1}}}</p>  
+            </div>
+        </div>
+    </div>
+</a>

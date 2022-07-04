@@ -197,8 +197,9 @@ export function birthdayInput(d){
 
 /**
  * Returns a clean string replacing newlines with spaces
- * @returns {string} s - the string with newlines replaced with spaces
+ * removes all HTML tags
+ * @returns {string} s - the string cleaned
  */
-export function removeNewLine(s){
-    return s.replace(/(\r\n|\n|\r)/gm, "");
+export function removeNewlinesAndTags(s){
+    return s.replace(/(\r\n|\n|\r)/gm, "").replace(/(<([^>]+)>)/gi, "");
 }

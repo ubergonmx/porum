@@ -59,13 +59,15 @@ window.addEventListener("load", function(e){
             }).then(res =>{
                 if(res.status >= 400){
                     console.log("Failed to follow.")
-                    return;
+                    return res.json();
                 }
                 else if(res.status==200){
                     follow.classList.add("hide");
                     unfollow.classList.remove("hide");
                 }
-            })
+            }).then(data =>{
+                if (data) console.log(data);
+            });
         });
 
         unfollow.addEventListener("click", (e)=> {
@@ -81,6 +83,7 @@ window.addEventListener("load", function(e){
                 })
             }).then(res =>{
                 if(res.status >= 400){
+                    console.log("Failed to unfollow.")
                     return res.json();
                 }
                 else if(res.status==200){
@@ -114,9 +117,9 @@ document.addEventListener("click", (e)=>{
         let input =  commentEditForm.querySelector(".comment-edit-textarea");
         let cancel = commentEditForm.querySelector(".comment-edit-cancel");
         let save =  commentEditForm.querySelector(".comment-edit-save");
-        let content = input.value.removeNewLine();
+        let content = input.value.removeNewlinesAndTags();
 
-        if(content === input.value.removeNewLine()){
+        if(content === input.value.removeNewlinesAndTags()){
             save.disabled = true;
         }
         commentContent.classList.add("hide");
@@ -131,7 +134,7 @@ document.addEventListener("click", (e)=>{
         });
 
         input.addEventListener("keyup", (e)=> {
-            if(content === input.value.removeNewLine()){
+            if(content === input.value.removeNewlinesAndTags()){
                 save.disabled = true;
             }
             else{
@@ -145,7 +148,7 @@ document.addEventListener("click", (e)=>{
                 save.disabled = false;
             }
 
-            content = input.value.removeNewLine();
+            content = input.value.removeNewlinesAndTags();
         });
 
         save.addEventListener("click", (e)=> {

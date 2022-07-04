@@ -27,6 +27,10 @@ main{
     color: var(--clr-white);
 }
 
+.filter-icon > * {
+    cursor: pointer;
+}
+
 .filter-name {
     color: var(--clr-white);
     font-family: var(--font-type2);
@@ -34,10 +38,12 @@ main{
     margin-left: 7px;
 }
 
+.filter-icon > svg:hover + .filter-name,
 .filter-name:hover{
     border-bottom: 2px solid var(--clr-white);
 }
 
+.filter-icon > svg:active + .filter-name,
 .filter-name:active{
     color: var(--clr-bg);
 }
@@ -192,6 +198,6 @@ main{
     color: var(--clr-blue)
 }
 
-.chosen{
+.filter-name.active{
     border-bottom: 2px solid var(--clr-white);
 }
