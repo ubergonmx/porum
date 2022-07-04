@@ -43,6 +43,7 @@ main{
     border-bottom: 2px solid var(--clr-white);
 }
 
+.filter-icon > svg:active + .filter-name,
 .filter-name:active{
     color: var(--clr-bg);
 }
