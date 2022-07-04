@@ -88,6 +88,8 @@ userRoute.get("/:id", checkAuth, async (req, res) => {
             const user = await User.findById(req.params.id).lean();
             const discussions = await Discussion.find({ userId: user._id }).lean();
             const comments = await Comment.find({ userId: user._id }).lean();
+            const followings = await Discussion.find({ _id: { $in : req.session.user.followings} }).lean();
+            
             for(var comment of comments){
                 comment.discussion = await Discussion.findOne({ _id: comment.discussionId }).select('title').lean();
             }
@@ -99,7 +101,8 @@ userRoute.get("/:id", checkAuth, async (req, res) => {
                 profile: user,
                 discussions: discussions,
                 comments: comments,
-                hasPosts: discussions.length > 0 || comments.length > 0,
+                followings: followings,
+                hasPosts: discussions.length > 0 || comments.length > 0 || followings.length > 0,
                 isCurrentUser: false,
                 helpers: {
                     calcDate, formatDate, birthday, truncate

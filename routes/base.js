@@ -3,7 +3,8 @@ import Discussion from '../db/models/Discussion.js';
 import User from '../db/models/User.js';
 import Comment from '../db/models/Comment.js';
 import { checkAuth, checkNoAuth } from './auth.js';
-import { calcDate, formatDate, birthday, birthdayInput, truncate, isEqual } from '../utils/helper.js';
+import { calcDate, formatDate, birthday,
+        birthdayInput, truncate } from '../utils/helper.js';
 
 const baseRoute = express.Router();
 
@@ -79,6 +80,7 @@ baseRoute.get('/login', checkNoAuth, (req, res) => {
 baseRoute.get('/profile', checkAuth, async(req, res) => {
     const discussions = await Discussion.find({ userId: req.session.user._id }).lean();
     const comments = await Comment.find({ userId: req.session.user._id }).lean();
+    const followings = await Discussion.find({ _id: { $in : req.session.user.followings} }).lean();
     for(var comment of comments){
         comment.discussion = await Discussion.findOne({ _id: comment.discussionId }).select('title').lean();
     }
@@ -90,7 +92,8 @@ baseRoute.get('/profile', checkAuth, async(req, res) => {
         profile: req.session.user,
         discussions: discussions,
         comments: comments,
-        hasPosts: discussions.length > 0 || comments.length > 0,
+        followings: followings,
+        hasPosts: discussions.length > 0 || comments.length > 0 || followings.length > 0,
         isCurrentUser: true,
         helpers: {
             calcDate, formatDate, birthday, truncate

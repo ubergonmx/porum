@@ -3,7 +3,7 @@ import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
 import User from '../db/models/User.js';
 import { checkAuth } from './auth.js';
-import { formatDate,removeNewLine } from '../utils/helper.js';
+import { formatDate,removeNewlinesAndTags } from '../utils/helper.js';
 
 const discussionRoute = express.Router();
 
@@ -113,7 +113,7 @@ discussionRoute.get('/:id', checkAuth, async (req, res) => {
             comments: comments,
             isCurrentUser: req.session.user._id.toString() === discussion.userId.toString(),
             isFollowed: req.session.user.followings.includes(discussion._id.toString()),
-            helpers: { formatDate, removeNewLine }
+            helpers: { formatDate, removeNewlinesAndTags }
         });
 
     } catch (err) {

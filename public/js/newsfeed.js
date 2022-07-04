@@ -1,5 +1,7 @@
-var container, scaffold, loadMore, tempSideFilter;
-var discussions = [], displayDiscussions = [], followingDiscussions = [], displayLimit = 5;
+var container, loadMore, tempSideFilter;
+var discussions = [], displayDiscussions = [], followingDiscussions = [], 
+displayLimit = 5; 
+// displayLimit - the num of discussions to display at a time (NOT IMPLEMENTED YET)
 
 fetch("/discussions/all").then(res => res.json()).then(discussionArr => { 
     for(const item of discussionArr){
@@ -48,7 +50,7 @@ if(searchIndex !== -1){
         
         displayDiscussions = [...foundDiscussions];
     });
-    
+
 }
 
 
@@ -75,7 +77,6 @@ function discussion(id, title, author, tag, date, content, comments_num){
 }
 
 window.addEventListener("load", function(e){
-    scaffold = document.querySelector("#scaffold");
     tempSideFilter = document.querySelector("#all-discussion");
     loadMore = document.querySelector("#load-more-discussion");
     container = document.querySelector("#discussion-container");
@@ -110,7 +111,6 @@ window.addEventListener("load", function(e){
 
     const newDiscussion = document.querySelector("#new-discussion");
     newDiscussion.addEventListener("click", () => {
-        console.log("CLICKED NEW DISCUSSION");
         window.location.href = window.location.origin + "/startdiscussion";
     });
 });

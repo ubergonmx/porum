@@ -3,24 +3,24 @@
     <section>
         <div id="posts-box" class="def-container">            
             <div id = "filter-box" class="def-container">
-                <div class = "filter-icon">
+                <div id="filter-all" class="filter-icon">
                     <i class="fa-solid fa-eye"></i>
-                    <p class="filter-name chosen">Overview</p>
+                    <p class="filter-name active">Overview</p>
                 </div>
 
-                <div class = "filter-icon">
+                <div id="filter-posts" class="filter-icon">
                     <i class="fa-solid fa-pen"></i>
-                    <p class = "filter-name">Posts</p>
+                    <p class="filter-name">Posts</p>
                 </div>
 
-                <div class = "filter-icon">
+                <div id="filter-comments" class="filter-icon">
                     <i class="fa-solid fa-message"></i>
-                    <p class = "filter-name">Comments</p>
+                    <p class="filter-name">Comments</p>
                 </div>
 
-                <div class = "filter-icon">
+                <div id="filter-followings" class="filter-icon">
                     <i class="fa-solid fa-star"></i>
-                    <p class = "filter-name">Following</p>
+                    <p class="filter-name">Following</p>
                 </div>
             </div>    
             <div id = "posts-container">    
@@ -30,6 +30,9 @@
                     {{/each}}
                     {{#each comments}}
                         {{>comment-preview}}
+                    {{/each}}
+                    {{#each followings}}
+                        {{>following-preview}}
                     {{/each}}
                 {{else}}
                     <div id="scaffold">
@@ -72,3 +75,73 @@
         </div>
     </aside>
 </main>
+{{!-- Quickest way --}}
+<script>
+const discussionArr = [{{#each discussions}}`{{>discussion-preview}}`,{{/each}}];
+const commentArr = [{{#each comments}}`{{>comment-preview}}`,{{/each}}];
+const followingArr = [{{#each followings}}`{{>following-preview}}`,{{/each}}];
+const isCurrentUser = {{#if isCurrentUser}}true{{else}}false{{/if}};
+
+const container = document.querySelector("#posts-container");
+const filterAll = document.querySelector("#filter-all");
+const filterPosts = document.querySelector("#filter-posts");
+const filterComments = document.querySelector("#filter-comments");
+const filterFollowings = document.querySelector("#filter-followings");
+var tempFilter = filterAll.querySelector(".filter-name");
+
+filterAll.addEventListener("click", function(){
+    setFilter(filterAll);
+    clear(container);
+    loadPosts([...discussionArr, ...commentArr, ...followingArr], "posts");
+});
+
+filterPosts.addEventListener("click", function(){
+    setFilter(filterPosts);
+    clear(container);
+    loadPosts(discussionArr, "discussions");
+});
+
+filterComments.addEventListener("click", function(){
+    setFilter(filterComments);
+    clear(container);
+    loadPosts(commentArr, "comments");
+});
+
+filterFollowings.addEventListener("click", function(){
+    setFilter(filterFollowings);
+    clear(container);
+    loadPosts(followingArr, "followings");
+}
+);
+
+/**
+ * Set the element inside filter-box to be active
+ * @param  {element} element
+ */
+function setFilter(element){
+    if(tempFilter)
+        tempFilter.classList.toggle("active");
+    tempFilter = element.querySelector(".filter-name");
+    tempFilter.classList.toggle("active");
+}
+
+/**
+ * This shows all the posts in HTML
+ * @param  {post[]} postArr
+ */
+function loadPosts(postArr, typePlaceholder){
+    if(postArr === undefined || postArr.length == 0){
+        container.innerHTML = 
+        `<div id="scaffold">
+            <img src="../images/design/404.png">
+            <h1 id="text-title">No ${typePlaceholder} yet</h1>
+        </div>`;
+        return;
+        // toggle(loadMore, 0);
+    }
+    for(const post of postArr){
+        container.insertAdjacentHTML('beforeend', post);
+    }    
+}
+
+</script>

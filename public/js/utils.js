@@ -231,6 +231,6 @@ function birthdayInput(d){
  * Returns a clean string replacing newlines with spaces
  * @returns {string} - the string with newlines replaced with spaces
  */
-String.prototype.removeNewLine = function(){
-    return this.replace(/(\r\n|\n|\r)/gm, "");
+String.prototype.removeNewlinesAndTags = function(){
+    return this.replace(/(\r\n|\n|\r)/gm, "").replace(/(<([^>]+)>)/gi, "");
 }
