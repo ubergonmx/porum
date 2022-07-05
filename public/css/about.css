@@ -36,6 +36,10 @@ main > section:first-child{
     flex-direction: column;
 }
 
+main > section + section > .content-box{
+    padding: 50px;
+}
+
 .content-box{
     max-width:1500px;
     max-height: 700px;
