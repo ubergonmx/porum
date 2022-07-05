@@ -131,7 +131,7 @@ baseRoute.get('/startdiscussion', checkAuth, (req, res) => {
     });
 });
 
-baseRoute.get('/editdiscussion/:id', checkAuth,async(req, res) => {
+baseRoute.get('/editdiscussion/:id', checkAuth, async(req, res) => {
     const discussion = await Discussion.findById(req.params.id).lean();
     res.render('editdiscussion', {
         title: 'Edit Discussion',
@@ -155,6 +155,13 @@ baseRoute.get('/resetpassword/:userId.:token', checkNoAuth, (req, res) => {
         title: 'Reset Password',
         styles: ['login.css'],
         scripts: ["resetpassword.js"]
+    });
+});
+
+baseRoute.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'About',
+        styles: ['about.css'],
     });
 });
 
