@@ -161,7 +161,7 @@ baseRoute.get('/resetpassword/:userId.:token', checkNoAuth, (req, res) => {
 baseRoute.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        styles: ['about.css'],
+        styles: ['about.css', 'login.css'],
     });
 });
 
