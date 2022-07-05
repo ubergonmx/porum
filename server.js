@@ -24,7 +24,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 // Set port
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.PORT || 3000;
 // Set static folder
 app.use(express.static(__dirname + "/public"));
 // Set handlebars as the app's view engine.
