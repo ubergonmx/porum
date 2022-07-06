@@ -478,7 +478,7 @@ main {
 }
 
 input.error, textarea.error{
-    border-color: var(--clr-tag-red);
+    border-color: var(--clr-tag-red) !important;
 }
 
 #scaffold{
