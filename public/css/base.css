@@ -177,7 +177,7 @@ input[type=password]:focus,
 input[type=tel]:focus,
 input[type=date]:focus-visible,
 .input-focus{
-    border-color: var(--clr-blue) !important;
+    border-color: var(--clr-blue);
     -webkit-box-shadow: none;
 	box-shadow: none;
     outline: none;    
