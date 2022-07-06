@@ -18,7 +18,7 @@ authRoute.get('/', (req, res) => {
 authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
     try{
         const emailExist = await User.findOne({email: req.body.email});
-        const { valid: emailValid } = await emailValidator.validate(req.body.email);
+        var { valid: emailValid } = await emailValidator.validate(req.body.email);
         const usernameExist = await User.findOne({username: req.body.username});
 
         if(req.body.email.includes("@dlsu.edu.ph")) emailValid = true;

@@ -68,14 +68,28 @@ window.addEventListener("load", function(e){
                     iconUser.src = URL.createObjectURL(profileImg.files[0]);
                 showSuccess(success, "Settings updated successfully.");
             }
+            else return res.json();
+        }).then(data => {
+            if(data.message){
+                showError(error, data.message,  [coverPic, profilePic]);
+                return;
+            }
         }).catch(err => console.log(err));
     });
 
     profileImg.addEventListener("change", ()=>{
-        profilePic.src = URL.createObjectURL(profileImg.files[0]);
+        try{
+            profilePic.src = URL.createObjectURL(profileImg.files[0]);
+        }catch(err){
+            // console.log(err);
+        }
     });
     coverImg.addEventListener("change", ()=>{
-        coverPic.src = URL.createObjectURL(coverImg.files[0]);
+        try{
+            coverPic.src = URL.createObjectURL(coverImg.files[0]);
+        }catch(err){
+            // console.log(err);
+        }
     });
 });
 

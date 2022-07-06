@@ -56,10 +56,18 @@ window.addEventListener("load", function(e){
                 showError(error, data.error, errorFields);
                 return;
             }
+            else if(data.message){
+                showError(error, data.message, [profileImg]);
+                return;
+            }
         }).catch(err => console.log(err));
     });
 
     profileImg.addEventListener("change", ()=>{
-        userPic.src = URL.createObjectURL(profileImg.files[0]);
+        try{
+            userPic.src = URL.createObjectURL(profileImg.files[0]);
+        }catch(err){
+            // console.log(err);
+        }
     });
 });
