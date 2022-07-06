@@ -9,7 +9,6 @@ import helmet from 'helmet';
 import { expressCspHeader } from 'express-csp-header';
 import session from 'express-session';
 // Database modules
-import mongoose from 'mongoose';
 import { connectToServer }  from './db/conn.js';
 // Routers
 import baseRoute from './routes/base.js';
