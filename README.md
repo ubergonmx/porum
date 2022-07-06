@@ -33,6 +33,7 @@ Herewith, the proposed web application is an online forum similar to Reddit and 
 ## Installed NPM Packages
 - [bcrypt](https://www.npmjs.com/package/bcrypt) - This package is used to hash passwords.
 - [body-parser](https://www.npmjs.com/package/body-parser) - This package parses incoming request bodies before the handlers, available under the req.body property.
+- [deep-email-validator](https://www.npmjs.com/package/deep-email-validator) - This package validates email addresses based on regex, common typos, disposable email blacklists, DNS records and SMTP server response.
 - [dotenv](https://www.npmjs.com/package/dotenv) - This package is the module that loads environment variables from a .env file into `process.env`.
 - [express](https://www.npmjs.com/package/express) - This package is the web framework of this project which provides broad features for building web and mobile applications.
 - [express-csp-header](https://www.npmjs.com/package/express-csp-header) - This package is a Content-Security-Policy middleware used to allow specified scripts (such as FontAwesome).
@@ -41,7 +42,7 @@ Herewith, the proposed web application is an online forum similar to Reddit and 
 - [helmet](https://www.npmjs.com/package/helmet) - This package is used to help secure the application by setting various HTTP headers.
 - [mongodb](https://www.npmjs.com/package/mongodb) - This package is the MongoDB driver for Node.js.
 - [mongoose](https://www.npmjs.com/package/mongoose) - This package is an object modelling tool for MongoDB.
-- [morgan](https://www.npmjs.com/package/morgan) - This package is a HTTP middleware for Node.js that logs HTTP requests and errors.
+- [morgan](https://www.npmjs.com/package/morgan) - This package is an HTTP middleware for Node.js that logs HTTP requests and errors.
 - [multer](https://www.npmjs.com/package/multer) - This package is a node.js middleware for handling `multipart/form-data`, which is primarily used for uploading files.
 - [nodemailer](https://www.npmjs.com/package/nodemailer) - This package allows sending emails from Node.js.
 - [nodemon](https://www.npmjs.com/package/nodemon) - This package helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.

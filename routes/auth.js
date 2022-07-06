@@ -1,8 +1,9 @@
 import express from 'express';
-import User from '../db/models/User.js';
-import Token from '../db/models/Token.js';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
+import emailValidator from 'deep-email-validator';
+import User from '../db/models/User.js';
+import Token from '../db/models/Token.js';
 import { upload, isEqual } from '../utils/helper.js';
 import { sendEmail } from '../utils/sendEmail.js';
 
@@ -17,8 +18,9 @@ authRoute.get('/', (req, res) => {
 authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
     try{
         const emailExist = await User.findOne({email: req.body.email});
+        const { valid } = await emailValidator.validate(req.body.email); 
         const usernameExist = await User.findOne({username: req.body.username});
-        if(!emailExist && !usernameExist){
+        if(!emailExist && valid && !usernameExist){
             //Hash the password
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -46,15 +48,28 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
             res.status(200).json({message: "User created"});
         }
         else{
-            if(emailExist && !usernameExist){
-                res.status(400).json({error:"Email already exists.", fields:["email"]});
+            let message = "", errorFields = [];
+            if(emailExist && usernameExist){
+                message = "Email and username already exist.";
+                errorFields = ["email", "username"];
             }
-            else if(!emailExist && usernameExist){
-                res.status(400).json({error:"Username already exists.", fields:["username"]});
+            else if(!valid && usernameExist){
+                message = "Invalid email and username already exists.";
+                errorFields = ["email", "username"];
             }
-            else{
-                res.status(400).json({error:"Email and username already exists.", fields:["email", "username"]});
+            else if(emailExist){
+                message = " already exists.";
+                errorFields = ["email"];
             }
+            else if(!valid){
+                message = "Please enter a valid email.";
+                errorFields = ["email"];
+            }
+            else if(usernameExist){
+                message = "Username already exists.";
+                errorFields = ["username"];
+            }
+            res.status(400).json({error: message, fields: errorFields});            
         }
     }catch(err){
         console.log("ERROR-IN-AUTH");
