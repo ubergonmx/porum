@@ -7,8 +7,16 @@ window.addEventListener("load", function(e){
 
     login.addEventListener("click", (e)=> {
         e.preventDefault();
+
+        let emptyFields = [];
+        for(const input of fields){
+            if(isEmptyOrSpaces(input.value)){
+                emptyFields.push(input);
+            }
+        }
+
         if(isEmptyOrSpaces(email.value) || isEmptyOrSpaces(password.value)){
-            showError(error, "Please fill out all fields.", fields);
+            showError(error, "Please fill out all fields.", emptyFields);
             return;
         }
         if(!email.value.match(emailRegex)){

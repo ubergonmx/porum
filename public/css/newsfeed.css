@@ -275,7 +275,7 @@ aside > * {
 }
 
 .commenter-more{
-    background-image: url('../images/icon/more.png');
+    background-image: url('/images/icon/more.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }

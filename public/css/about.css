@@ -1,8 +1,8 @@
 main{
-    display: flex;
     flex-direction: column;
     gap: 5rem;
     align-items: center;
+    color: var(--clr-txt-primary);
 }
 
 #about-head{
@@ -36,11 +36,12 @@ main > section:first-child{
     flex-direction: column;
 }
 
-main > section + section > .content-box{
+main > section:not(first-child) > .content-box{
     padding: 50px;
 }
 
 .content-box{
+    display: flex;
     max-width:1500px;
     max-height: 700px;
     flex-direction: column;
@@ -93,30 +94,18 @@ main > section + section > .content-box{
     margin-top:3vw;
 }
 
+#github-logo,
 .dev-photo{
     border-radius:50%;
-    width:260px;
-    height:260px;
-    max-width: 10vw;
-    max-height: 10vw;
+    max-width:260px;
+    max-height:260px;
+    width: 10vw;
+    height: 10vw;
     object-fit: cover;
 }
 
 
-#qr-code{
-    max-width:500px;
-    width:50vw;
-}
-
-.content-box2{
-    max-width:1500px;
-    max-height: 700px;
-    width:100vw;
-    padding: 2rem 3rem;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-content:center;
-    align-items:center;
-    gap:1rem;
+.content-box.github{
+    flex-direction: row;
+    gap: 15rem;
 }
