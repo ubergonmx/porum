@@ -79,14 +79,20 @@ window.addEventListener("load", function(e){
 
     profileImg.addEventListener("change", ()=>{
         try{
-            profilePic.src = URL.createObjectURL(profileImg.files[0]);
+            if(profileImg.files[0].type.match(/image.*/))
+                userPic.src = URL.createObjectURL(profileImg.files[0]);
+            else
+                showError(error, "Please select an image file.", [profileImg.parentElement]);
         }catch(err){
             // console.log(err);
         }
     });
     coverImg.addEventListener("change", ()=>{
         try{
-            coverPic.src = URL.createObjectURL(coverImg.files[0]);
+            if(coverImg.files[0].type.match(/image.*/))
+                coverPic.src = URL.createObjectURL(coverImg.files[0]);
+            else
+                showError(error, "Please select an image file.", [coverImg.parentElement]);
         }catch(err){
             // console.log(err);
         }

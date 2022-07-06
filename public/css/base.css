@@ -477,7 +477,9 @@ main {
     visibility: visible;
 }
 
-input.error, textarea.error{
+input.error, 
+textarea.error, 
+.button-secondary.error{
     border-color: var(--clr-tag-red) !important;
 }
 

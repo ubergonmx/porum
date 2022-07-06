@@ -57,7 +57,7 @@ window.addEventListener("load", function(e){
                 return;
             }
             else if(data.message){
-                showError(error, data.message, [profileImg]);
+                showError(error, data.message, [profileImg.parentElement]);
                 return;
             }
         }).catch(err => console.log(err));
@@ -65,7 +65,10 @@ window.addEventListener("load", function(e){
 
     profileImg.addEventListener("change", ()=>{
         try{
-            userPic.src = URL.createObjectURL(profileImg.files[0]);
+            if(profileImg.files[0].type.match(/image.*/))
+                userPic.src = URL.createObjectURL(profileImg.files[0]);
+            else
+                showError(error, "Please select an image file.", [profileImg.parentElement]);
         }catch(err){
             // console.log(err);
         }
