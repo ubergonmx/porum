@@ -18,9 +18,12 @@ authRoute.get('/', (req, res) => {
 authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
     try{
         const emailExist = await User.findOne({email: req.body.email});
-        const { valid } = await emailValidator.validate(req.body.email); 
+        const { valid: emailValid } = await emailValidator.validate(req.body.email);
         const usernameExist = await User.findOne({username: req.body.username});
-        if(!emailExist && valid && !usernameExist){
+
+        if(req.body.email.includes("@dlsu.edu.ph")) emailValid = true;
+
+        if(!emailExist && emailValid && !usernameExist){
             //Hash the password
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -53,7 +56,7 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
                 message = "Email and username already exist.";
                 errorFields = ["email", "username"];
             }
-            else if(!valid && usernameExist){
+            else if(!emailValid && usernameExist){
                 message = "Invalid email and username already exists.";
                 errorFields = ["email", "username"];
             }
@@ -61,7 +64,7 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
                 message = " already exists.";
                 errorFields = ["email"];
             }
-            else if(!valid){
+            else if(!emailValid){
                 message = "Please enter a valid email.";
                 errorFields = ["email"];
             }

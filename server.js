@@ -8,6 +8,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import { expressCspHeader } from 'express-csp-header';
 import session from 'express-session';
+// Multer
+import multer from 'multer';
 // Database modules
 import { connectToServer }  from './db/conn.js';
 // Routers
@@ -62,6 +64,18 @@ app.use(baseRoute);
 app.use("/users",userRoute);
 app.use("/auth",authRoute);
 app.use("/discussions",discussionRoute);
+
+// Manage Multer errors
+app.use((err, req, res, next) => {
+    if(err instanceof multer.MulterError){
+        if (err.code === 'LIMIT_FILE_SIZE') {
+            res.status(400).json({ message: 'File too big. Max size is 5MB.' });
+        }
+        if (err.code === 'LIMIT_UNEXPECTED_FILE') {
+            res.status(400).json({ message: 'Invalid filetype.' });
+        }
+    }
+});
 
 // 404 not found page
 app.use((req, res, err) => {
