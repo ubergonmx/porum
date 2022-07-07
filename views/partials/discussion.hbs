@@ -6,7 +6,7 @@
     <div class="discussion">
         <div>
             <a href="users/{{userId}}" class="discussion-author"> 
-                <img src="../{{author.profileImg}}" class="img-author">
+                <img crossorigin="anonymous" src="{{author.profileImg}}" class="img-author">
             </a>
 
             <div class="discussion-body">
@@ -19,7 +19,7 @@
         </div>
         <div class="discussion-footer">
             <div class="commenters">                  
-                {{!discussion.commenters.length > limit ? '<img src="../images/icon/more.png"class="commenter commenter-more"/>' : ''}  
+                {{!discussion.commenters.length > limit ? '<img src="/images/icon/more.png"class="commenter commenter-more"/>' : ''}  
                 ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')--}}
             </div>
 

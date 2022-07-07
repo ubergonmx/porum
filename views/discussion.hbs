@@ -4,15 +4,15 @@
         <div id="discussion-content" class="def-container content-box">
             <div class = "content">
                 <div id="post-header">
-                    <a href="../users/{{discussion.author._id}}">
-                        <img src="../{{discussion.author.profileImg}}" id="profile-pic">
+                    <a href="/users/{{discussion.author._id}}">
+                        <img crossorigin="anonymous" src="{{discussion.author.profileImg}}" id="profile-pic">
                     </a>
                 </div>
                 
                 <div>
                     <div>
                         <h1 id="title-text">{{title}}</h1>
-                        <a id="username-text" href="../users/{{discussion.author._id}}">{{discussion.author.username}}</a>
+                        <a id="username-text" href="/users/{{discussion.author._id}}">{{discussion.author.username}}</a>
                         <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.editedAt}}{{/if}}</span>
                     </div>
                 </div>

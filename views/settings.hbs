@@ -9,7 +9,7 @@
         <div class="div-format">
             <div class="change-photo-container">
                 <label for="picture">Change Profile Photo</label><br>
-                <img id="profile-pic" src="../{{user.profileImg}}" /><br>
+                <img id="profile-pic" crossorigin="anonymous" src="{{user.profileImg}}" /><br>
                 <label for="profile-img" class="button-secondary">
                     Change
                     <input type="file" id="profile-img" accept=".png, .jpg, .jpeg" name="profile-img"/>
@@ -18,7 +18,7 @@
             </div>
             <div class="change-photo-container">
                 <label for="picture">Change Cover Photo</label><br>
-                <img id="cover-photo" src="../{{user.coverImg}}" /><br>
+                <img id="cover-photo" crossorigin="anonymous" src="{{user.coverImg}}" /><br>
                 <label for="cover-img" class="button-secondary">
                     Change
                     <input type="file" id="cover-img" accept=".png, .jpg, .jpeg" name="cover-img"/>

@@ -1,7 +1,7 @@
 <header>
     <!-- Logo -->
     <a href="/" id="main-logo">
-        <img src="../images/design/logo.png" id="icon-logo"/>
+        <img src="/images/design/logo.png" id="icon-logo"/>
         <p id="main-title">Porum</p>
     </a>
 
@@ -32,7 +32,7 @@
 
         <!-- Profile -->
         <div id="profile-container" data-id="{{user._id}}">
-            <img src="../{{user.profileImg}}" id="icon-user">
+            <img crossorigin="anonymous" src="{{user.profileImg}}" id="icon-user">
             <i id="icon-arrowdown" class="fa-solid fa-angle-down fa-sm icon-base"></i>
             <div id="profile-dropdown" class="dropdown">
                 <div id="profile-btn"><i class="fa-solid fa-user"></i> <span>Profile</span></div>

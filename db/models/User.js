@@ -43,11 +43,11 @@ const UserSchema = new mongoose.Schema({
     },
     profileImg: {
         type: String,
-        default: "images/users/userDefault.jpg",
+        default: "/images/users/userDefault.jpg",
     },
     coverImg: {
         type: String,
-        default: "images/users/coverDefault.jpg",
+        default: "/images/users/coverDefault.jpg",
     },
     followings: {
         type: [String],

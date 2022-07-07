@@ -1,10 +1,13 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
+import fs from 'fs';
 import User from '../db/models/User.js';
 import Discussion from '../db/models/Discussion.js';
 import Comment from '../db/models/Comment.js';
+import Cloudinary from '../utils/cloudinary.js';
 import { checkAuth } from './auth.js';
-import { calcDate, formatDate, birthday, truncate, upload } from '../utils/helper.js';
+import { calcDate, formatDate, birthday, truncate } from '../utils/helper.js';
+import { upload } from '../utils/multer.js';
 
 const userRoute = express.Router();
 
@@ -18,7 +21,6 @@ userRoute.put("/:id", upload.fields([
     { name: 'profileImg', maxCount: 1 },
     { name: 'coverImg', maxCount: 1 }
 ]), async (req, res) => {
-    console.log(req.file);
     console.log(">>FILES<<");
     console.log(req.files);
     if(req.params.id === req.body.userId || req.body.isAdmin){
@@ -35,14 +37,28 @@ userRoute.put("/:id", upload.fields([
         try {
             //If there is a profile image, add profileImg property
             if(req.files.profileImg){
-                const profileImg = req.files.profileImg[0];
-                req.body.profileImg =  profileImg.destination.replaceAll('./public/', '') + profileImg.filename;
+                // Local
+                // const profileImg = req.files.profileImg[0];
+                // req.body.profileImg =  profileImg.destination.replaceAll('./public/', '') + profileImg.filename;
+
+                // Cloudinary
+                const profileImg = await Cloudinary.uploader.upload(req.files.profileImg[0].path, { folder: `porum/users/profile-img` });
+                req.body.profileImg = profileImg.secure_url;
+                //after upload, delete the local file
+                fs.unlinkSync(profileImg.path);
             }
 
             //If there is a cover image, add coverImg property
             if(req.files.coverImg){
-                const coverImg = req.files.coverImg[0];
-                req.body.coverImg = coverImg.destination.replaceAll('./public/', '') + coverImg.filename;
+                // Local
+                // const coverImg = req.files.coverImg[0];
+                // req.body.coverImg = coverImg.destination.replaceAll('./public/', '') + coverImg.filename;
+
+                // Cloudinary
+                const coverImg = await Cloudinary.uploader.upload(req.files.coverImg[0].path, { folder: `porum/users/cover-img` });
+                req.body.coverImg = coverImg.secure_url;
+                //after upload, delete the local file
+                fs.unlinkSync(coverImg.path);
             }
             console.log(req.body);
             const user = await User.findByIdAndUpdate(req.params.id, {

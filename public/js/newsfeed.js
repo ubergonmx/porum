@@ -171,7 +171,7 @@ function loadDiscussions(discussionArr){
     if(discussionArr === undefined || discussionArr.length == 0){
         container.innerHTML = 
         `<div id="scaffold">
-            <img src="../images/design/404.png">
+            <img src="/images/design/404.png">
             <h1 id="text-title">No discussions yet</h1>
         </div>`;
         return;
@@ -186,7 +186,7 @@ function loadDiscussions(discussionArr){
             <div class="discussion">
                 <div>
                     <a href="users/${discussion.author.profile}" class="discussion-author"> 
-                        <img src="../${discussion.author.imgSrc}" class="img-author">
+                        <img src="${discussion.author.imgSrc}" class="img-author">
                     </a>
 
                     <div class="discussion-body">
@@ -213,6 +213,6 @@ function loadDiscussions(discussionArr){
         </div>`;
         container.insertAdjacentHTML('beforeend', discussionHtml);
     }
-    // ${discussion.commenters.length > limit ? '<img src="../images/icon/more.png"class="commenter commenter-more"/>' : ''}
+    // ${discussion.commenters.length > limit ? '<img src="/images/icon/more.png"class="commenter commenter-more"/>' : ''}
     // ${discussion.commenters.slice(0, limit).reduce((updated,latest) => updated.concat(`<img src="${latest.imgSrc}" title="${latest.username}" class="commenter">`), '')}
 }

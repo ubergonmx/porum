@@ -33,6 +33,7 @@ Herewith, the proposed web application is an online forum similar to Reddit and 
 ## Installed NPM Packages
 - [bcrypt](https://www.npmjs.com/package/bcrypt) - This package is used to hash passwords.
 - [body-parser](https://www.npmjs.com/package/body-parser) - This package parses incoming request bodies before the handlers, available under the req.body property.
+- [cloudinary](https://www.npmjs.com/package/cloudinary) - This package integrates Cloudinary sdk for managing image upload to cloud.
 - [deep-email-validator](https://www.npmjs.com/package/deep-email-validator) - This package validates email addresses based on regex, common typos, disposable email blacklists, DNS records and SMTP server response.
 - [dotenv](https://www.npmjs.com/package/dotenv) - This package is the module that loads environment variables from a .env file into `process.env`.
 - [express](https://www.npmjs.com/package/express) - This package is the web framework of this project which provides broad features for building web and mobile applications.

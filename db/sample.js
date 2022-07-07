@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
 import Discussion from './models/Discussion.js';
 import User from './models/User.js';
 import Comment from "./models/Comment.js";
-import { tags } from './data.js';
 
 export async function generateData(){
     const initialUsers = [
@@ -15,8 +13,8 @@ export async function generateData(){
             bio: "Hi I’m Harry Higgins I have been a freelancer since 2019 and I enjoy my profession.",
             birthday: new Date(2001, 2, 27),
             phoneNumber: "09618294256",
-            profileImg: "images/users/user1.jpg",
-            coverImg: "images/users/cover1.jpg",
+            profileImg: "/images/users/user1.jpg",
+            coverImg: "/images/users/cover1.jpg",
             showBirthday: true,
             showPhoneNumber: true,
         }),
@@ -29,8 +27,8 @@ export async function generateData(){
             bio: "Hey there, I’m Ken Vitug! I have a passion for cooking and currently I have my own food blog.",
             birthday: new Date(2001, 4, 3),
             phoneNumber: "09663398043",
-            profileImg: "images/users/userDefault.jpg",
-            coverImg: "images/users/cover2.jpg",
+            profileImg: "/images/users/userDefault.jpg",
+            coverImg: "/images/users/cover2.jpg",
             showBirthday: true,
             showPhoneNumber: true,
         }),
@@ -43,8 +41,8 @@ export async function generateData(){
             bio: "Hi! I am Rory Lorelai. I was born and raised in Japan. I enjoy my neighborhood and I am a student currently finding a good university.",
             birthday: new Date(2001, 8, 12),
             phoneNumber: "09564328971",
-            profileImg: "images/users/user4.jpg",
-            coverImg: "images/users/cover3.jpg",
+            profileImg: "/images/users/user4.jpg",
+            coverImg: "/images/users/cover3.jpg",
             showBirthday: true,
             showPhoneNumber: true,
         }),
@@ -57,8 +55,8 @@ export async function generateData(){
             bio: "Hi, my name is Renata Glasc, I am currently a senior student at Moscow State University taking up a major in Civil Engineering. I can’t wait to finally graduate and apply for the best company here in Moscow.",
             birthday: new Date(2000, 0, 23),
             phoneNumber: "09562135684",
-            profileImg: "images/users/user6.jpg",
-            coverImg: "images/users/cover4.jpg",
+            profileImg: "/images/users/user6.jpg",
+            coverImg: "/images/users/cover4.jpg",
             showBirthday: true,
             showPhoneNumber: true,
         }),
@@ -71,8 +69,8 @@ export async function generateData(){
             bio: "Hi, my name is Von Miller. I am a car enthusiast and Ferrari is one of my favorite car brands. I currently own 4 Ferrari gallardo.",
             birthday: new Date(1998, 7, 25),
             phoneNumber: "09355688953",
-            profileImg: "images/users/user8.jpg",
-            coverImg: "images/users/cover5.jpg",
+            profileImg: "/images/users/user8.jpg",
+            coverImg: "/images/users/cover5.jpg",
             showBirthday: true,
             showPhoneNumber: true,
         }),

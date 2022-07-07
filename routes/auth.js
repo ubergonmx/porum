@@ -2,9 +2,12 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import emailValidator from 'deep-email-validator';
+import fs from 'fs';
 import User from '../db/models/User.js';
 import Token from '../db/models/Token.js';
-import { upload, isEqual } from '../utils/helper.js';
+import Cloudinary from '../utils/cloudinary.js';
+import { upload } from '../utils/multer.js';
+import { isEqual } from '../utils/helper.js';
 import { sendEmail } from '../utils/sendEmail.js';
 
 const authRoute = express.Router();
@@ -18,12 +21,15 @@ authRoute.get('/', (req, res) => {
 authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
     try{
         const emailExist = await User.findOne({email: req.body.email});
-        var { valid: emailValid } = await emailValidator.validate(req.body.email);
         const usernameExist = await User.findOne({username: req.body.username});
+        
+        // deep-email-validator is timing out so I removed it for now
+        // var { valid: emailValid } = await emailValidator.validate(req.body.email);
+        // if(req.body.email.includes("@dlsu.edu.ph")
+        // ||req.body.email.includes("@gmail.com")
+        // ||req.body.email.includes("@yahoo.com")) emailValid = true;
 
-        if(req.body.email.includes("@dlsu.edu.ph")
-        ||req.body.email.includes("@gmail.com")
-        ||req.body.email.includes("@yahoo.com")) emailValid = true;
+        const emailValid = true;
 
         if(!emailExist && emailValid && !usernameExist){
             //Hash the password
@@ -42,7 +48,14 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
 
             //If there is a profile image, add profileImg property
             if(req.file){
-                userData.profileImg = req.file.destination.replaceAll('./public/', '') + req.file.filename;
+                // Local
+                // userData.profileImg = req.file.destination.replaceAll('./public/', '') + req.file.filename;
+                        
+                // Cloudinary
+                const profileImg = await Cloudinary.uploader.upload(req.file.path, { folder: `porum/users/profile-img` });
+                userData.profileImg = profileImg.secure_url;
+                //after upload, delete the local file
+                fs.unlinkSync(req.file.path);
             }
 
             //Create a new user

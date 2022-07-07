@@ -80,7 +80,7 @@ window.addEventListener("load", function(e){
     profileImg.addEventListener("change", ()=>{
         try{
             if(profileImg.files[0].type.match(/image.*/))
-                userPic.src = URL.createObjectURL(profileImg.files[0]);
+                profilePic.src = URL.createObjectURL(profileImg.files[0]);
             else
                 showError(error, "Please select an image file.", [profileImg.parentElement]);
         }catch(err){

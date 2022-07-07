@@ -1,29 +1,3 @@
-import multer from 'multer';
-
-/**
- * Setup for image upload
- */
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images/users/')
-    },
-    filename: (req, file, cb) => {
-        cb(null, `${file.fieldname}-${Date.now()}-${file.originalname}`)
-    }
-});
-const fileFilter = (req, file, cb) => {
-    //reject a file
-    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png')
-        cb(null, true);
-    else
-        cb(new multer.MulterError("LIMIT_UNEXPECTED_FILE"), false);
-};
-export const upload = multer({ 
-    storage: storage, 
-    limits: { fileSize: 1024*1024*5 },
-    fileFilter: fileFilter
-});
-
 /**
  * Returns true if both objects's keys have the same values
  * @param  {Object} obj1

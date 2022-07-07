@@ -36,7 +36,7 @@
                     {{/each}}
                 {{else}}
                     <div id="scaffold">
-                        <img src="../images/design/404.png">
+                        <img src="/images/design/404.png">
                         <h1 id="text-title">No posts yet</h1>
                     </div>
                 {{/if}}
@@ -47,8 +47,8 @@
     <aside>
         <div id="profile-box" class="def-container">
             <div id="profile-header">
-                <img id="cover-photo" src="../{{profile.coverImg}}">
-                <img id="profile-pic" src="../{{profile.profileImg}}">
+                <img id="cover-photo" crossorigin="anonymous" src="{{profile.coverImg}}">
+                <img id="profile-pic" crossorigin="anonymous" src="{{profile.profileImg}}">
                 {{#if isCurrentUser}}
                 <a href="/settings">
                     <i class="fa-solid fa-gear settings-wheel"></i>
@@ -133,7 +133,7 @@ function loadPosts(postArr, typePlaceholder){
     if(postArr === undefined || postArr.length == 0){
         container.innerHTML = 
         `<div id="scaffold">
-            <img src="../images/design/404.png">
+            <img src="/images/design/404.png">
             <h1 id="text-title">No ${typePlaceholder} yet</h1>
         </div>`;
         return;
