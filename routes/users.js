@@ -45,7 +45,7 @@ userRoute.put("/:id", upload.fields([
                 const profileImg = await Cloudinary.uploader.upload(req.files.profileImg[0].path, { folder: `porum/users/profile-img` });
                 req.body.profileImg = profileImg.secure_url;
                 //after upload, delete the local file
-                fs.unlinkSync(profileImg.path);
+                fs.unlinkSync(req.files.profileImg[0].path);
             }
 
             //If there is a cover image, add coverImg property
@@ -58,7 +58,7 @@ userRoute.put("/:id", upload.fields([
                 const coverImg = await Cloudinary.uploader.upload(req.files.coverImg[0].path, { folder: `porum/users/cover-img` });
                 req.body.coverImg = coverImg.secure_url;
                 //after upload, delete the local file
-                fs.unlinkSync(coverImg.path);
+                fs.unlinkSync(req.files.profileImg[0].path);
             }
             console.log(req.body);
             const user = await User.findByIdAndUpdate(req.params.id, {
