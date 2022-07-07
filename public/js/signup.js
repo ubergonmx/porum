@@ -24,6 +24,11 @@ window.addEventListener("load", function(e){
             showError(error, "Please fill out all fields.", emptyFields);
             return;
         }
+        
+        if(password.value.length < 3){
+            showError(error, "Username must be at least 3 characters long.",[username]);
+            return;
+        }
         if(!email.value.match(emailRegex)){
             showError(error, "Please enter a valid email.",[email]);
             return;

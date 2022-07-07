@@ -21,7 +21,9 @@ authRoute.post('/signup', upload.single('profile-img'), async (req,res)=>{
         var { valid: emailValid } = await emailValidator.validate(req.body.email);
         const usernameExist = await User.findOne({username: req.body.username});
 
-        if(req.body.email.includes("@dlsu.edu.ph")) emailValid = true;
+        if(req.body.email.includes("@dlsu.edu.ph")
+        ||req.body.email.includes("@gmail.com")
+        ||req.body.email.includes("@yahoo.com")) emailValid = true;
 
         if(!emailExist && emailValid && !usernameExist){
             //Hash the password
