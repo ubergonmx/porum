@@ -64,6 +64,7 @@ window.addEventListener("load", function(e){
         }).then(res =>{
             if(res.status==200){
                 this.window.location.href = window.location.origin + "/settings#settings-box";
+                success.scrollIntoView();
                 if(profileImg.files[0])
                     iconUser.src = URL.createObjectURL(profileImg.files[0]);
                 showSuccess(success, "Settings updated successfully.");
