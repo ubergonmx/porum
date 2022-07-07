@@ -45,7 +45,11 @@ userRoute.put("/:id", upload.fields([
                 const profileImg = await Cloudinary.uploader.upload(req.files.profileImg[0].path, { folder: `porum/users/profile-img` });
                 req.body.profileImg = profileImg.secure_url;
                 //after upload, delete the local file
-                fs.unlinkSync(req.files.profileImg[0].path);
+                try{
+                    fs.unlinkSync(req.files.profileImg[0].path);
+                }catch(err){
+                    console.log(err);
+                }
             }
 
             //If there is a cover image, add coverImg property
@@ -58,7 +62,11 @@ userRoute.put("/:id", upload.fields([
                 const coverImg = await Cloudinary.uploader.upload(req.files.coverImg[0].path, { folder: `porum/users/cover-img` });
                 req.body.coverImg = coverImg.secure_url;
                 //after upload, delete the local file
-                fs.unlinkSync(req.files.profileImg[0].path);
+                try{
+                    fs.unlinkSync(req.files.profileImg[0].path);
+                }catch(err){
+                    console.log(err);
+                }
             }
             console.log(req.body);
             const user = await User.findByIdAndUpdate(req.params.id, {
@@ -119,7 +127,7 @@ userRoute.get("/:id", checkAuth, async (req, res) => {
                 comments: comments,
                 followings: followings,
                 hasPosts: discussions.length > 0 || comments.length > 0 || followings.length > 0,
-                isCurrentUser: false,
+                isCurrentUser: req.params.id === req.session.user._id,
                 helpers: {
                     calcDate, formatDate, birthday, truncate
                 }
