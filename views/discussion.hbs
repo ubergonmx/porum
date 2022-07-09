@@ -13,7 +13,7 @@
                     <div>
                         <h1 id="title-text">{{title}}</h1>
                         <a id="username-text" href="/users/{{discussion.author._id}}">{{discussion.author.username}}</a>
-                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.editedAt}}{{/if}}</span>
+                        <span id="date-text"> &bull; {{formatDate discussion.createdAt}} {{#if discussion.edited}}&bull; Edited on {{formatDate discussion.updatedAt}}{{/if}}</span>
                     </div>
                 </div>
             </div>
