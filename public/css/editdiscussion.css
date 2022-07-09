@@ -36,47 +36,45 @@ hr{
 
 #rulesedit-box{
     max-width:500px;
-    width:30vw;
+    width:310px;
     display:flex;
     flex-direction:column;
     padding-left:20px;
     padding-right:10px;
     padding-bottom:10px;
+    gap:5px;
 }
 
 #rulesedit-header{
     display:flex;
     flex-direction:row;
-    text-align:center;
+    align-items:center;
     gap:20px;
-    padding-top:20px;
+    padding-top:15px;
 }
 
 .rules{
-    margin-top:20px;
     display:flex;
     flex-direction:column;
     text-align:left;
-    gap:20px;
 }
-
+#text-title{
+    font-size:1.5rem;
+    font-weight:bold;
+}
 #text-format{
     font-size: 16px;
     font-family: var(--font-type2);
     color: var(--clr-txt-primary);
 }
-
-.pos{
-    margin-top:10px;
-}
-
-.line-separator{
-    margin-left:-20px;
+#text-format > div{
+    border-top: 1px solid var(--clr-gray);
+    padding: 10px 5px;
 }
 
 .logo-pos{
-    width:50px;
-    height:50px;
+    width:35px;
+    object-fit: cover;
 }
 
 
@@ -91,6 +89,10 @@ hr{
     max-width:100%;
     /* width:988px; */
     height:25px;
+}
+
+input, textarea{
+    max-width: 930px;
 }
 
 #edit-title{
