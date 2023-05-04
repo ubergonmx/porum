@@ -229,6 +229,10 @@ main {
     width: 100%;
 }
 
+#search-form:has(#search-bar:focus) {
+    border-color: var(--clr-blue);
+}
+
 #search-bar:focus + #icon-search{
     color: var(--clr-blue);
 }
